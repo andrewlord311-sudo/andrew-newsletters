@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What's On — Colchester &amp; Essex</title>
+<style>
+/* Plain, hardcoded CSS on purpose — this page gets converted to PDF by the emailer,
+   and Google's HTML-to-PDF conversion doesn't support CSS custom properties or
+   @media queries, so no :root variables and no dark-mode block here (see pdpt.html
+   for that pattern, which is fine since it's only ever viewed in a browser). */
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#FAF7F2; color:#2B2A28;
+  font-family:Charter,Georgia,Cambria,"Noto Serif",serif;
+  line-height:1.65; font-size:17px;
+}
+.wrap{max-width:660px; margin:0 auto; padding:3rem 1.5rem 5rem;}
+
+.masthead{text-align:center; margin-bottom:2.5rem; padding-bottom:1.75rem; border-bottom:1px solid #E3DED4;}
+.masthead .kicker{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.14em; color:#5B7A6B;
+  font-weight:700; margin-bottom:.6rem;
+}
+.masthead h1{
+  font-family:"Iowan Old Style",Palatino,Georgia,serif; font-weight:600; font-size:2rem;
+  margin:0 0 .35rem;
+}
+.masthead .issue{color:#6E6A63; font-size:.92rem; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+
+h2{
+  font-family:"Iowan Old Style",Palatino,Georgia,serif; font-size:1.4rem; font-weight:600;
+  margin:2.4rem 0 .9rem;
+}
+p{margin:0 0 1rem;}
+a{color:#5B7A6B;}
+
+.lede{font-size:1.05rem; color:#6E6A63; margin-bottom:0;}
+
+.callout{
+  border-left:3px solid #5B7A6B; background:#E7EEE9; border-radius:6px;
+  padding:.9rem 1.1rem; margin:1.1rem 0; font-size:.96rem;
+}
+.callout.quote{border-left-color:#B0793F; background:#F5EFE3; font-style:italic;}
+.callout.warn{border-left-color:#8A4A2B; background:#F7ECE6; color:#8A4A2B; font-style:normal;}
+.callout .label{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-style:normal;
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; font-weight:700;
+  color:inherit; opacity:.75; display:block; margin-bottom:.35rem;
+}
+
+table{
+  width:100%; border-collapse:collapse; margin:1rem 0 1.4rem;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:.86rem;
+}
+th{
+  text-align:left; font-size:.7rem; text-transform:uppercase; letter-spacing:.06em;
+  color:#6E6A63; padding:.5rem .6rem; border-bottom:2px solid #E3DED4;
+}
+td{padding:.55rem .6rem; border-bottom:1px solid #E3DED4; vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+
+hr{border:none; border-top:1px solid #E3DED4; margin:2.2rem 0;}
+
+footer{
+  text-align:center; color:#6E6A63; font-size:.82rem; margin-top:2.5rem;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="kicker">What's On</div>
+    <h1>Colchester &amp; Essex</h1>
+    <div class="issue">Week of 22 July 2026</div>
+  </div>
+
+  <p class="lede">The big one this week: Colchester Castle's Museum of the Moon opens Friday, kicking off a summer-long programme of moon trails and kids' clubs. A local theatre company also makes its Castle Park debut this week, and a 20-acre private garden throws open its gates for a summer fayre this weekend.</p>
+
+  <hr>
+
+  <h2>⭐ Pick of the week</h2>
+  <p><a href="https://castleparktheatre.co.uk/stage-craft-presents-our-countrys-good-2/"><strong>Our Country's Good</strong></a> — local company Stage Craft makes its debut at Castle Park Theatre with Timberlake Wertenbaker's play, on the Lower Bowls Green in Castle Park. Runs <strong>Wed 22 – Sat 25 July</strong>; evening doors 6.30pm (show 7.30pm), plus a Saturday matinee (doors 2pm, show 3pm).</p>
+
+  <div class="callout quote">
+    <span class="label">Worth booking ahead for</span>
+    <a href="https://colchester.cimuseums.org.uk/exhibitions-2/">Museum of the Moon</a> opens at Colchester Castle on <strong>Friday 24 July</strong> and runs to 31 October — a six-metre lunar installation by artist Luke Jerram, lit and soundtracked, plus a self-guided Mystical Moon Trail. Part of the museums' summer programme running to 2 September.
+  </div>
+
+  <h2>🌙 Museums &amp; exhibitions</h2>
+  <table>
+    <tr><th>What</th><th>Where / when</th><th>Link</th></tr>
+    <tr><td>Museum of the Moon</td><td>Colchester Castle, 24 Jul – 31 Oct</td><td><a href="https://colchester.cimuseums.org.uk/exhibitions-2/">Details</a></td></tr>
+    <tr><td>Mystical Moon Trail (self-guided)</td><td>Colchester Castle, to 2 Sep</td><td><a href="https://www.new.colchester.gov.uk/news/2026/summer-discovery-and-wonder-colchester-museums">Details</a></td></tr>
+    <tr><td>Arpita Shah photographic series</td><td>Firstsite, 13 Jun – 4 Oct</td><td><a href="https://firstsite.uk/firstsite-exhibitions-coming-up-in-2026/">Details</a></td></tr>
+    <tr><td>Figures from history exhibition</td><td>Firstsite, 23 May – 30 Aug</td><td><a href="https://firstsite.uk/firstsite-exhibitions-coming-up-in-2026/">Details</a></td></tr>
+  </table>
+
+  <h2>👨‍👩‍👧 Kids &amp; family</h2>
+  <table>
+    <tr><th>What</th><th>Who it's for</th><th>Link</th></tr>
+    <tr><td>Cosmic Kids Club — crafts, games, mini tours</td><td>Ages 5–10, Tue &amp; Thu 2–4pm, 28 Jul – 27 Aug</td><td><a href="https://colchester.cimuseums.org.uk/exhibitions-2/">Book</a></td></tr>
+    <tr><td>Hollytrees Museum dinosaur trail (feat. "Juliasaurus")</td><td>Ages 2–5, daily through summer</td><td><a href="https://www.new.colchester.gov.uk/news/2026/summer-discovery-and-wonder-colchester-museums">Details</a></td></tr>
+    <tr><td>Costumed Characters — meet a Roman, games, sticker</td><td>All ages, Tue &amp; Thu, 28 Jul – 27 Aug</td><td><a href="https://www.new.colchester.gov.uk/news/2026/summer-discovery-and-wonder-colchester-museums">Details</a></td></tr>
+    <tr><td>Space Day — planetarium experience</td><td>All ages, Sat 29 Aug (further out — worth booking early)</td><td><a href="https://www.new.colchester.gov.uk/news/2026/summer-discovery-and-wonder-colchester-museums">Details</a></td></tr>
+  </table>
+
+  <h2>🌻 Open days, gardens &amp; food/drink</h2>
+  <p><a href="https://www.greenislandgardens.co.uk/special-events"><strong>Summer Fayre at Green Island Gardens</strong></a>, Ardleigh — 20 acres of private garden open to the public for the weekend, with 30+ stalls (homemade produce, jewellery, crafts, woodwork, glasswork), a tearoom, licensed bar and live music. The garden's giant lilies are at their best right now. <strong>Sat 25 – Sun 26 July</strong>. £5/adult, free for children and season-ticket holders; wheelchair accessible; no dogs except assistance dogs. (The garden is also a regular <a href="https://ngs.org.uk/gardens/green-island-co7/">National Garden Scheme</a> opener, if you want to visit another time.)</p>
+
+  <div class="callout warn">
+    <span class="label">Thin week for food &amp; drink events</span>
+    Colchester's two big food festivals — the Sausage and Cider Fest and the main Food &amp; Drink Festival — both already happened earlier this month. Beyond the Green Island Gardens fayre above, the standing option is <a href="https://www.colchester.gov.uk/markets/when-and-where">Colchester Market</a> on the High Street, running Wednesdays, Fridays and Saturdays, 9am–4pm.
+  </div>
+
+  <h2>📋 This week at a glance</h2>
+  <table>
+    <tr><th>Event</th><th>Date</th><th>Where</th></tr>
+    <tr><td><a href="https://castleparktheatre.co.uk/stage-craft-presents-our-countrys-good-2/">Our Country's Good</a></td><td>Wed 22 – Sat 25 Jul</td><td>Castle Park Theatre</td></tr>
+    <tr><td><a href="https://colchester.cimuseums.org.uk/exhibitions-2/">Museum of the Moon opens</a></td><td>Fri 24 Jul</td><td>Colchester Castle</td></tr>
+    <tr><td><a href="https://www.greenislandgardens.co.uk/special-events">Green Island Gardens Summer Fayre</a></td><td>Sat 25 – Sun 26 Jul</td><td>Ardleigh</td></tr>
+    <tr><td><a href="https://colchester.cimuseums.org.uk/exhibitions-2/">Cosmic Kids Club begins</a></td><td>Tue 28 Jul</td><td>Colchester Castle</td></tr>
+    <tr><td><a href="https://www.colchester.gov.uk/markets/when-and-where">Colchester Market</a></td><td>Wed / Fri / Sat, weekly</td><td>High Street</td></tr>
+  </table>
+
+  <footer>Published automatically, once a week. andrewlord311-sudo/andrew-newsletters</footer>
+</div>
+</body>
+</html>
