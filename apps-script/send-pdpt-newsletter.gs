@@ -22,8 +22,10 @@ function sendPdptNewsletter() {
   var url = "https://andrewlord311-sudo.github.io/andrew-newsletters/pdpt.html";
   var html = UrlFetchApp.fetch(url).getContentText();
 
+  // Recipient intentionally left out of this reference copy — this repo is public.
+  // Set it directly in the live script.google.com project instead.
   MailApp.sendEmail({
-    to: "laura.lord1306@gmail.com",
+    to: "RECIPIENT_EMAIL_SET_IN_LIVE_SCRIPT_ONLY",
     subject: "PDPT Watch — Colchester & Essex",
     htmlBody: html,
   });
