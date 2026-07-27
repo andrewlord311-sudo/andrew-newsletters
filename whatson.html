@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>What's On — Colchester &amp; Essex</title>
 <style>
-/* Plain, hardcoded CSS on purpose — this page gets converted to PDF by the emailer,
-   and Google's HTML-to-PDF conversion doesn't support CSS custom properties or
-   @media queries, so no :root variables and no dark-mode block here (see pdpt.html
-   for that pattern, which is fine since it's only ever viewed in a browser). */
+/* EMAIL-SAFE CSS — every colour is hardcoded on purpose.
+   Do not reintroduce CSS custom properties (var(--x)) or @media queries:
+   Gmail strips both, which silently flattens this design and stops links
+   rendering as links. pdpt.html follows the same rule. */
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
 body{
@@ -35,7 +35,9 @@ h2{
   margin:2.4rem 0 .9rem;
 }
 p{margin:0 0 1rem;}
-a{color:#5B7A6B;}
+/* Links must read unmistakably as links in every client — explicit colour
+   AND underline, never relying on the client's defaults. */
+a{color:#3F6B54; text-decoration:underline;}
 
 .lede{font-size:1.05rem; color:#6E6A63; margin-bottom:0;}
 
@@ -67,6 +69,17 @@ hr{border:none; border-top:1px solid #E3DED4; margin:2.2rem 0;}
 footer{
   text-align:center; color:#6E6A63; font-size:.82rem; margin-top:2.5rem;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+/* Feedback block — the channel for changing what this newsletter covers. */
+.feedback{
+  border:1px solid #E3DED4; background:#FFFFFF; border-radius:6px;
+  padding:1rem 1.15rem; margin:2.5rem 0 0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:.88rem;
+  color:#2B2A28;
+}
+.feedback .label{
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; font-weight:700;
+  color:#5B7A6B; display:block; margin-bottom:.4rem;
 }
 </style>
 </head>
@@ -126,6 +139,13 @@ footer{
     <tr><td><a href="https://colchester.cimuseums.org.uk/exhibitions-2/">Cosmic Kids Club begins</a></td><td>Tue 28 Jul</td><td>Colchester Castle</td></tr>
     <tr><td><a href="https://www.colchester.gov.uk/markets/when-and-where">Colchester Market</a></td><td>Wed / Fri / Sat, weekly</td><td>High Street</td></tr>
   </table>
+
+  <div class="feedback">
+    <span class="label">Change what this covers</span>
+    Want more of something, less of something else, or a topic added? <strong>Just reply to this
+    email</strong> — say what you'd like and it'll be folded into how future issues are put
+    together. Suggestions shape the next edition, not just this one.
+  </div>
 
   <footer>Published automatically, once a week. andrewlord311-sudo/andrew-newsletters</footer>
 </div>
