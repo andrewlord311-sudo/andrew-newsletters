@@ -6,23 +6,32 @@ not need to touch the scheduled task's prompt.
 
 ## Subject
 
-Psychodynamic psychotherapy and counselling in the Colchester / Essex area.
+Psychodynamic psychotherapy remains the anchor, but coverage now also includes other
+evidence-based talking therapies and counselling for mental health problems in the
+Colchester / Essex area — CBT (cognitive behavioural therapy) explicitly included, plus other
+recognised counselling modalities (integrative, person-centred, systemic, etc.) where genuinely
+relevant. **Scope boundary: mental health counselling and psychotherapy only** — not
+physiotherapy, massage, or other non-mental-health uses of "therapy."
 
 ## Sections to cover
 
 Prioritise things genuinely new or current this week over static directory content.
 
-1. **Top story** — a notable local practice, practitioner, or story: a new practice opening,
-   a graduate success story, a talk, an award. Must always have a real source link.
+1. **Top story** — a notable local practice, practitioner, or story from any covered
+   modality: a new practice opening, a graduate success story, a talk, an award. Must always
+   have a real source link.
 2. **Research worth knowing about** — current-year papers, studies, meta-analyses, new
-   methodological angles. Pick 1–3 and explain each in plain English; never link-dump. If
-   nothing genuinely new turns up, say so rather than padding.
-3. **Practitioners currently advertising** in Colchester/Essex — Psychology Today,
-   Counselling Directory, individual practice sites.
+   methodological angles, across psychodynamic, CBT, or other covered talking therapies. Pick
+   1–3 and explain each in plain English; never link-dump. If nothing genuinely new turns up,
+   say so rather than padding.
+3. **Practitioners currently advertising** in Colchester/Essex — across psychodynamic, CBT,
+   and other covered modalities. Psychology Today, Counselling Directory, individual practice
+   sites.
 4. **Practice space / room rentals** in the Colchester/Essex area.
-5. **Training pipeline** — Essex/local university psychodynamic counselling courses, intake
-   dates, notable graduates.
-6. **Industry bodies** — BACP / UKCP news pages, anything Essex-relevant.
+5. **Training pipeline** — Essex/local university courses across covered modalities (not just
+   psychodynamic), intake dates, notable graduates.
+6. **Industry bodies** — BACP / UKCP / BABCP (CBT's professional body) news pages, anything
+   Essex-relevant.
 7. *Optional, don't force it* — YouTube/Instagram/TikTok content from local practitioners.
 
 ## Reader requests
