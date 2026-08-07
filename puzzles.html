@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Puzzle Weekly</title>
+<style>
+/* EMAIL-SAFE CSS — every colour is hardcoded on purpose, same rule as pdpt.html and
+   whatson.html in this repo. Do not reintroduce CSS custom properties (var(--x)) or
+   @media queries: Gmail strips both, which silently flattens this design and stops
+   links rendering as links. No gradients either — Outlook's Word rendering engine
+   drops them, so every fill here is a flat, hardcoded colour. */
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#F4F1EA; color:#221F2E;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  line-height:1.6; font-size:16px;
+}
+.wrap{max-width:640px; margin:0 auto;}
+
+/* Masthead — solid colour block, not a gradient, so it survives every client */
+.masthead{background:#2B2359; padding:2.6rem 1.75rem 2.2rem; text-align:center;}
+.masthead .grid-mark{margin:0 auto 1rem; width:54px;}
+.masthead .kicker{
+  font-size:.74rem; text-transform:uppercase; letter-spacing:.16em; color:#F2B84B;
+  font-weight:800; margin-bottom:.5rem;
+}
+.masthead h1{
+  font-family:Georgia,"Iowan Old Style",serif; font-weight:700; font-size:2.1rem;
+  margin:0 0 .4rem; color:#FFFFFF;
+}
+.masthead .issue{color:#C7BEEA; font-size:.92rem;}
+
+.body-pad{padding:2.2rem 1.75rem 3rem;}
+
+.lede{font-size:1.05rem; color:#4A4560; margin:0 0 1.6rem;}
+
+h2{
+  font-size:1.28rem; font-weight:800; margin:2.4rem 0 .5rem; color:#221F2E;
+}
+h2 .h2-sub{display:block; font-size:.82rem; font-weight:600; color:#736C8C; margin-top:.15rem; text-transform:none; letter-spacing:0;}
+p{margin:0 0 1rem;}
+a{color:#4C3BCF; text-decoration:underline;}
+
+/* Puzzle cards */
+.card{
+  border:2px solid #E4DECF; background:#FFFFFF; border-radius:12px;
+  padding:1.15rem 1.3rem 1.3rem; margin:1rem 0;
+}
+.card-top{margin-bottom:.5rem;}
+.badge{
+  display:inline-block; font-size:.68rem; font-weight:800; text-transform:uppercase;
+  letter-spacing:.06em; padding:.28rem .6rem; border-radius:20px; margin:0 .35rem .35rem 0;
+}
+.badge-gentle{background:#DCEEDD; color:#2E6B3E;}
+.badge-medium{background:#FBEAD1; color:#96601A;}
+.badge-tough{background:#F7DCD4; color:#A03E22;}
+.badge-monster{background:#2B2359; color:#F2B84B;}
+.badge-source{background:#EDEAF7; color:#4C3BCF;}
+.card h3{font-size:1.12rem; margin:.3rem 0 .15rem; font-family:Georgia,"Iowan Old Style",serif;}
+.card .setter{font-size:.85rem; color:#736C8C; margin-bottom:.6rem;}
+.card .rule{font-size:.93rem; color:#3A3650; margin-bottom:.9rem;}
+
+.play-btn{
+  display:inline-block; background:#4C3BCF; color:#FFFFFF !important; font-weight:700;
+  font-size:.9rem; text-decoration:none !important; padding:.6rem 1.1rem; border-radius:8px;
+  margin:0 .5rem .5rem 0;
+}
+.watch-link{font-size:.87rem; color:#4C3BCF;}
+
+/* Rating row */
+.rate{
+  margin-top:.7rem; padding-top:.7rem; border-top:1px solid #EEEAE0;
+  font-size:.82rem; color:#736C8C;
+}
+.rate .rate-label{display:block; font-size:.68rem; text-transform:uppercase; letter-spacing:.07em; font-weight:700; color:#A39CBB; margin-bottom:.4rem;}
+.rate a{
+  display:inline-block; text-decoration:none; background:#F4F1EA; border:1px solid #E4DECF;
+  border-radius:20px; padding:.32rem .7rem; margin:0 .4rem .4rem 0; color:#3A3650; font-weight:600;
+}
+
+/* Simpler list items for the games sections */
+.game-item{margin:0 0 1.1rem; padding-left:0;}
+.game-item .g-name{font-weight:800; font-size:1.01rem; color:#221F2E;}
+.game-item .g-desc{font-size:.93rem; color:#4A4560;}
+
+.callout{
+  border-left:4px solid #4C3BCF; background:#EDEAF7; border-radius:6px;
+  padding:1rem 1.15rem; margin:1rem 0; font-size:.96rem;
+}
+.callout .label{
+  font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; font-weight:800;
+  color:#4C3BCF; display:block; margin-bottom:.5rem;
+}
+.callout .q{font-family:Georgia,"Iowan Old Style",serif; font-size:1.05rem; font-style:italic; color:#221F2E; margin-bottom:.7rem;}
+
+hr{border:none; border-top:1px solid #E4DECF; margin:2.2rem 0;}
+
+.hub-link{
+  background:#FCF6E3; border:1px solid #F2B84B; border-radius:8px; padding:.9rem 1.1rem;
+  font-size:.9rem; margin:1.2rem 0 0;
+}
+
+footer{text-align:center; color:#8B8499; font-size:.82rem; margin-top:2.2rem;}
+
+.feedback{
+  border:1px solid #E4DECF; background:#FFFFFF; border-radius:6px;
+  padding:1rem 1.15rem; margin:2.5rem 0 0; font-size:.88rem; color:#221F2E;
+}
+.feedback .label{
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; font-weight:800;
+  color:#4C3BCF; display:block; margin-bottom:.4rem;
+}
+
+/* Sudoku-grid decoration in the masthead — plain bordered table cells, no images */
+.gridtable{border-collapse:collapse; margin:0 auto;}
+.gridtable td{width:16px; height:16px; border:1px solid #6C5FD1;}
+.gridtable td.on{background:#F2B84B;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <table class="gridtable" role="presentation" cellpadding="0" cellspacing="0"><tr>
+      <td></td><td class="on"></td><td></td>
+      <td></td><td></td><td class="on"></td>
+      <td class="on"></td><td></td><td></td>
+    </tr><tr>
+      <td></td><td></td><td class="on"></td>
+      <td class="on"></td><td></td><td></td>
+      <td></td><td class="on"></td><td></td>
+    </tr><tr>
+      <td class="on"></td><td></td><td></td>
+      <td></td><td class="on"></td><td></td>
+      <td></td><td></td><td class="on"></td>
+    </tr></table>
+    <div class="kicker" style="margin-top:.9rem;">Puzzle Weekly</div>
+    <h1>Andrew's Puzzle Weekly</h1>
+    <div class="issue">Week of 7 August 2026 — for the weekend ahead</div>
+  </div>
+
+  <div class="body-pad">
+
+  <p class="lede">Three genuinely fresh Cracking&nbsp;the&nbsp;Cryptic sudoku variants this week — from a clean single-twist puzzle up to a seven-constraint monster under dynamic fog — plus the pick of LinkedIn's logic games, what's new in Thinky Dailies' story, and a classic Kordemsky riddle to settle an argument with. Rate anything below and it'll shape what gets picked next week.</p>
+
+  <hr>
+
+  <h2>🧩 Sudoku variants<span class="h2-sub">This week's picks from Cracking the Cryptic's own puzzle feed — real, current, playable in-browser</span></h2>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="badge badge-medium">Medium</span>
+      <span class="badge badge-source">Fri 7 Aug</span>
+    </div>
+    <h3>"In-Between Extra"</h3>
+    <div class="setter">by Aad van de Wetering</div>
+    <div class="rule">Normal sudoku rules apply. Digits on a grey line have values between the two circled digits at the ends of that line — and in addition, the digit in <em>one</em> circle equals the sum of the digits on the line <em>and</em> the other circle. One clean extra twist on a familiar constraint.</div>
+    <a class="play-btn" href="https://app.crackingthecryptic.com/sudoku/musrlacrf2">▶ Play it in SudokuPad</a>
+    <a class="watch-link" href="https://www.youtube.com/watch?v=ZDZHyLa2Dus">Watch Simon or Mark solve it →</a>
+    <div class="rate">
+      <span class="rate-label">Rate this puzzle</span>
+      <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=sudoku&item=in-between-extra&rating=up">👍 Loved it</a>
+      <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=sudoku&item=in-between-extra&rating=mid">🙂 Good</a>
+      <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=sudoku&item=in-between-extra&rating=down">👎 Not for me</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="badge badge-tough">Tough</span>
+      <span class="badge badge-source">Fri 7 Aug</span>
+    </div>
+    <h3>"Magical Constellation"</h3>
+    <div class="setter">by Daniel Hanson</div>
+    <div class="rule">Normal sudoku rules apply. Cells a knight's-move apart can't share a digit. Black dots mean one digit is double the other (all dots given). And the nine cells in the red box must form a magic square — every row, column and diagonal summing to the same total. Three constraint types stacked on top of each other.</div>
+    <a class="play-btn" href="https://app.crackingthecryptic.com/sudoku/fc9t0o7etr">▶ Play it in SudokuPad</a>
+    <a class="watch-link" href="https://www.youtube.com/watch?v=WQN2Ej_LF7c">Watch Simon or Mark solve it →</a>
+    <div class="rate">
+      <span class="rate-label">Rate this puzzle</span>
+      <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=sudoku&item=magical-constellation&rating=up">👍 Loved it</a>
+      <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=sudoku&item=magical-constellation&rating=mid">🙂 Good</a>
+      <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=sudoku&item=magical-constellation&rating=down">👎 Not for me</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="badge badge-monster">Monster</span>
+      <span class="badge badge-source">Thu 6 Aug</span>
+    </div>
+    <h3>"Consecutive Regional Constraints"</h3>
+    <div class="setter">by Belamis</div>
+    <div class="rule">The grid starts hidden under <strong>dynamic fog</strong> — correct placements reveal more of it. Seven different line/constraint types are in play (arrow, region sum, renban, Dutch whisper, entropic, Kropki, parity), and within <em>each</em> type the digits used across the whole grid must form a consecutive run, with no repeats. This is a proper sit-down-with-a-coffee puzzle, not a quick one.</div>
+    <a class="play-btn" href="https://app.crackingthecryptic.com/sudoku/zt3l4bqwuj">▶ Play it in SudokuPad</a>
+    <a class="watch-link" href="https://www.youtube.com/watch?v=_FC2zpPDiZ4">Watch Simon or Mark solve it →</a>
+    <div class="rate">
+      <span class="rate-label">Rate this puzzle</span>
+      <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=sudoku&item=consecutive-regional-constraints&rating=up">👍 Loved it</a>
+      <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=sudoku&item=consecutive-regional-constraints&rating=mid">🙂 Good</a>
+      <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=sudoku&item=consecutive-regional-constraints&rating=down">👎 Not for me</a>
+    </div>
+  </div>
+
+  <div class="hub-link">Want more? Cracking the Cryptic post two new puzzles most days — the full current week is always at <a href="https://crackingthecryptic.com/latest">crackingthecryptic.com/latest</a>.</div>
+
+  <hr>
+
+  <h2>💼 LinkedIn games worth a coffee break<span class="h2-sub">These reset daily, so head to the hub and play today's — here's what's worth prioritising</span></h2>
+
+  <div class="game-item">
+    <div class="g-name">👑 Queens</div>
+    <div class="g-desc">Place one crown per row, column and colour region with no two touching, even diagonally — a tidy little constraint-satisfaction puzzle that plays a bit like a stripped-down sudoku. Usually solvable in a few minutes but the region shapes keep it fresh daily.</div>
+  </div>
+  <div class="game-item">
+    <div class="g-name">🎵 Tango</div>
+    <div class="g-desc">Fill a grid with sun and moon symbols so no three in a row match and each row/column stays balanced, with a few "same" or "opposite" clues between cells to anchor the logic. Closest thing here to a binary puzzle — good if you liked Binairo-style grids.</div>
+  </div>
+  <div class="game-item">
+    <div class="g-name">🔗 Zip</div>
+    <div class="g-desc">Draw a single path through every numbered checkpoint in order without crossing yourself. Simple rules, but the grid shapes get genuinely fiddly toward the end of the week — worth doing daily rather than catching up in one go.</div>
+  </div>
+
+  <div class="hub-link">Play today's line-up (free, no account needed to try): <a href="https://www.linkedin.com/games/">linkedin.com/games</a></div>
+
+  <div class="rate">
+    <span class="rate-label">Rate this section</span>
+    <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=linkedin&item=weekly-pick&rating=up">👍 More like this</a>
+    <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=linkedin&item=weekly-pick&rating=mid">🙂 Fine as-is</a>
+    <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=linkedin&item=weekly-pick&rating=down">👎 Skip these</a>
+  </div>
+
+  <hr>
+
+  <h2>🎮 Thinky Games dailies<span class="h2-sub">A different handcrafted puzzle type every single day, tied together by one ongoing story</span></h2>
+
+  <p>Thinky Dailies is currently mid-way through <strong>Season 3</strong> of its puzzle-adventure story — every day introduces a new puzzle mechanic rather than reusing the same format, which is the whole appeal if you like variety over grinding one puzzle type. Nothing to lose either: the full back-catalogue (Seasons 1 and 2) stays playable any time, so a missed day is never gone for good.</p>
+
+  <div class="hub-link">Start today's puzzle, or catch up on anything you've missed: <a href="https://thinkygames.com/dailies/">thinkygames.com/dailies</a></div>
+
+  <div class="rate">
+    <span class="rate-label">Rate this section</span>
+    <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=thinky&item=weekly-pick&rating=up">👍 More like this</a>
+    <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=thinky&item=weekly-pick&rating=mid">🙂 Fine as-is</a>
+    <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=thinky&item=weekly-pick&rating=down">👎 Skip these</a>
+  </div>
+
+  <hr>
+
+  <h2>➗ Maths puzzle of the week<span class="h2-sub">Not sourced from Facebook (I can't read your feed) — same spirit, found via a proper puzzle archive instead</span></h2>
+
+  <div class="callout">
+    <span class="label">"Level-Headed" — Boris Kordemsky, The Moscow Puzzles (1972)</span>
+    <div class="q">"A house has 6 storeys, each the same height. How many times as long is the ascent to the sixth floor as the ascent to the third?"</div>
+    It isn't 2. Worth thirty seconds of thought before you check — the trick is in what "ascent to a floor" actually counts.
+  </div>
+  <p><a href="https://www.futilitycloset.com/2026/08/05/level-headed/">See the answer at Futility Closet →</a></p>
+
+  <div class="rate">
+    <span class="rate-label">Rate this puzzle</span>
+    <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=maths&item=level-headed&rating=up">👍 Loved it</a>
+    <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=maths&item=level-headed&rating=mid">🙂 Good</a>
+    <a href="https://script.google.com/macros/s/PUZZLE_RATING_SCRIPT_ID/exec?week=2026-08-07&cat=maths&item=level-headed&rating=down">👎 Not for me</a>
+  </div>
+
+  <div class="feedback">
+    <span class="label">Change what this covers</span>
+    Want more variant sudoku and less LinkedIn, a harder maths puzzle, anything else? <strong>Reply to this email</strong> or use the rating links above — both shape next Friday's picks, not just this one.
+  </div>
+
+  <footer>Published automatically, every Friday morning. andrewlord311-sudo/andrew-newsletters</footer>
+  </div>
+</div>
+</body>
+</html>
