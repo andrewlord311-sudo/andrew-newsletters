@@ -1,8 +1,8 @@
 # andrew-newsletters
 
-Three weekly HTML newsletters, published to GitHub Pages and emailed by Google
+Four weekly HTML newsletters, published to GitHub Pages and emailed by Google
 Apps Script: **PDPT Watch** and **What's On** to Laura on Mondays, **Puzzle
-Weekly** to Andrew on Fridays.
+Weekly** to Andrew on Fridays, **Music Weekly** to Andrew on Saturdays.
 
 ## Two rules that break things silently
 
@@ -12,8 +12,8 @@ and Outlook strip all three, which flattens the design and can stop links
 rendering as links. Do **not** "improve" the CSS by reintroducing them — the
 page looking fine in a browser proves nothing about how it arrives in an inbox.
 
-**2. `scope/*.md` is data, not prompt.** `scope/pdpt.md`, `scope/whatson.md` and
-`scope/puzzles.md` define what each newsletter covers, including reader requests
+**2. `scope/*.md` is data, not prompt.** `scope/pdpt.md`, `scope/whatson.md`,
+`scope/puzzles.md` and `scope/music.md` define what each newsletter covers, including reader requests
 Laura has made. They are what Andrew edits to steer the content. If a scope file
 conflicts with a generation prompt, **the scope file wins.**
 
@@ -22,8 +22,8 @@ scope changes.
 
 ## Who generates these
 
-Since 10.8.26, three **Claude cloud routines** (Mon 04:00 and 04:30 UTC, Fri
-04:00 UTC). They run in the cloud precisely because this laptop is asleep at
+Since 10.8.26, **Claude cloud routines** (Mon 04:00 and 04:30 UTC, Fri 04:00 UTC,
+Sat 04:00 UTC). They run in the cloud precisely because this laptop is asleep at
 that hour — the previous local scheduled tasks never fired on time, and the
 Apps Script emailer would send the *previous* week's issue. The local tasks
 still exist but are disabled.
@@ -40,3 +40,14 @@ actually landed rather than assuming:
 ```
 git fetch origin && git diff --quiet origin/main -- pdpt.html && echo PUBLISHED_OK
 ```
+
+## Music Weekly, specifically
+
+`scope/music.md` carries a **copy of Andrew's taste note** from the vault
+(`Me/Identity/My musical tastes and interests.md`), because a cloud routine
+cannot read the vault. If the two disagree, the vault note is the truth.
+
+That file contains a **hard exclusion list** — no opera at all, no Wagner
+(bar one or two overtures), no Berlioz, no Liszt, no Second Viennese School or
+atonal music, no minimalism, no film music. Those exclusions are what stop the
+newsletter being generic. Breaking one is worse than shipping a thin issue.
