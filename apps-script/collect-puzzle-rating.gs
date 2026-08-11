@@ -32,7 +32,7 @@
 //      ?mode=summary in a browser) to trigger the one-time permission approval
 
 const SHEET_ID = "PUZZLE_RATINGS_SHEET_ID"; // replace with your real Sheet ID (step 4 above)
-const SHEET_NAME = "Ratings";
+const SHEET_NAME = "Puzzle Weekly Ratings";
 
 function doGet(e) {
   var p = (e && e.parameter) || {};

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Music Weekly</title>
+<style>
+/* EMAIL-SAFE CSS — every colour is hardcoded on purpose, same rule as pdpt.html,
+   whatson.html and puzzles.html in this repo. Do not reintroduce CSS custom
+   properties (var(--x)) or @media queries: Gmail strips both, which silently
+   flattens this design and stops links rendering as links. No gradients either —
+   Outlook's Word rendering engine drops them, so every fill is a flat colour. */
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#F4F1EA; color:#251C20;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  line-height:1.62; font-size:16px;
+}
+.wrap{max-width:640px; margin:0 auto;}
+
+/* Masthead — wine, like a recital programme, and distinct from the sage of
+   PDPT/What's On and the indigo of Puzzle Weekly. Solid, never a gradient. */
+.masthead{background:#5E2233; padding:2.6rem 1.75rem 2.1rem; text-align:center;}
+.masthead .kicker{
+  color:#E4B95E; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+  font-weight:700; margin:0 0 .55rem;
+}
+.masthead h1{
+  color:#FBF7F0; font-family:Georgia,"Times New Roman",serif;
+  font-size:2.1rem; margin:0 0 .5rem; font-weight:400; letter-spacing:.01em;
+}
+.masthead .issue{color:#D7B9A6; font-size:.9rem; margin:0;}
+
+.body{padding:1.9rem 1.75rem 1rem;}
+.lede{font-size:1.06rem; color:#3D3037; margin:0 0 1.9rem;}
+
+h2{
+  font-family:Georgia,"Times New Roman",serif; font-size:1.32rem; font-weight:400;
+  color:#5E2233; margin:2.3rem 0 .35rem; padding-bottom:.42rem;
+  border-bottom:2px solid #E8DCCB;
+}
+h2:first-of-type{margin-top:.6rem;}
+.section-note{color:#7A6A70; font-size:.9rem; margin:.35rem 0 1.15rem;}
+
+/* A recommendation */
+.piece{
+  background:#FFFFFF; border:1px solid #E3D8C8; border-left:4px solid #5E2233;
+  padding:1.1rem 1.25rem; margin:0 0 1.15rem;
+}
+.piece .work{
+  font-family:Georgia,"Times New Roman",serif; font-size:1.1rem;
+  color:#251C20; margin:0 0 .12rem;
+}
+.piece .composer{color:#8A6B34; font-size:.88rem; font-weight:700; margin:0 0 .6rem;
+  letter-spacing:.02em;}
+.piece p{margin:0 0 .7rem; color:#3D3037;}
+.piece .why{color:#4A3B41;}
+.meta{font-size:.84rem; color:#7A6A70; margin:0 0 .75rem;}
+.listen{
+  display:inline-block; background:#5E2233; color:#FBF7F0 !important;
+  text-decoration:none; padding:.5rem .95rem; font-weight:700; font-size:.9rem;
+  margin:0 .4rem .3rem 0;
+}
+.score-link{
+  display:inline-block; color:#5E2233 !important; text-decoration:none;
+  border:1px solid #C9B9A4; padding:.46rem .9rem; font-size:.88rem; font-weight:700;
+  margin:0 .4rem .3rem 0;
+}
+
+/* A pull-out — a question, a bit of context, something to chew on */
+.aside{
+  background:#F0E7DA; border:1px solid #E0D2BE; padding:1rem 1.2rem;
+  margin:0 0 1.2rem; color:#3D3037;
+}
+.aside .label{
+  display:block; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+  color:#8A6B34; font-weight:700; margin-bottom:.4rem;
+}
+
+/* A thin week — said plainly rather than padded */
+.thin{
+  background:#F6EFE2; border:1px solid #E4CFA8; border-left:4px solid #C79A3A;
+  padding:.95rem 1.2rem; margin:0 0 1.2rem; color:#5C4A28;
+}
+
+table.table{width:100%; border-collapse:collapse; margin:0 0 1.3rem; font-size:.92rem;}
+table.table th{
+  text-align:left; background:#EFE5D6; color:#5E2233; font-weight:700;
+  padding:.6rem .7rem; border-bottom:2px solid #DDD0BC; font-size:.83rem;
+  letter-spacing:.03em; text-transform:uppercase;
+}
+table.table td{padding:.6rem .7rem; border-bottom:1px solid #E8DCCB; vertical-align:top;}
+table.table a{color:#5E2233;}
+
+.rate{margin:.55rem 0 0; padding-top:.6rem; border-top:1px solid #EDE3D4;}
+.rate-label{font-size:.76rem; color:#8A7A80; margin-right:.5rem;}
+.rate a{
+  display:inline-block; color:#5E2233 !important; text-decoration:none;
+  border:1px solid #DCCDB8; padding:.24rem .6rem; font-size:.82rem;
+  margin:0 .28rem .28rem 0;
+}
+
+a{color:#5E2233;}
+
+.feedback{
+  background:#EDE3D4; border:1px solid #DDD0BC; padding:1.05rem 1.25rem;
+  margin:2rem 0 1rem; font-size:.94rem; color:#4A3B41;
+}
+.feedback .label{
+  display:block; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+  color:#8A6B34; font-weight:700; margin-bottom:.4rem;
+}
+
+footer{
+  padding:1.2rem 1.75rem 2.4rem; color:#8A7A80; font-size:.8rem; text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <p class="kicker">Music Weekly</p>
+    <h1>Something to listen to</h1>
+    <p class="issue">Week of 11 August 2026</p>
+  </div>
+
+  <div class="body">
+
+    <p class="lede">First issue — the shape rather than the substance. From next
+    Saturday this arrives with real recommendations; everything below shows what
+    each section will hold. The rating links already work, and they are what
+    makes the next one better than this one.</p>
+
+    <h2>Listen this week</h2>
+    <p class="section-note">Three or four pieces, each with a working link and a
+    reason it is for you specifically.</p>
+
+    <div class="piece">
+      <p class="work">The piece, with its opus number</p>
+      <p class="composer">The composer</p>
+      <p class="why">Why this one, for you — pitched against what you already
+      love rather than described in general. Adjacent to Schumann, or the Mahler
+      you rarely reach for, or a Bartók quartet you have not sat with.</p>
+      <p class="meta">Roughly how long it takes · which recording</p>
+      <a class="listen" href="#">Listen</a>
+      <a class="score-link" href="#">Score on IMSLP</a>
+      <div class="rate">
+        <span class="rate-label">Rate this</span>
+        <a href="#">👍 Loved it</a>
+        <a href="#">🙂 Good</a>
+        <a href="#">👎 Not for me</a>
+      </div>
+    </div>
+
+    <h2>A composer to explore</h2>
+    <p class="section-note">One, with a route in — which piece first, then what.</p>
+
+    <div class="aside">
+      <span class="label">Why now</span>
+      Leaning into your own stated gap: the unexplored 20th century, and older
+      composers worth reviving. Not a biography — a way in.
+    </div>
+
+    <h2>Something to study</h2>
+    <p class="section-note">For the composer's ear, not the listener's.</p>
+
+    <div class="aside">
+      <span class="label">This week</span>
+      What Brahms is actually doing that makes it seamless. How Mozart voices a
+      quartet. A point of form or orchestration, with the score to read it in.
+    </div>
+
+    <h2>On the radio</h2>
+    <p class="section-note">Radio 3 this week, and anything on BBC Sounds about
+    to expire — the time-limited section, which is why this is a weekly.</p>
+
+    <table class="table">
+      <tr><th>When</th><th>What</th><th>Where</th></tr>
+      <tr><td>—</td><td>Broadcasts and catch-up worth the time</td><td>—</td></tr>
+    </table>
+
+    <h2>Live near Colchester</h2>
+    <p class="section-note">Colchester, Essex, and as far as Snape, Cambridge or
+    Saffron Hall when it is worth the trip.</p>
+
+    <div class="thin">
+      When there is nothing worth going to, this will say so plainly rather than
+      padding the section with whatever is on.
+    </div>
+
+    <div class="feedback">
+      <span class="label">Change what this covers</span>
+      Want more early music and less orchestral, more score study, a wider net for
+      concerts? <strong>Edit <code>scope/music.md</code> in the repo</strong>, or use
+      the rating links — both steer next Saturday's issue, not just this one.
+    </div>
+
+  </div>
+
+  <footer>Published automatically, every Saturday morning.<br>andrewlord311-sudo/andrew-newsletters</footer>
+</div>
+</body>
+</html>
