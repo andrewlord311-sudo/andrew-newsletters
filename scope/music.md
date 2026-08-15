@@ -89,9 +89,43 @@ he acts on beats a full one he skims.
    orchestration analysis. This is where his composer's ear is served: what
    Brahms is actually doing that makes it seamless, how Mozart voices a quartet.
    IMSLP links are ideal since the scores are free.
-4. **On the radio** — what is on **BBC Radio 3** in the coming week, and
-   anything on **BBC Sounds** about to expire. Time-limited, so it earns its
-   place in a weekly.
+4. **On the radio** — **special events on BBC Radio 3 in the coming week.**
+   Andrew's own framing, 15.8.26: *"all I really want to know is what
+   interesting concerts/events are coming up that I don't want to miss"* —
+   not a listing of everything broadcasting, a filter down to what's actually
+   worth clearing time for.
+
+   **Do not scrape the BBC website — it blocks that, which is why this
+   section kept failing.** Instead, fetch the schedule directly as JSON, one
+   call per day, using Bash:
+
+   ```
+   curl -s "https://rms.api.bbc.co.uk/v2/experience/inline/schedules/bbc_radio_three/YYYY-MM-DD"
+   ```
+
+   No headers, no auth, no User-Agent needed — confirmed working plainly.
+   Fetch today plus the next six days. Each response is
+   `.data[0].data[]`, a list of broadcasts with `start`/`end` (UTC),
+   `titles.primary`/`titles.secondary`, and `synopses.short`/`medium`/`long`
+   — the `long` synopsis often lists the actual pieces and performers.
+
+   **What counts as special** — there is no flag for this, judge it from the
+   titles and synopses: a **"Classical Live"** relay (these are Proms or
+   festival broadcasts — the secondary title says which, e.g. *"from the BBC
+   Proms"* or *"from the Edinburgh Festival"*), an **"In Tune"** entry naming
+   a specific artist playing live in the studio, or anything else whose
+   synopsis makes clear it is a one-off performance rather than a themed
+   selection or a continuity slot (**"Through the Night", "Breakfast",
+   "Essential Classics"** and similar are routine — leave them out even if
+   nothing else is happening that day).
+
+   For each one picked: what it is, who's performing, and the UK broadcast
+   time converted from the UTC in `start`. If nothing in the coming week
+   clears that bar, say so plainly — a genuinely quiet week is a valid answer,
+   better than padding with routine programming dressed up as an event.
+
+   (BBC Sounds catch-up-expiry is not covered by this endpoint and has no
+   reliable source found yet — dropped from scope rather than guessed at.)
 5. **Live near Colchester** — concerts in Colchester, Essex and reachable parts
    of Suffolk and Cambridge. Include date, venue, price and a booking link.
    Say plainly if there is nothing worth the trip.
