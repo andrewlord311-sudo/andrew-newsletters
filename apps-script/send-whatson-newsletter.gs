@@ -30,9 +30,39 @@ function sendWeeklyWhatsOn() {
   var url = "https://andrewlord311-sudo.github.io/andrew-newsletters/whatson.html";
   var html = UrlFetchApp.fetch(url).getContentText();
 
+  // Guard added 17.8.26: this fetch and the Monday-morning regeneration are two
+  // independent schedules with no coordination between them, and this is the third
+  // time it's raced (Andrew: "What's On was 10th August not 17th" -- the send fired
+  // before the fresh page had landed and forwarded last week's issue to Laura without
+  // anyone noticing until she'd already read it). Better to hold the email back and
+  // tell Andrew than to silently forward stale content to Laura again.
+  if (!isThisWeeksIssue(html)) {
+    MailApp.sendEmail({
+      to: Session.getActiveUser().getEmail(),
+      subject: "What's On — held back, looked stale",
+      body: "Fetched " + url + " for this week's send, but its \"Week of\" date " +
+            "isn't from the last few days -- looks like last week's issue, not a " +
+            "fresh one. Didn't forward it to Laura. Check whether the generator ran " +
+            "yet, then re-run sendWeeklyWhatsOn manually once it has.",
+    });
+    return;
+  }
+
   MailApp.sendEmail({
     to: "FILL_IN_RECIPIENT_EMAIL_IN_LIVE_SCRIPT_ONLY",
     subject: "What's On — Colchester & Essex, this week",
     htmlBody: html,
   });
+}
+
+// True if the page's own "Week of D Month YYYY" date is recent enough to be this
+// week's issue, not a leftover from before the generator's most recent run. A missing
+// or unparseable date counts as NOT fresh -- never guess a stale page is fine.
+function isThisWeeksIssue(html) {
+  var match = html.match(/Week of (\d{1,2} \w+ \d{4})/);
+  if (!match) return false;
+  var issueDate = new Date(match[1]);
+  if (isNaN(issueDate.getTime())) return false;
+  var ageDays = (new Date() - issueDate) / (1000 * 60 * 60 * 24);
+  return ageDays >= 0 && ageDays < 6;
 }
