@@ -46,9 +46,40 @@ function sendMusicNewsletter() {
     return;
   }
 
+  var html = response.getContentText();
+
+  // Guard added 17.8.26, after What's On's sibling script (same fetch-then-send
+  // shape) forwarded a stale issue because its send fired before that week's
+  // regeneration had landed. The 04:00 UTC generator margin noted above has held so
+  // far, but the race is structurally the same one that bit What's On, so the same
+  // guard applies here too rather than trusting the margin indefinitely.
+  if (!isThisWeeksIssue(html)) {
+    MailApp.sendEmail({
+      to: RECIPIENT,
+      subject: "Music Weekly — held back, looked stale",
+      body: "Fetched " + url + " for this week's send, but its \"Week of\" date " +
+            "isn't from the last few days -- looks like last week's issue, not a " +
+            "fresh one. Didn't send it. Check whether the generator ran yet, then " +
+            "re-run sendMusicNewsletter manually once it has.",
+    });
+    return;
+  }
+
   MailApp.sendEmail({
     to: RECIPIENT,
     subject: "🎼 Music Weekly",
-    htmlBody: response.getContentText(),
+    htmlBody: html,
   });
+}
+
+// True if the page's own "Week of D Month YYYY" date is recent enough to be this
+// week's issue, not a leftover from before the generator's most recent run. A missing
+// or unparseable date counts as NOT fresh -- never guess a stale page is fine.
+function isThisWeeksIssue(html) {
+  var match = html.match(/Week of (\d{1,2} \w+ \d{4})/);
+  if (!match) return false;
+  var issueDate = new Date(match[1]);
+  if (isNaN(issueDate.getTime())) return false;
+  var ageDays = (new Date() - issueDate) / (1000 * 60 * 60 * 24);
+  return ageDays >= 0 && ageDays < 6;
 }
