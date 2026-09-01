@@ -13,6 +13,27 @@ recognised counselling modalities (integrative, person-centred, systemic, etc.) 
 relevant. **Scope boundary: mental health counselling and psychotherapy only** — not
 physiotherapy, massage, or other non-mental-health uses of "therapy."
 
+### Particular interest: mothers with postnatal depression
+
+**Added 1.9.26.** Perinatal and maternal mental health — postnatal depression above all — is a
+standing priority that runs **across every section below**, not a section of its own. Where a
+week offers a choice between two otherwise equal items, prefer the one that touches it:
+
+- research on PND, perinatal mental health, maternal mental illness, and the talking therapies
+  used for them
+- practitioners and practices in Colchester/Essex who name perinatal, maternal or postnatal
+  mental health as a specialism
+- NHS perinatal mental health services covering Essex — provision, waiting times, referral
+  routes, service changes
+- training, CPD and qualifications in perinatal mental health
+- charities and peer support operating locally (e.g. PANDAS, Home-Start, NCT branches), where
+  there is something genuinely current to report
+
+Source it to the same standard as everything else: clinicians, services, professional bodies
+and peer-reviewed work — not personal blogs or anecdote presented as evidence. And do not let
+it crowd out the rest of the newsletter: if a week genuinely has nothing new on it, say
+nothing rather than padding.
+
 ## Sections to cover
 
 Prioritise things genuinely new or current this week over static directory content.
@@ -32,7 +53,24 @@ Prioritise things genuinely new or current this week over static directory conte
    psychodynamic), intake dates, notable graduates.
 6. **Industry bodies** — BACP / UKCP / BABCP (CBT's professional body) news pages, anything
    Essex-relevant.
-7. *Optional, don't force it* — YouTube/Instagram/TikTok content from local practitioners.
+7. **New YouTube content** — genuinely new video worth making time for, in any covered
+   modality. This was previously an optional "local practitioners' social media" footnote,
+   which meant it was almost always empty; it is now a proper section (added 1.9.26).
+   - **Where to look:** named clinicians and academics; training institutions and archives
+     (Tavistock and Portman, Anna Freud Centre, Freud Museum London, university psychotherapy
+     departments); professional bodies (BACP, UKCP, BABCP); recorded lectures, conference
+     talks, case discussions and long-form clinical interviews. Local practitioners' own
+     channels are a bonus, not a requirement.
+   - **Check the upload date and say it.** Only include video actually published recently
+     (roughly the last month) — "new to the reader" is not the test. A well-known lecture from
+     2019 does not belong here.
+   - **Give:** channel, video title, a real `https://www.youtube.com/watch?v=…` link, the
+     running time, and one line on why it is worth that time.
+   - **Skip:** generic self-help and wellness content, anonymous or unattributed channels,
+     anything that is really an advert for a course or a practice, and anything you cannot
+     confirm the upload date of.
+   - A thin week here is fine — say the section was thin rather than reaching for filler.
+8. *Optional, don't force it* — Instagram/TikTok content from local practitioners.
 
 ## Reader requests
 
@@ -41,7 +79,10 @@ bullets so future issues honour them. Newest first.
 
 <!-- e.g. - 2026-08-03: More on NHS talking-therapies waiting times locally. -->
 
-_(none yet)_
+- **2026-09-01:** Two requests. (1) Cover **new YouTube content** as a proper category rather
+  than an optional footnote — now section 7 above. (2) **Mothers with postnatal depression**
+  is of specific interest — now a standing priority running across all sections, see
+  "Particular interest" under Subject.
 
 ## Standing preferences
 
