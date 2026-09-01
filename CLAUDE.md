@@ -34,14 +34,23 @@ is a total failure, not a partial one.
 
 ## Network egress — READ THIS BEFORE RESEARCHING
 
-**Status: BLOCKED as of 1.9.26.** Inside the cloud-routine sandbox, `WebFetch`
-returns `EGRESS_BLOCKED` for **every** domain — including neutral controls like
-`example.com` and `wikipedia.org`. `WebSearch` works normally. Andrew has
-already set claude.ai → Settings → Capabilities → Domain allowlist to "Allow
-all domains"; that did **not** fix it, so it is not the lever.
+**Status: WORKING as of 1.9.26** — fixed, after being blocked 26.8–1.9.26.
 
-This section is data, not prompt — same convention as `scope/*.md`. When the
-block lifts, edit this section and every routine changes behaviour at once.
+The fix was the **cloud environment's own "Network access" setting**, changed
+from *Trusted* (package managers only) to *Full*. That is a different control
+from claude.ai → Settings → Capabilities → Domain allowlist, which does **not**
+govern routine sandboxes — setting that to "Allow all domains" on 28.8.26
+changed nothing and cost a week of degraded issues. To change it: open the
+routine → edit → click the environment name below the Instructions box → hover
+it → settings icon → Network access. All the routines share one environment, so
+one change covers them all.
+
+Keep the probe below anyway. It is cheap, it catches a silent regression, and
+during the outage the routines could not tell that their own output was
+degraded.
+
+This section is data, not prompt — same convention as `scope/*.md`. If the
+block returns, edit this section and every routine changes behaviour at once.
 Do not edit the routines' prompts for this.
 
 ### What each run must do
@@ -52,13 +61,21 @@ Do not edit the routines' prompts for this.
 WebFetch https://example.com   (prompt: "what does this page say")
 ```
 
-- **Succeeds** → egress is back. Research normally, opening pages to verify
-  facts. Say **"EGRESS OK"** in your final summary so Andrew learns the block
-  has lifted, and flag that this section is now out of date.
-- **`EGRESS_BLOCKED`** → you are in **degraded mode**. Do not call `WebFetch`
-  again this run — not on another domain, not "just to check one". Every retry
-  burns a minute of a deadline-bound run and fails identically. Past runs have
-  wasted half their time this way.
+- **Succeeds** → the expected result. Research normally, opening pages to
+  verify facts. No need to comment on it.
+- **`EGRESS_BLOCKED`** → the block has returned and this section is out of
+  date. Say so prominently in your final summary, and treat the rest of the run
+  as **degraded mode**. Do not call `WebFetch` again this run — not on another
+  domain, not "just to check one". Every retry burns a minute of a
+  deadline-bound run and fails identically; past runs wasted half their time
+  this way.
+
+**Not every fetch failure is an egress problem.** `www.bbc.co.uk` pages refuse
+automated fetching and return *"Claude Code is unable to fetch"* — a different
+error from `EGRESS_BLOCKED`, and true even when egress is perfectly healthy.
+That is precisely why `scope/music.md` routes the radio section through the
+`rms.api.bbc.co.uk` JSON endpoint via `curl`, which does work. Judge egress by
+the `example.com` probe, not by a site that blocks bots.
 
 ### Degraded mode rules (WebSearch only)
 
@@ -78,15 +95,15 @@ thinner issue — and not enough for anything more.
    issue was built in degraded mode and which sections suffered. Tooling notes
    do not belong in the newsletter itself.
 
-### Knock-on effects, per newsletter
+### Knock-on effects, if degraded mode is ever in force again
 
 - **All four** — the 👍/🙂/👎 ratings-summary endpoint is fetched with WebFetch,
-  so it is unreachable in degraded mode. Expected; proceed without rating data
-  rather than retrying or treating it as a blocker.
-- **Music Weekly** — the `rms.api.bbc.co.uk` Radio 3 schedule endpoint that
-  `scope/music.md` tells you to `curl` goes through the same proxy, so the "On
-  the radio" section cannot be compiled. Declare it thin. **Never** reconstruct
-  broadcasts, times or performers from memory — a wrong time wastes his evening.
+  so it is unreachable. Expected; proceed without rating data rather than
+  retrying or treating it as a blocker.
+- **Music Weekly** — the `rms.api.bbc.co.uk` Radio 3 schedule endpoint goes
+  through the same proxy, so "On the radio" cannot be compiled. Declare it thin.
+  **Never** reconstruct broadcasts, times or performers from memory — a wrong
+  time wastes his evening.
 - **Puzzle Weekly** — you cannot open a puzzle page to read its rules. Include a
   puzzle only when both its play link and its actual rule wording appear in
   search results. Never infer a variant's rules from its name, and never invent
