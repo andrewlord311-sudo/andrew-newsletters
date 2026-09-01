@@ -13,21 +13,40 @@ recognised counselling modalities (integrative, person-centred, systemic, etc.) 
 relevant. **Scope boundary: mental health counselling and psychotherapy only** — not
 physiotherapy, massage, or other non-mental-health uses of "therapy."
 
+### Geography — the default, and its two exceptions
+
+The newsletter is anchored to **Colchester / Essex**. Two things below are deliberately
+**not** bound by that anchor, and must not be filtered down to local material:
+
+| | Geographic scope |
+|---|---|
+| Postnatal depression (below) | **UK-wide.** Not Essex-only. Not international. |
+| New YouTube content (section 7) | **No geographic limit at all** — international is welcome. |
+
+Everything else stays local.
+
 ### Particular interest: mothers with postnatal depression
 
 **Added 1.9.26.** Perinatal and maternal mental health — postnatal depression above all — is a
 standing priority that runs **across every section below**, not a section of its own. Where a
-week offers a choice between two otherwise equal items, prefer the one that touches it:
+week offers a choice between two otherwise equal items, prefer the one that touches it.
+
+**Cover it UK-wide.** Essex items are welcome but carry no priority, and a good national story
+beats a thin local one. Do not restrict searches to Colchester or Essex for this topic. Do not
+range outside the UK for it either — non-UK research is admissible under section 2 like any
+other research, but services, provision and policy should be UK.
 
 - research on PND, perinatal mental health, maternal mental illness, and the talking therapies
   used for them
-- practitioners and practices in Colchester/Essex who name perinatal, maternal or postnatal
-  mental health as a specialism
-- NHS perinatal mental health services covering Essex — provision, waiting times, referral
-  routes, service changes
+- NHS perinatal mental health services anywhere in the UK — provision, waiting times, referral
+  routes, service changes, new specialist units
+- national policy, guidance and reporting: NICE guidance, Royal College of Psychiatrists, the
+  Maternal Mental Health Alliance, NHS England perinatal programmes
+- practitioners and practices naming perinatal, maternal or postnatal mental health as a
+  specialism — local ones are a bonus, not the target
 - training, CPD and qualifications in perinatal mental health
-- charities and peer support operating locally (e.g. PANDAS, Home-Start, NCT branches), where
-  there is something genuinely current to report
+- charities and peer support (PANDAS, Home-Start, NCT, MMHA members), where there is something
+  genuinely current to report
 
 Source it to the same standard as everything else: clinicians, services, professional bodies
 and peer-reviewed work — not personal blogs or anecdote presented as evidence. And do not let
@@ -56,11 +75,16 @@ Prioritise things genuinely new or current this week over static directory conte
 7. **New YouTube content** — genuinely new video worth making time for, in any covered
    modality. This was previously an optional "local practitioners' social media" footnote,
    which meant it was almost always empty; it is now a proper section (added 1.9.26).
-   - **Where to look:** named clinicians and academics; training institutions and archives
-     (Tavistock and Portman, Anna Freud Centre, Freud Museum London, university psychotherapy
-     departments); professional bodies (BACP, UKCP, BABCP); recorded lectures, conference
-     talks, case discussions and long-form clinical interviews. Local practitioners' own
-     channels are a bonus, not a requirement.
+   - **No geographic restriction — international is welcome and expected.** This is the one
+     section with no local anchor at all. Do not filter to Colchester, Essex or even the UK:
+     the best psychotherapy lecture published this month is very unlikely to be local, and
+     restricting the search is what kept this section empty before.
+   - **Where to look:** named clinicians and academics anywhere; training institutions and
+     archives (Tavistock and Portman, Anna Freud Centre, Freud Museum London, university
+     psychotherapy departments, and their international equivalents — e.g. the American
+     Psychoanalytic Association, IPA, Austen Riggs, Confer); professional bodies (BACP, UKCP,
+     BABCP); recorded lectures, conference talks, case discussions and long-form clinical
+     interviews.
    - **Check the upload date and say it.** Only include video actually published recently
      (roughly the last month) — "new to the reader" is not the test. A well-known lecture from
      2019 does not belong here.
@@ -79,10 +103,12 @@ bullets so future issues honour them. Newest first.
 
 <!-- e.g. - 2026-08-03: More on NHS talking-therapies waiting times locally. -->
 
-- **2026-09-01:** Two requests. (1) Cover **new YouTube content** as a proper category rather
-  than an optional footnote — now section 7 above. (2) **Mothers with postnatal depression**
-  is of specific interest — now a standing priority running across all sections, see
-  "Particular interest" under Subject.
+- **2026-09-01:** Two requests, plus a same-day clarification on both. (1) Cover **new YouTube
+  content** as a proper category rather than an optional footnote — now section 7, and
+  explicitly **international, no geographic limit**. (2) **Mothers with postnatal depression**
+  is of specific interest — now a standing priority across all sections, covered **UK-wide
+  rather than Essex-only**. Both are deliberate exceptions to the newsletter's local anchor;
+  see "Geography" under Subject.
 
 ## Standing preferences
 
