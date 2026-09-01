@@ -45,6 +45,28 @@ Weekly research digests, published automatically and emailed out.
    session), so the fix closes the failure mode itself rather than the unconfirmed cause: no
    `.gs` script can silently forward a stale issue again, regardless of why the race happens.
 
+## Watchdog
+
+`watchdog.py` (local, `launchd` `com.andrewlord.newsletterwatchdog`, daily at 10:00, also
+kickstarted on wake via `~/.wakeup` but throttled to once a day) fetches `origin/main` and
+alerts on Telegram if any newsletter's file hasn't been committed in over 8 days — i.e. a
+weekly routine missed a run. It re-alerts at most once a week during an outage rather than
+nagging daily. `--dry-run` prints the alert instead of sending it.
+
+Added 1.9.26 after a check of the *local* clone (four commits behind `origin/main`) plus the
+long-disabled `~/.claude/scheduled-tasks/` entries produced a confident and completely wrong
+"all the cloud routines have disappeared". They were all running fine. **Diagnose a suspected
+outage from `origin/main` or the cloud run logs (`RemoteTrigger` `list_runs` / `get_run_log`),
+never from the local working copy.**
+
+It answers only "did a routine produce an issue when it should have?" — not whether the
+content was well-sourced. For that see the **Network egress** section of `CLAUDE.md`; the
+routines report their own degraded runs by PushNotification.
+
+Deliberately not watched: `holiday-monitor`. Its research routine correctly commits nothing
+when no deal matches, so commit age there means "quiet week" far more often than "broken", and
+alerting on it would train Andrew to ignore the bot.
+
 ## Rating system (Puzzle Weekly only)
 
 Each puzzle/section in Puzzle Weekly has 👍/🙂/👎 links that hit a small Apps Script Web App
