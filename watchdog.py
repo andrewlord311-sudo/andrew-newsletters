@@ -88,6 +88,52 @@ def git(*args: str) -> subprocess.CompletedProcess:
     return subprocess.run(["git", *args], cwd=REPO, capture_output=True, text=True)
 
 
+def fast_forward() -> None:
+    """Bring the working tree up to origin/main. Best-effort, never fatal.
+
+    The watchdog itself does not need this -- it reads `origin/main` directly,
+    which is why its own answers were never wrong. This is for everything
+    ELSE that looks at this clone. The routines push here and nothing ever
+    pulls back, so the working tree drifts days behind, and that staleness has
+    now caused three separate wrong conclusions:
+
+      31.8.26  a local clone four commits behind produced a confident
+               "all the cloud routines have disappeared" alarm
+       6.9.26  holiday-monitor looked like it had never once run, when a
+               candidate had been sitting on origin/main since 05:08
+       7.9.26  a commit written on the stale tip was rejected as
+               non-fast-forward
+
+    This job already fetches daily, so it is the cheapest place to also keep
+    the tree current.
+
+    `--ff-only` on purpose: if the tree is dirty or carries local commits,
+    this must fail and say so rather than merge, rebase or discard anything.
+    A watchdog is the last thing that should be resolving conflicts on its
+    own at 7am.
+    """
+    ahead = git("rev-list", "--count", "origin/main..HEAD")
+    n = ahead.stdout.strip() if ahead.returncode == 0 else "?"
+    if n not in ("0", "?"):
+        print(f"  working tree has {n} local commit(s) not on origin -- "
+              f"leaving it alone")
+        return
+
+    before = git("rev-parse", "HEAD").stdout.strip()
+    merged = git("merge", "--ff-only", "origin/main", "--quiet")
+    if merged.returncode == 0:
+        after = git("rev-parse", "HEAD").stdout.strip()
+        # Say what actually happened. "fast-forwarded" when nothing moved is
+        # the kind of reassuring-but-false log line that hides a broken job.
+        print("  working tree already current" if before == after
+              else f"  working tree fast-forwarded {before[:7]} -> {after[:7]}")
+        return
+    # Dirty tree, or a diverged history. Either way: report, change nothing.
+    reason = (merged.stderr or merged.stdout).strip().splitlines()
+    print(f"  could not fast-forward, left as is: "
+          f"{reason[0] if reason else 'unknown'}")
+
+
 def last_published(filename: str) -> int | None:
     """Commit timestamp of `filename` on origin/main, or None if unknown."""
     result = git("log", "-1", "--format=%ct", "origin/main", "--", filename)
@@ -125,6 +171,8 @@ def main() -> int:
         print(f"  git fetch failed: {fetched.stderr.strip()}")
         print("  cannot trust local refs without a fetch -- skipping this run")
         return 0
+
+    fast_forward()
 
     stale: list[str] = []
     suppressed = 0
