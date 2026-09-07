@@ -52,53 +52,54 @@ guessed: on 7.9.26 PDPT (published 04:12:49) went out, and What's On
 (published 04:36:38) was held back as stale, so the fetch happened between the
 two.
 
-**The trigger is "every Monday 4am"** — read off the Apps Script UI on
-7.9.26. The project is called **Events Newsletter** at script.google.com, and
-the What's On function inside it is `sendWeeklyWhatsOn` (not
-`sendWhatsonNewsletter`; the file is named that way but the function is not).
+**Trigger, read off the Apps Script UI 7.9.26 and then fixed.** The What's On
+emailer lives in a standalone project called **Events Newsletter** at
+script.google.com — the function is `sendWeeklyWhatsOn` (the *file* is named
+`send-whatson-newsletter.gs`, the function is not). That project holds
+**exactly one trigger**; PDPT Watch is a separate project with its own.
 
-**That single fact explains the whole intermittent history.** An Apps Script
-time-driven trigger set to an hour fires at a *random minute within that
-hour* — so "4am" means somewhere in 04:00-05:00, and the exact minute
-changes every week. That window is sitting directly on top of when the
-routines publish:
+**The trigger times are in the project's timezone, shown as GMT+01:00 — not
+UTC.** That is the fact everything turned on, and missing it is why this took
+three weeks to explain.
 
-| | Publishes | Stale if the trigger fires before | Roughly |
-|---|---|---|---|
-| PDPT Watch | 04:12 | 04:00-04:12 | ~1 week in 5 |
-| What's On | 04:36 | 04:00-04:36 | ~3 weeks in 5 |
+| | Trigger window (BST) | = in UTC | What's On publishes | Result |
+|---|---|---|---|---|
+| Until 7.9.26 | 4am–5am | **03:00–04:00** | 04:36 | **always** before the publish |
+| Fixed 7.9.26 | **7am–8am** | **06:00–07:00** | 04:36 | always after, 1h24m clear |
 
-That is exactly the observed pattern: PDPT mostly fine, What's On failing
-repeatedly — three stale sends before the guard existed, and a hold-back on
-7.9.26. It was never a coordination bug. It is a coin toss, weighted against
-What's On because its routine finishes latest.
+So it was never intermittent and never a coin toss: a 4am BST trigger could
+not once have seen a fresh page. Every What's On send since that trigger was
+set was either last week's issue (three times, before the guard) or a
+hold-back (7.9.26, after it).
 
-⚠️ **Confirm the project's timezone** (Project Settings, the gear icon)
-before reasoning further about absolute times — the trigger hour is in the
-script's timezone, and the table above assumes it resolves to ~04:00 UTC,
-which is what the observed behaviour implies.
+**7am–8am also survives the clocks going back** — the offset becomes
+GMT+00:00 in winter, making the window 07:00–08:00 UTC, still hours clear.
 
-**The fix is to move the trigger, not to tune it:** set both Monday triggers
-to **7am**. That is two to three hours clear of the routines whatever the
-timezone turns out to be, so the race cannot recur — and it restores the send
-window this file used to claim was already in place.
+⚠️ **PDPT Watch's own trigger has not been checked.** It has been sending
+successfully, so its setting must differ, but nobody has confirmed what it
+is. Worth reading off and recording here.
 
-### What's On is structurally at risk, and always was
+### The guard, and why it still matters
 
-Its routine finishes at **~04:36**. The emailer fetches by **~04:36 at the
-latest**. That is a dead heat it can only lose, whereas PDPT clears its fetch
-by roughly twenty minutes.
+The `isThisWeeksIssue` guard in every `send-*.gs` was added 17.8.26, after
+What's On had forwarded a stale issue to Laura **three times**. On 7.9.26 it
+did its job properly: Laura got *no* What's On rather than last week's, and
+Andrew got "held back, looked stale". **That is the guard working, not
+failing** — and it is what turned an invisible wrong-send into a visible
+symptom with enough evidence attached to finally diagnose the cause.
 
-This is exactly the race the `send-*.gs` guards were built for on 17.8.26 —
-after What's On had forwarded a stale issue to Laura **three times**. On
-7.9.26 the guard caught it properly: Laura got no What's On rather than last
-week's, and Andrew got "held back, looked stale". **That is the guard
-working, not failing.**
+Now that the trigger is fixed the guard should never fire again. **Keep it
+anyway.** It costs nothing, it is the only thing standing between a future
+schedule change and Laura's inbox, and it has already paid for itself once.
 
-**The fix is to stop the race, not keep catching it:** move the What's On
-email trigger materially later — an hour after its routine, not six minutes
-before. Until then, a manual `sendWhatsonNewsletter` after ~04:40 UTC sends
-correctly, because by then the page is fresh.
+**A lesson worth keeping, since it cost three weeks:** the 17.8.26 write-up
+reasoned that both newsletters published "over an hour before the 7am send
+window", concluded the race was impossible, and closed the failure mode
+instead of the cause. Every step of that was sound except the premise — the
+send window was never 7am, and nobody had read the trigger. **When a
+conclusion depends on a time, a path or a schedule, go and look at it rather
+than citing the documentation.** The documentation here was written by the
+same people who were wrong.
 
 ## Network egress — READ THIS BEFORE RESEARCHING
 
