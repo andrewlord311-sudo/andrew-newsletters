@@ -28,9 +28,51 @@ that hour — the previous local scheduled tasks never fired on time, and the
 Apps Script emailer would send the *previous* week's issue. The local tasks
 still exist but are disabled.
 
-The emailers fire between 07:00 and 08:00 Europe/London and send **whatever is
-live on GitHub Pages at that moment**. So generating a file without pushing it
-is a total failure, not a partial one.
+The emailers send **whatever is live on GitHub Pages at the moment they
+fetch**. So generating a file without pushing it is a total failure, not a
+partial one.
+
+### When things actually happen — measured 7.9.26
+
+The "07:00-08:00 Europe/London" this section used to claim for the emailers is
+**wrong**, and it mattered: it made a real race look impossible.
+
+**Publish times are solid** — median of the last four scheduled runs of each,
+from git, in UTC:
+
+| Newsletter | Routine starts | Lands | Takes |
+|---|---|---|---|
+| PDPT Watch | Mon 04:00 | **04:10-04:18** | 10-18 min |
+| What's On | Mon 04:30 | **04:35-04:37** | 5-7 min |
+| Puzzle Weekly | Fri 04:00 | **04:09-04:19** | 9-19 min |
+| Music Weekly | Sat 04:00 | **04:14-04:17** | 14-17 min |
+
+**The emailers fetch between 04:12:49 and 04:36:38 UTC.** That is bounded, not
+guessed: on 7.9.26 PDPT (published 04:12:49) went out, and What's On
+(published 04:36:38) was held back as stale, so the fetch happened between the
+two.
+
+⚠️ **The exact trigger times are still unknown** — they live in the Apps
+Script UI, not in this repo, and nothing here can read them. Anyone with
+access should read them off Triggers and replace this paragraph with the
+real figures.
+
+### What's On is structurally at risk, and always was
+
+Its routine finishes at **~04:36**. The emailer fetches by **~04:36 at the
+latest**. That is a dead heat it can only lose, whereas PDPT clears its fetch
+by roughly twenty minutes.
+
+This is exactly the race the `send-*.gs` guards were built for on 17.8.26 —
+after What's On had forwarded a stale issue to Laura **three times**. On
+7.9.26 the guard caught it properly: Laura got no What's On rather than last
+week's, and Andrew got "held back, looked stale". **That is the guard
+working, not failing.**
+
+**The fix is to stop the race, not keep catching it:** move the What's On
+email trigger materially later — an hour after its routine, not six minutes
+before. Until then, a manual `sendWhatsonNewsletter` after ~04:40 UTC sends
+correctly, because by then the page is fresh.
 
 ## Network egress — READ THIS BEFORE RESEARCHING
 
