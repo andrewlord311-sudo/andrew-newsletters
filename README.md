@@ -11,6 +11,33 @@ Weekly research digests, published automatically and emailed out.
   Has a one-click 👍/🙂/👎 rating system feeding back into future picks — see "Rating system"
   below.
 
+## The watchdog also keeps this clone current
+
+`watchdog.py` reads `origin/main` directly, so its own answers were never
+wrong. But it now also **fast-forwards the working tree** after its daily
+fetch, because everything *else* that looks at this clone was being misled by
+it. The routines push here; nothing ever pulled back; the tree drifted days
+behind, and that staleness produced three separate wrong conclusions:
+
+| | What the stale clone caused |
+|---|---|
+| 31.8.26 | a confident, entirely wrong "all the cloud routines have disappeared" |
+| 6.9.26 | holiday-monitor looked like it had never run — a candidate had been on `origin/main` since 05:08 |
+| 7.9.26 | a commit written on the stale tip rejected as non-fast-forward |
+
+It is `--ff-only` on purpose, and it refuses rather than resolves:
+
+- **behind, clean** → fast-forwards, and logs the actual hashes it moved between
+- **already current** → says so; it never claims to have moved when it hasn't
+- **dirty** → refuses, leaves the edit untouched
+- **local commits ahead** → leaves it alone entirely
+
+A watchdog should not be merging, rebasing or discarding anything at 7am.
+
+```sh
+python3.12 test_fast_forward.py   # 10 checks, against a synthetic origin+clone
+```
+
 ## How it works
 
 1. **Generation** — since 10.8.26, a **Claude cloud routine** per newsletter (Mon 04:00 UTC for
