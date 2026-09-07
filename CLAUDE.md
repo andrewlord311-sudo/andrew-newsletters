@@ -52,10 +52,36 @@ guessed: on 7.9.26 PDPT (published 04:12:49) went out, and What's On
 (published 04:36:38) was held back as stale, so the fetch happened between the
 two.
 
-⚠️ **The exact trigger times are still unknown** — they live in the Apps
-Script UI, not in this repo, and nothing here can read them. Anyone with
-access should read them off Triggers and replace this paragraph with the
-real figures.
+**The trigger is "every Monday 4am"** — read off the Apps Script UI on
+7.9.26. The project is called **Events Newsletter** at script.google.com, and
+the What's On function inside it is `sendWeeklyWhatsOn` (not
+`sendWhatsonNewsletter`; the file is named that way but the function is not).
+
+**That single fact explains the whole intermittent history.** An Apps Script
+time-driven trigger set to an hour fires at a *random minute within that
+hour* — so "4am" means somewhere in 04:00-05:00, and the exact minute
+changes every week. That window is sitting directly on top of when the
+routines publish:
+
+| | Publishes | Stale if the trigger fires before | Roughly |
+|---|---|---|---|
+| PDPT Watch | 04:12 | 04:00-04:12 | ~1 week in 5 |
+| What's On | 04:36 | 04:00-04:36 | ~3 weeks in 5 |
+
+That is exactly the observed pattern: PDPT mostly fine, What's On failing
+repeatedly — three stale sends before the guard existed, and a hold-back on
+7.9.26. It was never a coordination bug. It is a coin toss, weighted against
+What's On because its routine finishes latest.
+
+⚠️ **Confirm the project's timezone** (Project Settings, the gear icon)
+before reasoning further about absolute times — the trigger hour is in the
+script's timezone, and the table above assumes it resolves to ~04:00 UTC,
+which is what the observed behaviour implies.
+
+**The fix is to move the trigger, not to tune it:** set both Monday triggers
+to **7am**. That is two to three hours clear of the routines whatever the
+timezone turns out to be, so the race cannot recur — and it restores the send
+window this file used to claim was already in place.
 
 ### What's On is structurally at risk, and always was
 
