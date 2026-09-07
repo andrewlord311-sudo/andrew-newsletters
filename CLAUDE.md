@@ -75,9 +75,31 @@ hold-back (7.9.26, after it).
 **7am–8am also survives the clocks going back** — the offset becomes
 GMT+00:00 in winter, making the window 07:00–08:00 UTC, still hours clear.
 
-⚠️ **PDPT Watch's own trigger has not been checked.** It has been sending
-successfully, so its setting must differ, but nobody has confirmed what it
-is. Worth reading off and recording here.
+**PDPT Watch is a separate project, and its trigger is 6am–7am** (read off
+7.9.26). That is **05:00–06:00 UTC**, against a 04:10–04:18 publish — so it
+has always fired after its own content landed, by at least 42 minutes. That
+is why it has no history of stale sends while What's On has three: it was
+never exposed, and What's On always was.
+
+**All four, as they now stand:**
+
+| Newsletter | Publishes (UTC) | Trigger (local) | = UTC | Margin |
+|---|---|---|---|---|
+| PDPT Watch | 04:10–04:18 | 6am–7am | 05:00–06:00 | ≥42 min |
+| What's On | 04:35–04:37 | 7am–8am | 06:00–07:00 | ≥1h23m |
+| Puzzle Weekly | 04:09–04:19 | *unread* | — | — |
+| Music Weekly | 04:14–04:17 | *unread* | — | — |
+
+⚠️ **Puzzle Weekly and Music Weekly triggers are still unread.** Both go to
+Andrew rather than Laura, so a stale send is cheap — but the same guard is in
+both, and if either is set before ~05:00 UTC it will start holding back
+instead of sending. Worth reading off at some point.
+
+**PDPT's 42 minutes is adequate but the thinnest of the two known.** Its
+routine is the most variable of the four (10–18 minutes from a 04:00 start),
+so a run that took much longer than usual would eat into it. Moving it to
+7am–8am alongside What's On would make both comfortable and identical; not
+urgent.
 
 ### The guard, and why it still matters
 
