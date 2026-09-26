@@ -243,3 +243,7 @@ That file contains a **hard exclusion list** — no opera at all, no Wagner
 (bar one or two overtures), no Berlioz, no Liszt, no Second Viennese School or
 atonal music, no minimalism, no film music. Those exclusions are what stop the
 newsletter being generic. Breaking one is worse than shipping a thin issue.
+
+Context carried over from Claude's memory on the Mac:
+
+@CLAUDE-context.md
