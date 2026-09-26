@@ -209,6 +209,30 @@ actually landed rather than assuming:
 git fetch origin && git diff --quiet origin/main -- pdpt.html && echo PUBLISHED_OK
 ```
 
+### `git push` on its own does not work here — measured 26.9.26
+
+The routine sandbox checks the repo out in **detached HEAD**, and the local
+`main` ref stays pinned at whatever commit the clone was made from. So a bare
+`git push` (or `git push -u origin main`) tries to push that *stale* ref and is
+rejected:
+
+```
+! [rejected]  main -> main (a pushed branch tip is behind its remote counterpart)
+```
+
+The commit itself is fine — it sits directly on top of `origin/main`, nothing to
+merge. Only the ref being pushed is wrong. **Push `HEAD` explicitly:**
+
+```
+git push origin HEAD:main
+```
+
+This matters more than it looks. `git push` failing is loud if you read the
+output and completely silent if you don't, and a run that commits without
+pushing means the emailer re-sends **last week's** issue — the exact failure this
+file keeps warning about. Do not assume the push worked: run the
+`PUBLISHED_OK` check above, every time.
+
 ## Music Weekly, specifically
 
 `scope/music.md` carries a **copy of Andrew's taste note** from the vault
