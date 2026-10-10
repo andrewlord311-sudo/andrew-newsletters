@@ -16,9 +16,19 @@ actually plays something because of it.
 
 ## The taste, in his words
 
-Copied from `Me/Identity/My musical tastes and interests.md` in the vault, which
-the cloud routine cannot read. **If the two disagree, the vault note is the
-truth and this copy needs updating.**
+**Read his own note first — it is the truth.** Andrew's vault is cloned next to
+this repo as `andrew-second-brain` (only one folder of it is checked out). Read:
+
+    andrew-second-brain/Me/Identity/Music taste/My musical tastes and interests.md
+
+(find it with `ls ..` or `find / -name "My musical tastes and interests.md" 2>/dev/null`).
+He edits that note in Obsidian whenever his taste moves, so **anything new or
+dated in it outranks the snapshot below** — notice the newest comments
+especially and let them change this week's picks.
+
+Only if that file genuinely cannot be found, fall back to this snapshot
+(last copied 10.10.26) and say in your final message that the vault note was
+missing:
 
 **Renaissance and earlier** — not keen in general, but he plays the lute and
 likes lute music, especially **John Dowland**. Curious about re-using very old
@@ -48,7 +58,9 @@ there are many composers here he has not explored.
 
 **21st century** — likes **Arvo Pärt** and **Judith Weir (loves her)**. Likes
 that the century is flying off in all directions and wishes he had time to
-explore it.
+explore it. Dislikes minimalism and film music. **New, 10.10.26:** has recently
+enjoyed various 21st-century *tonal* composers, some of whom get little
+air-time, and wants to explore them more.
 
 **Broader** — compositional technique, form, orchestration, and understanding a
 composer within their historical context.
@@ -73,7 +85,7 @@ section was thin this week rather than smuggling it in.
 
 ## Sections
 
-Five recommendations is the target. Quality over completeness — a shorter issue
+Six sections; about six recommendations is the target. Quality over completeness — a shorter issue
 he acts on beats a full one he skims.
 
 1. **Listen this week** — 3 to 4 pieces, each with a real, working link
@@ -85,11 +97,35 @@ he acts on beats a full one he skims.
 2. **A composer to explore** — one, with a short "why now" and a route in
    (which piece first, then what). Lean into his own stated gap: unexplored
    20th-century composers, and lesser-known older ones worth reviving.
-3. **Something to study** — a score, a technique, a piece of form or
+   (Living and 21st-century composers now have their own section, below —
+   keep this one to composers whose main work is before 2000.)
+3. **New music: a 21st-century tonal composer** — **one every week, his own
+   request (10.10.26).** A composer writing *tonal or modal* music, whose main
+   work is from 2000 onwards, whom he has **probably never heard of** — lower
+   air-time, not a household name. Choose for his ear: the Romantic line he loves
+   (Schumann, Brahms, Mahler, Elgar, Vaughan Williams, Shostakovich), Bartók's
+   energy, Pärt's stillness, Weir's wit, or strong craft in form and
+   orchestration, which a composer will notice. Give: who they are in two or
+   three sentences (born, where, what they write), **why he in particular would
+   find them interesting**, and a route in — **two or three pieces with working
+   links**, first piece under ~15 minutes. One sentence on where they sit in
+   today's tonal music is welcome; a lecture is not.
+
+   **Not eligible:** minimalism or post-minimalism (the exclusion list still
+   rules), film/game/TV composers (a concert composer who also writes some film
+   music is fine if the recommended pieces are concert works), atonal or
+   "difficult" modernism, and anyone already in `scope/music-new-composers.md`.
+   **After publishing, append the composer to that file** (name, dates, country,
+   date of the issue) and commit it with the issue, so no one repeats. If he
+   names composers in his vault note as ones he already knows, treat them as
+   already covered too.
+
+   Use `.aside` like *A composer to explore*, and rating `cat=newmusic`.
+4. **Something to study** — a score, a technique, a piece of form or
    orchestration analysis. This is where his composer's ear is served: what
    Brahms is actually doing that makes it seamless, how Mozart voices a quartet.
    IMSLP links are ideal since the scores are free.
-4. **On the radio** — **special events on BBC Radio 3 in the coming week.**
+5. **On the radio** — **special events on BBC Radio 3 in the coming week.**
    Andrew's own framing, 15.8.26: *"all I really want to know is what
    interesting concerts/events are coming up that I don't want to miss"* —
    not a listing of everything broadcasting, a filter down to what's actually
@@ -126,7 +162,7 @@ he acts on beats a full one he skims.
 
    (BBC Sounds catch-up-expiry is not covered by this endpoint and has no
    reliable source found yet — dropped from scope rather than guessed at.)
-5. **Live near Colchester** — concerts in Colchester, Essex and reachable parts
+6. **Live near Colchester** — concerts in Colchester, Essex and reachable parts
    of Suffolk and Cambridge. Include date, venue, price and a booking link.
    Say plainly if there is nothing worth the trip.
 

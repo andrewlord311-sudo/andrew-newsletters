@@ -235,9 +235,15 @@ file keeps warning about. Do not assume the push worked: run the
 
 ## Music Weekly, specifically
 
-`scope/music.md` carries a **copy of Andrew's taste note** from the vault
-(`Me/Identity/My musical tastes and interests.md`), because a cloud routine
-cannot read the vault. If the two disagree, the vault note is the truth.
+Since 10.10.26 the Music Weekly routine also clones Andrew's vault repo
+`andrew-second-brain`, sparse-checked-out to **only** `Me/Identity/Music taste/`,
+and reads his taste note there directly — he edits it in Obsidian and the next
+issue follows. `scope/music.md` keeps a dated snapshot as a fallback only. The
+vault reaches GitHub via `vault-tools/sync-second-brain.py` on the Mac (every
+6 h + on wake); if the Mac is off for days, the note on GitHub lags.
+
+Section 3, *New music*, features one 21st-century tonal composer a week;
+`scope/music-new-composers.md` is the no-repeat list the routine appends to.
 
 That file contains a **hard exclusion list** — no opera at all, no Wagner
 (bar one or two overtures), no Berlioz, no Liszt, no Second Viennese School or
