@@ -1,8 +1,12 @@
 # andrew-newsletters
 
-Four weekly HTML newsletters, published to GitHub Pages and emailed by Google
+Five weekly HTML newsletters, published to GitHub Pages and emailed by Google
 Apps Script: **PDPT Watch** and **What's On** to Laura on Mondays, **Puzzle
-Weekly** to Andrew on Fridays, **Music Weekly** to Andrew on Saturdays.
+Weekly** to Andrew on Fridays, **Music Weekly** to Andrew on Saturdays, and
+**GitHub Weekly** (new picks of open-source projects, with a safety line for each)
+to Andrew on Sundays. GitHub Weekly's scope is `scope/github.md`; it reads
+Andrew's whole-range interests note from his vault, and its routine starts at
+04:20 UTC on Sundays.
 
 ## Two rules that break things silently
 
@@ -13,7 +17,7 @@ rendering as links. Do **not** "improve" the CSS by reintroducing them — the
 page looking fine in a browser proves nothing about how it arrives in an inbox.
 
 **2. `scope/*.md` is data, not prompt.** `scope/pdpt.md`, `scope/whatson.md`,
-`scope/puzzles.md` and `scope/music.md` define what each newsletter covers, including reader requests
+`scope/puzzles.md`, `scope/music.md` and `scope/github.md` define what each newsletter covers, including reader requests
 Laura has made. They are what Andrew edits to steer the content. If a scope file
 conflicts with a generation prompt, **the scope file wins.**
 
