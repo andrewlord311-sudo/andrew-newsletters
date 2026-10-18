@@ -1,0 +1,147 @@
+# GitHub Weekly — scope
+
+**This file defines what the newsletter covers.** The weekly task reads it at the
+start of every run, and it wins over anything in the prompt. It is the file
+Andrew edits to steer the newsletter — scope is data, not prompt.
+
+*Status: drafted 18.10.26 with one sample issue made by hand (`github.html`).
+Not yet automated: no routine, no emailer, no hub entry. Andrew's answers, 18.10.26:
+email to him only; Sunday; 3 to 5 picks; be cautious about anything under a month old.*
+
+## Subject
+
+A Sunday-morning pick of **3 to 5 open-source projects worth trying**, chosen
+from GitHub for one reader. It is not "what's trending": raw star counts on new
+repositories are mostly hype. The measure of success is that he actually tries
+one of them, and that nothing he tries does him harm.
+
+His own words: *a weekly newsletter googling around GitHub and selecting a few
+interesting, new open-source applications that I could try* — things he is
+already interested in, code that might make his projects easier or more
+exciting, copies of software that is usually expensive, applications getting a
+lot of likes, and games. They might run on a Mac, a phone or an iPad.
+
+## The reader
+
+**Read his own notes first — they are the truth.** His vault is cloned next to
+this repo as `andrew-second-brain`. Look at `Interest Areas/`, `Claude Projects/Project Index.md`
+and `Me/Identity/Music taste/`, and let anything new or dated outrank the
+snapshot below. Only if they cannot be found, use the snapshot (copied 18.10.26)
+and say so in the final message.
+
+**Interests**
+- **Music**: a composer who studies scores. Sheet-music scanning (OMR), MIDI,
+  MusicXML and ABC notation, DAWs and synths, Web Audio, sample libraries, tools
+  for analysing form and harmony.
+- **Obsidian and his vaults**: Bases, Excalidraw, Git and sync tooling. Pain
+  points: one vault lives in iCloud (invisible to his Android phone), the other
+  syncs through git.
+- **Claude Code and agents**: he uses Claude Code daily. Skills, hooks, MCP
+  servers. Be sceptical here: this is where the hype is thickest.
+- **Web and tooling he already uses**: Astro and Tailwind on Cloudflare Workers,
+  GitHub Pages, Google Apps Script (with clasp), Playwright and ffmpeg (a
+  video pipeline that records HTML scenes), Web Audio, Godot, three.js, Python
+  on a Mac with launchd.
+- **Kids' learning games** (phonics, times tables, reading music) and children's
+  explainer videos.
+- **Puzzles**: sudoku variants, logic games, tower-defence and board games.
+- Origami and geometry, photo organising (a very large local library), maths
+  puzzles, 3D models of historical places.
+
+**Kit.** A MacBook (where the Claude work happens), a Windows PC (music and video
+work, short of RAM), an **iPad** (no Claude Code; ideas, sketching, recreation, so
+browser apps and installable web apps matter), an Android phone, and an ARM NAS
+with **no Docker** (so a "just run the Docker image" project is no use for it).
+
+**Dislikes.** Hype. Anything that is mostly a prompt pack. Projects that need a
+paid account to do the interesting part. Windows-only tools, unless they are
+for the PC's music work.
+
+## Hard rules: never break these
+
+Breaking them is worse than a thin issue.
+
+1. **Age.** Nothing created in the last **30 days** is a pick. (Andrew, 18.10.26:
+   "be cautious about anything under a month old.") A project between 14 and 30
+   days old may appear only under **On the radar**, and only if it is from an
+   established organisation, has at least five contributors and an OSI licence,
+   and is labelled "too new to try yet". Anything younger is left out entirely.
+2. **A clear licence.** An OSI-approved licence stated in the repo. No licence,
+   or `NOASSERTION`, means leave it out. If a repo mixes licences, say so.
+3. **No harm, no grey areas.** Leave out: adult content; cracked, pirated or
+   "free download" copies of paid software; ports, emulators or compatibility
+   layers for commercial games; scrapers built to evade bot detection; crypto
+   trading bots and wallets; credential or cookie tools; clones of a company's
+   branded interface.
+4. **Never recommend an install that pipes a script into a shell** (`curl … | sh`,
+   `iwr … | iex`) or asks for `sudo` without saying so. If that is the only way to
+   install it, it is not a pick.
+5. **Say what it does with his data.** Accounts needed, telemetry, network use,
+   hosted-versus-local. If the README is silent, say so.
+6. **Do not trust star counts.** Repos that gain tens of thousands of stars in a
+   few months are common and cannot be told apart from bought stars. Weigh
+   **forks, contributors, release history and recent commits** above stars, and
+   flag a count that is out of line with them.
+7. **Never download, clone or run anything.** Read descriptions and READMEs through
+   the API only. "Works on iPad" means "the README says it runs in a browser",
+   never "I tested it". Every pick carries a plain **Risk** line.
+8. **Never repeat.** Do not feature anything listed in `scope/github-seen.md`.
+   After publishing, append each pick (owner/name, date of the issue) and commit
+   it with the issue.
+
+## Sections
+
+About **five picks in total**: quality over completeness, a short issue he acts
+on beats a long one he skims. Use the same page design as the other newsletters
+(email-safe CSS, hardcoded colours).
+
+1. **Try this weekend**: three picks. For each: what it is in one line, **why it
+   is for him** (named against an interest or a project), what it takes to try it
+   and on which device, how long that will take, and the **Risk** line (age,
+   licence, who maintains it, anything the install or the README makes you
+   cautious about).
+2. **For your projects**: one pick tied to something he is building. Say which
+   project, and whether it is something to *use* or just to *learn from*.
+3. **A game**: one, ideally playable in a browser or as an installable web app.
+4. **On the radar** (optional, short): worth knowing but not this week: too new,
+   too big, or no room.
+5. **What I left out and why**: two or three lines naming the kinds of thing that
+   were rejected and the rule that rejected them. This keeps the filter honest.
+
+## How to find candidates
+
+Use the **GitHub search API with `curl`**, no key needed:
+
+    curl -s "https://api.github.com/search/repositories?q=topic:midi+created:2026-01-01..2026-09-17+pushed:%3E2026-09-25+stars:%3E40&sort=stars&order=desc&per_page=8"
+
+- **One topic per query.** Queries that combined topics with `OR` and parentheses returned nothing when tried (18.10.26).
+- Always restrict by `created:` (older than 30 days; usually within the last year)
+  and `pushed:` (active in the last few weeks).
+- Unauthenticated limits: about **10 searches a minute and 60 other API calls an
+  hour**. Pause a few seconds between searches and keep to roughly 25 searches and
+  15 detail calls a run.
+- For each finalist read `repos/{owner}/{repo}` (created, pushed, stars, forks,
+  licence, owner type), `…/contributors`, `…/commits?since=` (last 30 days),
+  `…/releases` and `…/readme`. Flag a README that says `telemetry`, `account`,
+  `sign in`, `subscription`, `sudo`, or pipes to a shell.
+- GitHub has **no official trending feed**. Do not scrape its trending page. For
+  "getting a lot of likes", use recent repos sorted by stars and the snapshot in
+  `scope/github-seen.md`.
+
+**Topics to rotate** (vary week to week; two issues running that lean on the same
+searches is a failure of the brief): `midi`, `musicxml`, `abc-notation`,
+`music-theory`, `daw`, `synthesizer`, `web-audio`, `obsidian-plugin`, `mcp-server`,
+`claude-code`, `ffmpeg`, `playwright`, `godot`, `browser-game`, `educational-game`,
+`sudoku`, `origami`, "open source alternative to…" in descriptions.
+
+## Rating — how it feeds back in
+
+Once automated, every pick carries 👍 / 🙂 / 👎 links to the same Apps Script
+collector the puzzle newsletter uses, and each run fetches the summary first.
+Until then the rating links in the sample are inert.
+
+## Reader requests
+
+*Andrew adds things here and they are honoured from the next issue.*
+
+-

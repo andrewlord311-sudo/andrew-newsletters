@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>GitHub Weekly (sample issue)</title>
+<style>
+/* EMAIL-SAFE CSS — every colour is hardcoded on purpose, same rule as pdpt.html,
+   whatson.html, puzzles.html and music.html in this repo. Do not reintroduce CSS
+   custom properties (var(--x)) or @media queries: Gmail strips both. No gradients
+   either — Outlook's Word rendering engine drops them, so every fill is flat. */
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#EEF2F0; color:#1C2826;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  line-height:1.62; font-size:16px;
+}
+.wrap{max-width:640px; margin:0 auto;}
+
+/* Masthead — deep teal, distinct from the sage of PDPT/What's On, the indigo of
+   Puzzle Weekly and the wine of Music Weekly. Solid, never a gradient. */
+.masthead{background:#14504F; padding:2.6rem 1.75rem 2.1rem; text-align:center;}
+.masthead .kicker{
+  color:#F2C14E; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+  font-weight:700; margin:0 0 .55rem;
+}
+.masthead h1{
+  color:#F4FAF8; font-family:Georgia,"Times New Roman",serif;
+  font-size:2.1rem; margin:0 0 .5rem; font-weight:400; letter-spacing:.01em;
+}
+.masthead .issue{color:#B7D6D0; font-size:.9rem; margin:0;}
+
+.sample{background:#F2C14E; color:#3A2C05; text-align:center; font-size:.84rem; padding:.55rem 1rem; font-weight:700;}
+
+.body{padding:1.9rem 1.75rem 1rem;}
+.lede{font-size:1.06rem; color:#2E3D3A; margin:0 0 1.9rem;}
+
+h2{
+  font-family:Georgia,"Times New Roman",serif; font-size:1.32rem; font-weight:400;
+  color:#14504F; margin:2.3rem 0 .35rem; padding-bottom:.42rem;
+  border-bottom:2px solid #CFDDD8;
+}
+h2:first-of-type{margin-top:.6rem;}
+.section-note{color:#5B6C68; font-size:.9rem; margin:.35rem 0 1.15rem;}
+
+.piece{
+  background:#FFFFFF; border:1px solid #D2DFDA; border-left:4px solid #14504F;
+  padding:1.1rem 1.25rem; margin:0 0 1.15rem;
+}
+.piece .work{font-family:Georgia,"Times New Roman",serif; font-size:1.2rem; color:#1C2826; margin:0 0 .12rem;}
+.piece .composer{color:#8A6B1E; font-size:.88rem; font-weight:700; margin:0 0 .7rem; letter-spacing:.02em;}
+.piece p{margin:0 0 .7rem; color:#2E3D3A;}
+.piece .risk{background:#FBF3DC; border:1px solid #EBD79B; padding:.6rem .8rem; color:#5C4A12; font-size:.93rem;}
+.meta{font-size:.84rem; color:#5B6C68; margin:0 0 .75rem;}
+.listen{
+  display:inline-block; background:#14504F; color:#F4FAF8 !important;
+  text-decoration:none; padding:.5rem .95rem; font-weight:700; font-size:.9rem;
+  margin:0 .4rem .3rem 0;
+}
+.score-link{
+  display:inline-block; color:#14504F !important; text-decoration:none;
+  border:1px solid #A9C2BB; padding:.46rem .9rem; font-size:.88rem; font-weight:700;
+  margin:0 .4rem .3rem 0;
+}
+.thin{
+  background:#F6F1E3; border:1px solid #E4D4A8; border-left:4px solid #C79A3A;
+  padding:.95rem 1.2rem; margin:0 0 1.2rem; color:#4F4220;
+}
+ul.plain{margin:0; padding-left:1.1rem;}
+ul.plain li{margin:0 0 .5rem;}
+.aside{background:#E6EFEC; border:1px solid #CADBD5; padding:1rem 1.2rem; margin:0 0 1.2rem; color:#2E3D3A;}
+.aside .label{display:block; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:#8A6B1E; font-weight:700; margin-bottom:.4rem;}
+table.table{width:100%; border-collapse:collapse; margin:0 0 1.3rem; font-size:.92rem;}
+table.table th{text-align:left; background:#DDE9E5; color:#14504F; font-weight:700; padding:.6rem .7rem; border-bottom:2px solid #C4D6D0; font-size:.83rem; letter-spacing:.03em; text-transform:uppercase;}
+table.table td{padding:.6rem .7rem; border-bottom:1px solid #DCE7E3; vertical-align:top;}
+table.table a{color:#14504F;}
+.rate{margin:.55rem 0 0; padding-top:.6rem; border-top:1px solid #E2ECE8;}
+.rate-label{font-size:.76rem; color:#74847F; margin-right:.5rem;}
+.rate .fake{display:inline-block; color:#8FA39D; border:1px dashed #C4D3CE; padding:.24rem .6rem; font-size:.82rem; margin:0 .28rem .28rem 0;}
+.rate-note{font-size:.74rem; color:#8FA39D; font-style:italic;}
+a{color:#14504F;}
+.feedback{background:#E1ECE8; border:1px solid #C9DAD4; padding:1.05rem 1.25rem; margin:2rem 0 1rem; font-size:.94rem; color:#2E3D3A;}
+.feedback .label{display:block; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:#8A6B1E; font-weight:700; margin-bottom:.4rem;}
+footer{padding:1.2rem 1.75rem 2.4rem; color:#74847F; font-size:.8rem; text-align:center;}
+code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <p class="kicker">GitHub Weekly</p>
+    <h1>Things worth trying</h1>
+    <p class="issue">Sample issue &middot; week of 18 October 2026</p>
+  </div>
+  <div class="sample">A sample, made by hand so you can judge the picks. Not emailed and not automated yet.</div>
+
+  <div class="body">
+
+    <p class="lede">Five open-source projects, picked for you rather than for the crowd.
+    I searched GitHub by topic across music, Obsidian, video, games and puzzles, looked closely at six finalists (and glanced at a few more), and kept five. Every pick is more than a month old, has a
+    stated licence, and comes with a plain line about what could go wrong. I did not
+    download or run any of it: this is what the project says about itself, checked against
+    who maintains it and how active it is.</p>
+
+    <h2>Try this weekend</h2>
+    <p class="section-note">Three things you can try in under an hour each.</p>
+
+    <div class="piece">
+      <p class="work">NoteLite</p>
+      <p class="composer">Scan printed music into editable scores &middot; Mac, Windows, Linux</p>
+      <p class="why"><strong>What it is.</strong> Open-source sheet-music recognition. Give it a PDF or photo of printed music and it produces a score you can correct, then export as MusicXML or MIDI, or practise against with a MIDI keyboard or microphone. It is built on Audiveris, the long-standing open-source recognition engine.</p>
+      <p class="why"><strong>Why it is for you.</strong> You study scores. This turns an IMSLP PDF into something you can hear and edit: play back a quartet you are reading, or pull a passage into your own notation software. It is the kind of thing paid scanners charge for.</p>
+      <p class="why"><strong>To try it.</strong> Download a desktop package from the Releases page (Java-based; macOS 13+ has a native build), or build from source with Java 21. Try one page of a score you know well and see how many notes it gets wrong. About 30 minutes. The iPad and iPhone versions are development builds only, with no App Store release, so treat this as a Mac and PC tool.</p>
+      <p class="risk"><strong>Risk.</strong> Two people maintain it, but it is very active (at least 100 commits in the last month, release 5.13.0 on 23 September). <strong>The licence is mixed:</strong> the repo is MIT, but the files derived from Audiveris keep their AGPL-3.0 licence, which the README says openly. Fine to use for yourself; read it before building anything on top. Check the release notes before running an installer.</p>
+      <p class="meta">1,063 stars &middot; 168 forks &middot; MIT plus AGPL parts &middot; created 27 April 2026 (about five and a half months old)</p>
+      <a class="listen" href="https://github.com/Lucas0623z/NoteLite">NoteLite on GitHub</a>
+      <div class="rate"><span class="rate-label">Rate this</span><span class="fake">&#128077; Loved it</span><span class="fake">&#128578; Good</span><span class="fake">&#128078; Not for me</span><span class="rate-note">inert in this sample</span></div>
+    </div>
+    <div class="piece">
+      <p class="work">ComposeYogi</p>
+      <p class="composer">A music maker in the browser &middot; works on the iPad</p>
+      <p class="why"><strong>What it is.</strong> A free, open-source, Ableton-style composer that runs entirely in the browser: beat-making, loops and arrangements, built on Web Audio. It saves locally in the browser, works offline once installed, and exports WAV, MP3, MIDI or a project file.</p>
+      <p class="why"><strong>Why it is for you.</strong> Nothing to install, so it is the quickest thing in this issue to try, and it suits the iPad you sketch on. It is also a real-world example of a large Web Audio app, relevant to the games you build.</p>
+      <p class="why"><strong>To try it.</strong> Open the live demo at composeyogi.com, add it to the iPad home screen, and make a short loop. Then export it as MIDI and open the file in your notation software to see how clean the notes are. About 20 minutes.</p>
+      <p class="risk"><strong>Risk.</strong> One developer, and development has slowed (two commits in the last month; release 1.4.0 on 31 August). Supported through Patreon. It runs locally and the README does not mention an account or tracking, but as a single-person project, do not rely on it for work you cannot lose: export your files.</p>
+      <p class="meta">152 stars &middot; 14 forks &middot; MIT &middot; created 10 January 2026 (about nine months old)</p>
+      <a class="listen" href="https://github.com/AppsYogi-com/ComposeYogi">ComposeYogi on GitHub</a><a class="score-link" href="https://composeyogi.com">Live demo</a>
+      <div class="rate"><span class="rate-label">Rate this</span><span class="fake">&#128077; Loved it</span><span class="fake">&#128578; Good</span><span class="fake">&#128078; Not for me</span><span class="rate-note">inert in this sample</span></div>
+    </div>
+    <div class="piece">
+      <p class="work">Synch</p>
+      <p class="composer">End-to-end encrypted sync for Obsidian vaults &middot; Mac, iPad, Android</p>
+      <p class="why"><strong>What it is.</strong> An Obsidian community plugin that encrypts your vault on the device before uploading it, then syncs it to your other devices. You can use its hosted service (a free plan and a paid one) or deploy your own server to your own Cloudflare account. It merges simple edits to Markdown files automatically and keeps both versions when edits clash.</p>
+      <p class="why"><strong>Why it is for you.</strong> Your two vaults each have a sync problem: the Second Brain lives in iCloud, which your Android phone cannot see, and the family vault depends on git with phones that only pull. This is a possible way to put the same vault on all your devices. It also fits what you already run, since you use Cloudflare.</p>
+      <p class="why"><strong>To try it.</strong> Do <strong>not</strong> point it at either real vault yet. Copy a small test vault, install the plugin from Obsidian's community plugins, and sync it between the Mac and the Android phone. Self-hosting on Cloudflare is the longer route; the hosted free plan is the quick one. About an hour.</p>
+      <p class="risk"><strong>Risk.</strong> Still version 0.5 (0.5.5 on 6 October), so expect rough edges. Nine contributors and 48 commits in the last month is a healthy sign. The README itself says to back up your vault before changing sync provider, and running it alongside iCloud or git on the same vault would cause conflicts. The hosted option puts (encrypted) copies of your notes on their servers.</p>
+      <p class="meta">263 stars &middot; 38 forks &middot; MIT &middot; created 30 April 2026 (about five and a half months old)</p>
+      <a class="listen" href="https://github.com/hjinco/synch">Synch on GitHub</a><a class="score-link" href="https://synch.run">Website</a>
+      <div class="rate"><span class="rate-label">Rate this</span><span class="fake">&#128077; Loved it</span><span class="fake">&#128578; Good</span><span class="fake">&#128078; Not for me</span><span class="rate-note">inert in this sample</span></div>
+    </div>
+
+    <h2>For your projects</h2>
+    <p class="section-note">Something to learn from rather than install.</p>
+
+    <div class="piece">
+      <p class="work">HyperFrames</p>
+      <p class="composer">Write HTML, render video &middot; by HeyGen</p>
+      <p class="why"><strong>What it is.</strong> An open-source framework that turns HTML, CSS and animations into repeatable MP4 videos. You can use it from a command line or from Claude Code through a plugin and a set of skills, and it has a native Mac app.</p>
+      <p class="why"><strong>Why it is for you.</strong> It is the same idea as the video pipeline you built for Music Nuggets and the kids' videos (HTML scenes recorded in a browser, then joined with ffmpeg). Read how it makes rendering repeatable and how its skills structure the loop of plan, write, lint, preview, render. The point is to <em>learn from it</em>, not to replace your pipeline.</p>
+      <p class="why"><strong>To try it.</strong> Start by reading its documentation (about 20 minutes) and looking at the showcase. If you want to try it, it needs Node 22 or later, and it installs through <code>npx</code>, which downloads and runs code from the npm registry: skim what it installs before you run it, and try it in a scratch folder rather than in your pipeline folder.</p>
+      <p class="risk"><strong>Risk.</strong> Backed by a real company (HeyGen), with at least 100 contributors, daily releases (v0.8.172 landed today) and 369 open issues. It moves fast, so expect things to change under you. Its 66,000 stars are far more than I would trust on their own, but the 6,000 forks, the contributor count and the release history all support that it is real.</p>
+      <p class="meta">66,649 stars &middot; 6,032 forks &middot; Apache-2.0 &middot; created 10 March 2026 (about seven months old)</p>
+      <a class="listen" href="https://github.com/heygen-com/hyperframes">HyperFrames on GitHub</a><a class="score-link" href="https://hyperframes.dev">Playground</a>
+      <div class="rate"><span class="rate-label">Rate this</span><span class="fake">&#128077; Loved it</span><span class="fake">&#128578; Good</span><span class="fake">&#128078; Not for me</span><span class="rate-note">inert in this sample</span></div>
+    </div>
+
+    <h2>A game</h2>
+
+    <div class="piece">
+      <p class="work">Chogan</p>
+      <p class="composer">A small collection of finishable games &middot; browser, Android, iPad home screen</p>
+      <p class="why"><strong>What it is.</strong> A free, open-source app of games you can finish in one sitting: tower defence (six fixed maps plus a daily map, twenty waves and an endless mode), sudoku with a daily challenge, minesweeper and dots and boxes. No ads, no purchases and no tracking, and it works offline.</p>
+      <p class="why"><strong>Why it is for you.</strong> You like tower games and sudoku, and this is both in one small package. It runs as a web page you can add to the iPad home screen, and it is on F-Droid for the Android phone.</p>
+      <p class="why"><strong>To try it.</strong> Open choganhq.github.io/chogan in a browser and play a sudoku and a tower-defence map. About 15 minutes. It also reads as a good model of a minimal, no-tracker games app.</p>
+      <p class="risk"><strong>Risk.</strong> Small and young: 80 stars, three contributors, created 5 September 2026 (about six weeks old), and version 0.9.0, released today after several releases in one day. That is just over the one-month line, so this is a trial, not a keeper. The F-Droid build is reproducible, which is a good sign for the Android version. The README is in English and Farsi.</p>
+      <p class="meta">80 stars &middot; 6 forks &middot; MIT &middot; created 5 September 2026 (about six weeks old)</p>
+      <a class="listen" href="https://github.com/choganhq/chogan">Chogan on GitHub</a><a class="score-link" href="https://choganhq.github.io/chogan/">Play in the browser</a>
+      <div class="rate"><span class="rate-label">Rate this</span><span class="fake">&#128077; Loved it</span><span class="fake">&#128578; Good</span><span class="fake">&#128078; Not for me</span><span class="rate-note">inert in this sample</span></div>
+    </div>
+
+    <h2>On the radar</h2>
+    <p class="section-note">Good, but not this week.</p>
+
+    <table class="table">
+      <tr><th>Project</th><th>Why not this week</th></tr>
+      <tr><td><a href="https://github.com/hi-godot/godot-ai">godot-ai</a></td><td>A mature, well-staffed connector between Claude Code and the Godot editor (3,060 stars, 32 contributors, MIT, release 4.3.0 on 3 October). Relevant if you go back to your Godot games; no room this week. Its README documents opt-out telemetry (an install ID and usage events) and how to turn it off.</td></tr>
+      <tr><td><a href="https://github.com/leemysw/yovoice">yovoice</a></td><td>A local AI audio and music studio for Mac and Windows (including text to speech), which touches the ElevenLabs credits you ration. Created 15 September, so it is <strong>too new to try yet</strong>; 1,657 stars in five weeks is also more than I would trust. Revisit after mid-November.</td></tr>
+      <tr><td><a href="https://github.com/nota-daw/nota">Nota</a></td><td>A free digital audio workstation for Mac, Windows and Linux with no subscription. Interesting, but only 91 stars, AGPL, and created on 25 August.</td></tr>
+    </table>
+
+    <h2>What I left out, and why</h2>
+    <p class="section-note">The filter, shown working. The rules are in <code>scope/github.md</code>.</p>
+
+    <div class="thin">
+      <ul class="plain">
+        <li><strong>Unofficial ports and compatibility layers for commercial games</strong>, including one that tops this week's list of new repositories. Copyright-grey, and you would be running binaries nobody has vetted. (Rule 3.)</li>
+        <li><strong>An adult-content prompt pack and a clone of a company's branded interface.</strong> (Rule 3.)</li>
+        <li><strong>Repositories with 100,000+ stars that are a few months old.</strong> I could not tell real interest from bought stars, so I passed unless forks, contributors and releases backed the number up. (Rule 6.) HyperFrames is the one that did.</li>
+        <li><strong>Everything created in the last month</strong>, however well starred. (Rule 1.)</li>
+      </ul>
+    </div>
+
+    <div class="aside">
+      <span class="label">How I checked each pick</span>
+      Age, licence, who owns it, number of contributors, commits in the last 30 days,
+      releases, and a read of the README for warning signs (installs that pipe a script
+      into your shell, accounts, telemetry, subscriptions). Stars came last, because they
+      are the easiest number to fake.
+    </div>
+
+    <div class="feedback">
+      <span class="label">Change what this covers</span>
+      Tell me which picks were useful and which weren't, or edit
+      <strong><code>scope/github.md</code></strong> in the repo to change the interests,
+      the safety rules or how many picks. Once it is automated, the rating links on each
+      pick will steer the next issue too.
+    </div>
+
+  </div>
+
+  <footer>Sample issue, made by hand on 18 October 2026.<br>andrewlord311-sudo/andrew-newsletters</footer>
+</div>
+</body>
+</html>
