@@ -4,9 +4,7 @@
 start of every run, and it wins over anything in the prompt. It is the file
 Andrew edits to steer the newsletter — scope is data, not prompt.
 
-*Status: drafted 18.10.26 with one sample issue made by hand (`github.html`).
-Not yet automated: no routine, no emailer, no hub entry. Andrew's answers, 18.10.26:
-email to him only; Sunday; 3 to 5 picks; be cautious about anything under a month old.*
+*Status: live from Sunday 25 Oct 2026. The routine starts at 04:20 UTC every Sunday, and the emailer (to Andrew only) sends it between 07:00 and 08:00 London. The first issue, 18 Oct 2026, was made by hand. Andrew's answers, 18.10.26: email to him only; Sunday; 3 to 5 picks; be cautious about anything under a month old.*
 
 ## Subject
 
@@ -25,9 +23,9 @@ lot of likes, and games. They might run on a Mac, a phone or an iPad.
 
 **Read his own note first. It is the truth:**
 
-    andrew-second-brain/Interest Areas/Interests at a glance.md
+    andrew-second-brain/Me/Identity/Interests/Interests at a glance.md
 
-(his vault is cloned next to this repo; find it with `ls ..` or
+(his vault is cloned next to this repo, with only `Me/Identity/Interests/` checked out; find it with `ls ..` or
 `find / -name "Interests at a glance.md" 2>/dev/null`). It collects his **whole
 range of interests, goals and practical constraints in one place**, and he edits
 it whenever they move, so anything new or dated in it outranks the snapshot
@@ -153,9 +151,25 @@ downwards rather than the date range.
 
 ## Rating — how it feeds back in
 
-Once automated, every pick carries 👍 / 🙂 / 👎 links to the same Apps Script
-collector the puzzle newsletter uses, and each run fetches the summary first.
-Until then the rating links in the sample are inert.
+Every pick carries 👍 / 🙂 / 👎 links to the same Apps Script collector the puzzle
+and music newsletters use (copy the base URL exactly as it appears in
+`github.html`). Set `week=` to today's date (`YYYY-MM-DD`), `cat=` to the pick's
+**area** (`gh-music`, `gh-vault`, `gh-photo`, `gh-video`, `gh-game`, or a new
+`gh-<area>` for another corner of his range, such as `gh-electronics` or
+`gh-maps`) and `item=` to a kebab-case `owner-repo`. **Each run fetches
+`?mode=summary` first** and shifts emphasis: lean into the areas and kinds of pick
+that score well, ease off what does not. Ratings by area are how the newsletter
+learns which parts of his range he actually wants.
+
+## Publishing
+
+The routine starts at **04:20 UTC on Sunday**. The emailer sends whatever is live
+between **07:00 and 08:00 Europe/London**, so **push by 06:30 London at the latest**;
+cut scope rather than miss it. The page's date line must read `Week of D Month YYYY`
+with today's date: the emailer holds the issue back as stale otherwise. Overwrite
+`github.html`, append the picks to `scope/github-seen.md`, and push with
+`git push origin HEAD:main` (a bare `git push` fails in the routine's sandbox), then
+confirm with `git diff --quiet origin/main -- github.html && echo PUBLISHED_OK`.
 
 ## Reader requests
 
