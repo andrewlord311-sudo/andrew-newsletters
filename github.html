@@ -100,7 +100,7 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
   <div class="body">
 
     <p class="lede">Five open-source projects, picked for you rather than for the crowd.
-    I searched GitHub by topic across music, Obsidian, video, games and puzzles, looked closely at six finalists (and glanced at a few more), and kept five. Every pick is more than a month old, has a
+    I searched GitHub by topic across your whole range (music, Obsidian, video, photography, electronics, maps and history, maths, games and puzzles), looked closely at seven finalists (and checked the basics on a few more), and kept five. Every pick is more than a month old, has a
     stated licence, and comes with a plain line about what could go wrong. I did not
     download or run any of it: this is what the project says about itself, checked against
     who maintains it and how active it is.</p>
@@ -120,14 +120,14 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
       <div class="rate"><span class="rate-label">Rate this</span><span class="fake">&#128077; Loved it</span><span class="fake">&#128578; Good</span><span class="fake">&#128078; Not for me</span><span class="rate-note">inert in this sample</span></div>
     </div>
     <div class="piece">
-      <p class="work">ComposeYogi</p>
-      <p class="composer">A music maker in the browser &middot; works on the iPad</p>
-      <p class="why"><strong>What it is.</strong> A free, open-source, Ableton-style composer that runs entirely in the browser: beat-making, loops and arrangements, built on Web Audio. It saves locally in the browser, works offline once installed, and exports WAV, MP3, MIDI or a project file.</p>
-      <p class="why"><strong>Why it is for you.</strong> Nothing to install, so it is the quickest thing in this issue to try, and it suits the iPad you sketch on. It is also a real-world example of a large Web Audio app, relevant to the games you build.</p>
-      <p class="why"><strong>To try it.</strong> Open the live demo at composeyogi.com, add it to the iPad home screen, and make a short loop. Then export it as MIDI and open the file in your notation software to see how clean the notes are. About 20 minutes.</p>
-      <p class="risk"><strong>Risk.</strong> One developer, and development has slowed (two commits in the last month; release 1.4.0 on 31 August). Supported through Patreon. It runs locally and the README does not mention an account or tracking, but as a single-person project, do not rely on it for work you cannot lose: export your files.</p>
-      <p class="meta">152 stars &middot; 14 forks &middot; MIT &middot; created 10 January 2026 (about nine months old)</p>
-      <a class="listen" href="https://github.com/AppsYogi-com/ComposeYogi">ComposeYogi on GitHub</a><a class="score-link" href="https://composeyogi.com">Live demo</a>
+      <p class="work">AfterFrame</p>
+      <p class="composer">A local photo library for Mac and Windows &middot; browse and cull thousands of photos</p>
+      <p class="why"><strong>What it is.</strong> A local-first photo workspace for browsing, rating, searching and editing large libraries, including RAW files from more than 1,200 cameras and iPhone HEIC photos. Your files stay where they are and nothing is uploaded. On a recent Mac it can also find people and places on the device, and it has saved filters (smart collections). The AI features are optional and use your own API key.</p>
+      <p class="why"><strong>Why it is for you.</strong> You have a very large photo library you keep trying to tame: the half-built Photo Curator, and thousands of recovered photos with meaningless names. This is a ready-made way to browse and cull by hand, and a look at what a local-first photo tool does well before you decide how much of Photo Curator to finish.</p>
+      <p class="why"><strong>To try it.</strong> Download the Mac build from the Releases page (Apple Silicon, macOS 14 or later; older Macs have a separate build, and there is an installer for Windows 10 and 11). Point it at one folder of a few hundred photos, not the whole library, and see how fast browsing and search feel. About 30 minutes.</p>
+      <p class="risk"><strong>Risk.</strong> One developer, and still version 0.5 (0.5.13 on 16 October), though very active (at least 100 commits in the last month). The Windows installer is not signed, so Windows will warn you. Photos stay local, but the optional AI features send images to whichever AI provider's key you give it, so leave them off while testing. Work on a copy of a folder until you have seen what it writes.</p>
+      <p class="meta">244 stars &middot; 26 forks &middot; MIT &middot; created 1 May 2026 (about five and a half months old)</p>
+      <a class="listen" href="https://github.com/YIWANG3/AfterFrame">AfterFrame on GitHub</a><a class="score-link" href="https://yiwang3.github.io/AfterFrame/">Project site</a>
       <div class="rate"><span class="rate-label">Rate this</span><span class="fake">&#128077; Loved it</span><span class="fake">&#128578; Good</span><span class="fake">&#128078; Not for me</span><span class="rate-note">inert in this sample</span></div>
     </div>
     <div class="piece">
@@ -176,9 +176,11 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
 
     <table class="table">
       <tr><th>Project</th><th>Why not this week</th></tr>
-      <tr><td><a href="https://github.com/hi-godot/godot-ai">godot-ai</a></td><td>A mature, well-staffed connector between Claude Code and the Godot editor (3,060 stars, 32 contributors, MIT, release 4.3.0 on 3 October). Relevant if you go back to your Godot games; no room this week. Its README documents opt-out telemetry (an install ID and usage events) and how to turn it off.</td></tr>
+      <tr><td><a href="https://github.com/AppsYogi-com/ComposeYogi">ComposeYogi</a></td><td>A free music maker that runs in the browser (works offline, exports WAV, MP3 and MIDI), good on an iPad. 152 stars, one developer, and development has slowed. It was in an earlier draft of this issue and moved here to make room for something outside music.</td></tr>
+      <tr><td><a href="https://github.com/aklofas/kicad-happy">kicad-happy</a></td><td>Skills that let Claude Code help design electronics in KiCad. 1,444 stars, 17 contributors, MIT, release 2.3.1 on 6 October. Worth a look when you get back to electronics, which you want to teach.</td></tr>
+      <tr><td><a href="https://github.com/opengeos/GeoAgent">GeoAgent</a></td><td>An AI agent for analysing map and geospatial data. 512 stars, 10 contributors, MIT, owned by an organisation, release 1.9.0 on 9 August. Could help with the Roman Colchester maps and LiDAR if you restart that project.</td></tr>
+      <tr><td><a href="https://github.com/hi-godot/godot-ai">godot-ai</a></td><td>A mature connector between Claude Code and the Godot editor (3,060 stars, 32 contributors, MIT, release 4.3.0 on 3 October). Relevant if you go back to your Godot games. Its README documents opt-out telemetry (an install ID and usage events) and how to turn it off.</td></tr>
       <tr><td><a href="https://github.com/leemysw/yovoice">yovoice</a></td><td>A local AI audio and music studio for Mac and Windows (including text to speech), which touches the ElevenLabs credits you ration. Created 15 September, so it is <strong>too new to try yet</strong>; 1,657 stars in five weeks is also more than I would trust. Revisit after mid-November.</td></tr>
-      <tr><td><a href="https://github.com/nota-daw/nota">Nota</a></td><td>A free digital audio workstation for Mac, Windows and Linux with no subscription. Interesting, but only 91 stars, AGPL, and created on 25 August.</td></tr>
     </table>
 
     <h2>What I left out, and why</h2>
