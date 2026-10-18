@@ -23,30 +23,39 @@ lot of likes, and games. They might run on a Mac, a phone or an iPad.
 
 ## The reader
 
-**Read his own notes first — they are the truth.** His vault is cloned next to
-this repo as `andrew-second-brain`. Look at `Interest Areas/`, `Claude Projects/Project Index.md`
-and `Me/Identity/Music taste/`, and let anything new or dated outrank the
-snapshot below. Only if they cannot be found, use the snapshot (copied 18.10.26)
-and say so in the final message.
+**Read his own note first. It is the truth:**
 
-**Interests**
-- **Music**: a composer who studies scores. Sheet-music scanning (OMR), MIDI,
-  MusicXML and ABC notation, DAWs and synths, Web Audio, sample libraries, tools
-  for analysing form and harmony.
-- **Obsidian and his vaults**: Bases, Excalidraw, Git and sync tooling. Pain
-  points: one vault lives in iCloud (invisible to his Android phone), the other
-  syncs through git.
-- **Claude Code and agents**: he uses Claude Code daily. Skills, hooks, MCP
-  servers. Be sceptical here: this is where the hype is thickest.
-- **Web and tooling he already uses**: Astro and Tailwind on Cloudflare Workers,
-  GitHub Pages, Google Apps Script (with clasp), Playwright and ffmpeg (a
-  video pipeline that records HTML scenes), Web Audio, Godot, three.js, Python
-  on a Mac with launchd.
-- **Kids' learning games** (phonics, times tables, reading music) and children's
-  explainer videos.
-- **Puzzles**: sudoku variants, logic games, tower-defence and board games.
-- Origami and geometry, photo organising (a very large local library), maths
-  puzzles, 3D models of historical places.
+    andrew-second-brain/Interest Areas/Interests at a glance.md
+
+(his vault is cloned next to this repo; find it with `ls ..` or
+`find / -name "Interests at a glance.md" 2>/dev/null`). It collects his **whole
+range of interests, goals and practical constraints in one place**, and he edits
+it whenever they move, so anything new or dated in it outranks the snapshot
+below. Use the notes it links to for detail. Only if it cannot be found, use the
+snapshot (copied 18.10.26) and say so in the final message. **Never reproduce
+personal details from it in the issue**: use it to choose, not to quote.
+
+**The range (snapshot).** Do not let this collapse into "music and AI".
+- **Music**: composer and student of scores. Sheet-music scanning (OMR), MIDI,
+  MusicXML and ABC, DAWs and synths, Web Audio, generative music and
+  sonification, tools for studying form and harmony.
+- **Software he builds** with Claude Code: agents and MCP (be sceptical, the hype
+  is thickest here); Astro and Tailwind on Cloudflare Workers; GitHub Pages;
+  Google Apps Script with clasp; Playwright and ffmpeg (a video pipeline that
+  records HTML scenes); Godot and three.js; Python on a Mac with launchd.
+- **Obsidian and his vaults**: Bases, Excalidraw, Git and sync tooling. One vault
+  lives in iCloud (invisible to his Android phone), the other syncs through git.
+- **Teaching children** music, phonics, maths and history with games and video.
+- **Video and a YouTube presence**: AI voices, avatars, short-form clips, a hymn
+  channel.
+- **Optical networking and quantum** (his professional field), including error
+  correction and photonics.
+- **Puzzles and maths**: sudoku variants, logic games, tower-defence and board
+  games, maths visualisation and animation.
+- **Photography and a very large photo library**: culling, search, metadata,
+  deduplication.
+- **Electronics** (he wants to teach it), **origami and geometry**, **history and
+  archaeology** (a 3D Roman Colchester, maps, LiDAR), **garden and cooking**.
 
 **Kit.** A MacBook (where the Claude work happens), a Windows PC (music and video
 work, short of RAM), an **iPad** (no Claude Code; ideas, sketching, recreation, so
@@ -85,7 +94,11 @@ Breaking them is worse than a thin issue.
 7. **Never download, clone or run anything.** Read descriptions and READMEs through
    the API only. "Works on iPad" means "the README says it runs in a browser",
    never "I tested it". Every pick carries a plain **Risk** line.
-8. **Never repeat.** Do not feature anything listed in `scope/github-seen.md`.
+8. **Cover the range.** No more than two picks from the same area in one issue,
+   and at least **three different areas** each week. If a week's best finds are all
+   music or AI, go back and search the other areas before settling. Say so if a
+   corner of his range has nothing worth recommending that week.
+9. **Never repeat.** Do not feature anything listed in `scope/github-seen.md`.
    After publishing, append each pick (owner/name, date of the issue) and commit
    it with the issue.
 
@@ -129,10 +142,14 @@ Use the **GitHub search API with `curl`**, no key needed:
   `scope/github-seen.md`.
 
 **Topics to rotate** (vary week to week; two issues running that lean on the same
-searches is a failure of the brief): `midi`, `musicxml`, `abc-notation`,
-`music-theory`, `daw`, `synthesizer`, `web-audio`, `obsidian-plugin`, `mcp-server`,
-`claude-code`, `ffmpeg`, `playwright`, `godot`, `browser-game`, `educational-game`,
-`sudoku`, `origami`, "open source alternative to…" in descriptions.
+searches is a failure of the brief). Music: `midi`, `musicxml`, `abc-notation`,
+`music-theory`, `daw`, `synthesizer`, `web-audio`, `generative-music`, `lilypond`.
+Work tools: `obsidian-plugin`, `mcp-server`, `claude-code`, `ffmpeg`, `playwright`,
+`godot`. Games and puzzles: `browser-game`, `educational-game`, `sudoku`. The rest
+of the range: `photo-management`, `kicad`, `esp32`, `manim`, `photonics`, `qgis`,
+`blender`, `origami`, `gardening`, `youtube`, plus "open source alternative to…" in
+descriptions. Many of these return few or no results; widen the star threshold
+downwards rather than the date range.
 
 ## Rating — how it feeds back in
 
