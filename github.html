@@ -89,66 +89,70 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
   <div class="masthead">
     <p class="kicker">GitHub Weekly</p>
     <h1>Things worth trying</h1>
-    <p class="issue">Week of 18 October 2026</p>
+    <p class="issue">Week of 19 October 2026</p>
   </div>
 
   <div class="body">
 
-    <p class="lede">Five open-source projects, picked for you rather than for the crowd.
-    I searched GitHub by topic across your whole range (music, Obsidian, video, photography, electronics, maps and history, maths, games and puzzles), looked closely at seven finalists (and checked the basics on a few more), and kept five. Every pick is more than a month old, has a
-    stated licence, and comes with a plain line about what could go wrong. I did not
-    download or run any of it: this is what the project says about itself, checked against
-    who maintains it and how active it is.</p>
+    <p class="lede">Five projects this week, and an unusually honest filter behind them.
+    I searched across your range &mdash; notes and sync, music, electronics, maths and teaching,
+    web and games, photography, maps &mdash; and <strong>four of the most appealing things I found had no
+    stated licence</strong>, including the one that answers your origami-software question and a
+    browser Arduino emulator with 3,355 stars. They are named at the bottom rather than quietly
+    dropped. What is left is five projects that each have an OSI licence, are all more than a
+    month old, and come with a plain line about what could go wrong. I did not download or run any
+    of it: this is what each project says about itself, checked against who maintains it and how
+    active it is.</p>
 
     <h2>Try this weekend</h2>
-    <p class="section-note">Three things you can try in under an hour each.</p>
+    <p class="section-note">Three things you can try in about an hour each.</p>
 
     <div class="piece">
-      <p class="work">NoteLite</p>
-      <p class="composer">Scan printed music into editable scores &middot; Mac, Windows, Linux</p>
-      <p class="why"><strong>What it is.</strong> Open-source sheet-music recognition. Give it a PDF or photo of printed music and it produces a score you can correct, then export as MusicXML or MIDI, or practise against with a MIDI keyboard or microphone. It is built on Audiveris, the long-standing open-source recognition engine.</p>
-      <p class="why"><strong>Why it is for you.</strong> You study scores. This turns an IMSLP PDF into something you can hear and edit: play back a quartet you are reading, or pull a passage into your own notation software. It is the kind of thing paid scanners charge for.</p>
-      <p class="why"><strong>To try it.</strong> Download a desktop package from the Releases page (Java-based; macOS 13+ has a native build), or build from source with Java 21. Try one page of a score you know well and see how many notes it gets wrong. About 30 minutes. The iPad and iPhone versions are development builds only, with no App Store release, so treat this as a Mac and PC tool.</p>
-      <p class="risk"><strong>Risk.</strong> Two people maintain it, but it is very active (at least 100 commits in the last month, release 5.13.0 on 23 September). <strong>The licence is mixed:</strong> the repo is MIT, but the files derived from Audiveris keep their AGPL-3.0 licence, which the README says openly. Fine to use for yourself; read it before building anything on top. Check the release notes before running an installer.</p>
-      <p class="meta">1,063 stars &middot; 168 forks &middot; MIT plus AGPL parts &middot; created 27 April 2026 (about five and a half months old)</p>
-      <a class="listen" href="https://github.com/Lucas0623z/NoteLite">NoteLite on GitHub</a>
+      <p class="work">yaos</p>
+      <p class="composer">Real-time vault sync on a Cloudflare Worker you own &middot; Mac, Android, iPad</p>
+      <p class="why"><strong>What it is.</strong> An Obsidian sync engine built on Yjs CRDTs, so every device holds one live vault state rather than trading files. The server is a Cloudflare Worker you deploy to your own account with a button; text sync works out of the box, and adding R2 storage brings attachment sync and daily snapshots.</p>
+      <p class="why"><strong>Why it is for you.</strong> This is the sharpest answer yet to the one problem that spans both your vaults: the Second Brain sitting in iCloud where your Android phone cannot reach it, and the family vault leaning on git with phones that only ever pull. It is also a better shape than the sync plugin here last week &mdash; there is no hosted tier, so no encrypted copy of your notes on anyone else's server, and it runs on Cloudflare, which you already use.</p>
+      <p class="why"><strong>To try it.</strong> Deploy the Worker from the README's button, click <em>Claim</em> on the Worker URL, install the plugin from Obsidian's marketplace, then scan the QR code on a second device. The README stresses there is no terminal, no <code>.env</code> and no database step. Point it at a throwaway copy of a vault, not the real one. About an hour.</p>
+      <p class="risk"><strong>Risk.</strong> One developer, eight months old, and the Worker is yours so there is no third party in the middle; no telemetry is mentioned. The limits are specific and worth reading first: without R2 there is no attachment sync and no snapshots, files above the size cap are skipped silently, and empty folders and some non-Markdown plugin files are not covered. <strong>The README never tells you to back up first</strong> &mdash; do it anyway, and never run it alongside iCloud or git on the same vault.</p>
+      <p class="meta">1,059 stars &middot; 98 forks &middot; 0BSD &middot; created 16 February 2026 (about eight months old)</p>
+      <a class="listen" href="https://github.com/kavinsood/yaos">yaos on GitHub</a><a class="score-link" href="https://yaos.dev">Website</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-music&amp;item=lucas0623z-notelite&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-music&amp;item=lucas0623z-notelite&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-music&amp;item=lucas0623z-notelite&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-vault&amp;item=kavinsood-yaos&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-vault&amp;item=kavinsood-yaos&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-vault&amp;item=kavinsood-yaos&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
     <div class="piece">
-      <p class="work">AfterFrame</p>
-      <p class="composer">A local photo library for Mac and Windows &middot; browse and cull thousands of photos</p>
-      <p class="why"><strong>What it is.</strong> A local-first photo workspace for browsing, rating, searching and editing large libraries, including RAW files from more than 1,200 cameras and iPhone HEIC photos. Your files stay where they are and nothing is uploaded. On a recent Mac it can also find people and places on the device, and it has saved filters (smart collections). The AI features are optional and use your own API key.</p>
-      <p class="why"><strong>Why it is for you.</strong> You have a very large photo library you keep trying to tame: the half-built Photo Curator, and thousands of recovered photos with meaningless names. This is a ready-made way to browse and cull by hand, and a look at what a local-first photo tool does well before you decide how much of Photo Curator to finish.</p>
-      <p class="why"><strong>To try it.</strong> Download the Mac build from the Releases page (Apple Silicon, macOS 14 or later; older Macs have a separate build, and there is an installer for Windows 10 and 11). Point it at one folder of a few hundred photos, not the whole library, and see how fast browsing and search feel. About 30 minutes.</p>
-      <p class="risk"><strong>Risk.</strong> One developer, and still version 0.5 (0.5.13 on 16 October), though very active (at least 100 commits in the last month). The Windows installer is not signed, so Windows will warn you. Photos stay local, but the optional AI features send images to whichever AI provider's key you give it, so leave them off while testing. Work on a copy of a folder until you have seen what it writes.</p>
-      <p class="meta">244 stars &middot; 26 forks &middot; MIT &middot; created 1 May 2026 (about five and a half months old)</p>
-      <a class="listen" href="https://github.com/YIWANG3/AfterFrame">AfterFrame on GitHub</a><a class="score-link" href="https://yiwang3.github.io/AfterFrame/">Project site</a>
+      <p class="work">Guitariz Studio</p>
+      <p class="composer">A workbench for guitar and piano in the browser &middot; Mac, iPad, phone</p>
+      <p class="why"><strong>What it is.</strong> A web music workbench: chord recognition from audio with the progression exported as MIDI, key and BPM detection, a tuner, stem separation, a scale explorer, a virtual fretboard with a capo, a virtual piano and ear-training drills. React front end, optional Python back end for the audio analysis.</p>
+      <p class="why"><strong>Why it is for you.</strong> Two of your stated music goals are writing guitar music and getting back to the piano, and this is aimed squarely between them. The part worth your attention is chord recognition straight out to MIDI: play or load something, get the harmony as a MIDI file, and take it into Reaper. It is also an installable web app, which makes it one of the few music tools on this list that works on the iPad.</p>
+      <p class="why"><strong>To try it.</strong> Open the hosted demo and try the fretboard, the scale explorer and a chord analysis on a track you know. Nothing to install. If you want the audio analysis running locally, the back end is a Python virtual environment and a first run downloads a roughly 300&nbsp;MB Demucs model. About 30 minutes for the hosted tour.</p>
+      <p class="risk"><strong>Risk.</strong> <strong>Small:</strong> 35 stars, one named creator, and no stated contributor count &mdash; though 18 forks against 35 stars is a healthier ratio than most things this size. The hosted site loads <strong>PostHog and Ahrefs analytics</strong>, and the README does not say what they collect or where uploaded audio goes, so run the back end yourself for anything you care about. It calls itself an installable web app but never mentions touch support, so treat the iPad as unproven until you open it. Chord-detection accuracy is unverified; nothing here is a substitute for your own ear.</p>
+      <p class="meta">35 stars &middot; 18 forks &middot; MIT &middot; created 10 December 2025 (about ten months old)</p>
+      <a class="listen" href="https://github.com/Guitariz/Guitariz">Guitariz on GitHub</a><a class="score-link" href="https://guitariz.studio">Live demo</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-photo&amp;item=yiwang3-afterframe&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-photo&amp;item=yiwang3-afterframe&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-photo&amp;item=yiwang3-afterframe&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-music&amp;item=guitariz-guitariz&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-music&amp;item=guitariz-guitariz&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-music&amp;item=guitariz-guitariz&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
     <div class="piece">
-      <p class="work">Synch</p>
-      <p class="composer">End-to-end encrypted sync for Obsidian vaults &middot; Mac, iPad, Android</p>
-      <p class="why"><strong>What it is.</strong> An Obsidian community plugin that encrypts your vault on the device before uploading it, then syncs it to your other devices. You can use its hosted service (a free plan and a paid one) or deploy your own server to your own Cloudflare account. It merges simple edits to Markdown files automatically and keeps both versions when edits clash.</p>
-      <p class="why"><strong>Why it is for you.</strong> Your two vaults each have a sync problem: the Second Brain lives in iCloud, which your Android phone cannot see, and the family vault depends on git with phones that only pull. This is a possible way to put the same vault on all your devices. It also fits what you already run, since you use Cloudflare.</p>
-      <p class="why"><strong>To try it.</strong> Do <strong>not</strong> point it at either real vault yet. Copy a small test vault, install the plugin from Obsidian's community plugins, and sync it between the Mac and the Android phone. Self-hosting on Cloudflare is the longer route; the hosted free plan is the quick one. About an hour.</p>
-      <p class="risk"><strong>Risk.</strong> Still version 0.5 (0.5.5 on 6 October), so expect rough edges. Nine contributors and 48 commits in the last month is a healthy sign. The README itself says to back up your vault before changing sync provider, and running it alongside iCloud or git on the same vault would cause conflicts. The hosted option puts (encrypted) copies of your notes on their servers.</p>
-      <p class="meta">263 stars &middot; 38 forks &middot; MIT &middot; created 30 April 2026 (about five and a half months old)</p>
-      <a class="listen" href="https://github.com/hjinco/synch">Synch on GitHub</a><a class="score-link" href="https://synch.run">Website</a>
+      <p class="work">kicad-happy</p>
+      <p class="composer">Design review for electronics, driven from Claude Code &middot; Mac</p>
+      <p class="why"><strong>What it is.</strong> A KiCad review toolkit: Python scripts that parse schematics, PCBs and Gerbers into structured data, plus skills that let a coding agent drive them &mdash; design review, EMC pre-compliance checks, SPICE simulation, datasheet fetching, component sourcing and fabrication prep. The analysis scripts are pure Python 3.10+ with no required dependencies, and KiCad itself is not needed to run them.</p>
+      <p class="why"><strong>Why it is for you.</strong> It was on last week's radar and it has earned a promotion, because electronics is the corner of your range with the least to show for it &mdash; a parts inventory that is still a stub and a stated wish to teach the subject. The teaching angle is the real one here: point it at a known-good example board and have it explain what the review found and why, which is a faster route into the vocabulary than reading a datasheet cold.</p>
+      <p class="why"><strong>To try it.</strong> Install it as a Claude Code plugin from its marketplace entry, or symlink the skills folder by hand. Then run the analysis scripts against an example KiCad project &mdash; no licence keys, and distributor API keys are optional because it falls back to web search. About an hour, and most of that is reading what it reports back.</p>
+      <p class="risk"><strong>Risk.</strong> MIT, 129 forks behind 1,451 stars, seven months old and actively released. Two honest caveats. It is a skills-plus-scripts toolkit for an agent rather than an application, which is the shape you are usually wary of &mdash; the scripts are real, but an agent is doing the driving. And <strong>the README never promises read-only operation</strong>: its own workflow says to fix issues and re-run, the datasheet skill writes into your project folder, and there is no mention of backups. Work on a copy. Your agent also sends project content to its model provider, and component searches reach out to distributors.</p>
+      <p class="meta">1,451 stars &middot; 129 forks &middot; MIT &middot; created 9 March 2026 (about seven months old)</p>
+      <a class="listen" href="https://github.com/aklofas/kicad-happy">kicad-happy on GitHub</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-vault&amp;item=hjinco-synch&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-vault&amp;item=hjinco-synch&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-vault&amp;item=hjinco-synch&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-electronics&amp;item=aklofas-kicad-happy&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-electronics&amp;item=aklofas-kicad-happy&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-electronics&amp;item=aklofas-kicad-happy&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
@@ -156,38 +160,38 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
     <p class="section-note">Something to learn from rather than install.</p>
 
     <div class="piece">
-      <p class="work">HyperFrames</p>
-      <p class="composer">Write HTML, render video &middot; by HeyGen</p>
-      <p class="why"><strong>What it is.</strong> An open-source framework that turns HTML, CSS and animations into repeatable MP4 videos. You can use it from a command line or from Claude Code through a plugin and a set of skills, and it has a native Mac app.</p>
-      <p class="why"><strong>Why it is for you.</strong> It is the same idea as the video pipeline you built for Music Nuggets and the kids' videos (HTML scenes recorded in a browser, then joined with ffmpeg). Read how it makes rendering repeatable and how its skills structure the loop of plan, write, lint, preview, render. The point is to <em>learn from it</em>, not to replace your pipeline.</p>
-      <p class="why"><strong>To try it.</strong> Start by reading its documentation (about 20 minutes) and looking at the showcase. If you want to try it, it needs Node 22 or later, and it installs through <code>npx</code>, which downloads and runs code from the npm registry: skim what it installs before you run it, and try it in a scratch folder rather than in your pipeline folder.</p>
-      <p class="risk"><strong>Risk.</strong> Backed by a real company (HeyGen), with at least 100 contributors, daily releases (v0.8.172 landed today) and 369 open issues. It moves fast, so expect things to change under you. Its 66,000 stars are far more than I would trust on their own, but the 6,000 forks, the contributor count and the release history all support that it is real.</p>
-      <p class="meta">66,649 stars &middot; 6,032 forks &middot; Apache-2.0 &middot; created 10 March 2026 (about seven months old)</p>
-      <a class="listen" href="https://github.com/heygen-com/hyperframes">HyperFrames on GitHub</a><a class="score-link" href="https://hyperframes.dev">Playground</a>
+      <p class="work">Operation Ironhold</p>
+      <p class="composer">A complete 3D game in one 290&nbsp;KB HTML file &middot; read it, then play it</p>
+      <p class="why"><strong>What it is.</strong> A finished first-person shooter that is a single HTML file of about 290&nbsp;KB. No build step, no asset pipeline, no dependencies beyond three.js from a CDN. Levels are generated procedurally and the sound is Web Audio.</p>
+      <p class="why"><strong>Why it is for you.</strong> This is the one to read rather than use, and it speaks to three things you build at once: three.js, the small self-contained pages you send to people as links, and the video pipeline that records HTML scenes and stitches them with ffmpeg. A whole 3D game with no build step is a direct argument about how much machinery that pipeline actually needs, and the Web Audio side is worth a look on its own given your interest in it. The lesson is the file, not the genre.</p>
+      <p class="why"><strong>To try it.</strong> Read the source on GitHub &mdash; it is one file, so you can scroll the whole architecture in a sitting and see how scene setup, procedural generation and audio are partitioned without a bundler. About 40 minutes to skim properly.</p>
+      <p class="risk"><strong>Risk.</strong> MIT, 102 stars, 28 forks, and just under three months old &mdash; past the one-month line but not by much, so treat it as a thing to study rather than a dependency. It pulls three.js from a CDN, which is fine for reading and worth pinning if you ever borrow the pattern. A single-file 290&nbsp;KB game is a deliberate stunt as much as a design: admire the partitioning, do not conclude that one file is the right answer for your own projects.</p>
+      <p class="meta">102 stars &middot; 28 forks &middot; MIT &middot; created 26 July 2026 (just under three months old)</p>
+      <a class="listen" href="https://github.com/StarKnightt/operation-ironhold">Operation Ironhold on GitHub</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-video&amp;item=heygen-com-hyperframes&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-video&amp;item=heygen-com-hyperframes&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-video&amp;item=heygen-com-hyperframes&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-webdev&amp;item=starknightt-operation-ironhold&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-webdev&amp;item=starknightt-operation-ironhold&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-webdev&amp;item=starknightt-operation-ironhold&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
     <h2>A game</h2>
 
     <div class="piece">
-      <p class="work">Chogan</p>
-      <p class="composer">A small collection of finishable games &middot; browser, Android, iPad home screen</p>
-      <p class="why"><strong>What it is.</strong> A free, open-source app of games you can finish in one sitting: tower defence (six fixed maps plus a daily map, twenty waves and an endless mode), sudoku with a daily challenge, minesweeper and dots and boxes. No ads, no purchases and no tracking, and it works offline.</p>
-      <p class="why"><strong>Why it is for you.</strong> You like tower games and sudoku, and this is both in one small package. It runs as a web page you can add to the iPad home screen, and it is on F-Droid for the Android phone.</p>
-      <p class="why"><strong>To try it.</strong> Open choganhq.github.io/chogan in a browser and play a sudoku and a tower-defence map. About 15 minutes. It also reads as a good model of a minimal, no-tracker games app.</p>
-      <p class="risk"><strong>Risk.</strong> Small and young: 80 stars, three contributors, created 5 September 2026 (about six weeks old), and version 0.9.0, released today after several releases in one day. That is just over the one-month line, so this is a trial, not a keeper. The F-Droid build is reproducible, which is a good sign for the Android version. The README is in English and Farsi.</p>
-      <p class="meta">80 stars &middot; 6 forks &middot; MIT &middot; created 5 September 2026 (about six weeks old)</p>
-      <a class="listen" href="https://github.com/choganhq/chogan">Chogan on GitHub</a><a class="score-link" href="https://choganhq.github.io/chogan/">Play in the browser</a>
+      <p class="work">Server Survival</p>
+      <p class="composer">Tower defence, except the towers are infrastructure &middot; browser, iPad</p>
+      <p class="why"><strong>What it is.</strong> A 3D browser game in which you play a cloud architect: place and link firewalls, compute, databases and queues to absorb rising traffic and DDoS attacks while watching a budget and a reputation meter. Earn money on requests you serve, lose reputation on the ones you drop; the run ends at zero reputation or minus a thousand dollars. Survival mode, a 25-level campaign and a sandbox.</p>
+      <p class="why"><strong>Why it is for you.</strong> Tower defence is the genre you keep coming back to and have built in yourself, and this is the version where the waves are traffic and the towers are capacity planning &mdash; close enough to your professional day that the intuitions transfer, far enough to still be a game. It opens in a browser with no account, so it is one of the few picks here that genuinely works on the iPad.</p>
+      <p class="why"><strong>To try it.</strong> Open it and play one Survival run, then try the campaign. No install, no build, no account. About 15 minutes to see whether it grips. You can export an architecture as a PNG or share it as a URL, which is a neat touch if you want to show someone a layout.</p>
+      <p class="risk"><strong>Risk.</strong> MIT by its licence file, though the README itself never mentions a licence. 723 forks behind 6,458 stars is a ratio that holds up, and it is eleven months old with CI on every pull request &mdash; but no maintainer is named beyond the account, and <strong>the README says nothing about analytics either way</strong>. It is a game in a browser tab, so the exposure is small. The cloud architecture it teaches is simplified for play; do not take its scaling lessons to work.</p>
+      <p class="meta">6,458 stars &middot; 723 forks &middot; MIT &middot; created 21 November 2025 (about eleven months old)</p>
+      <a class="listen" href="https://github.com/pshenok/server-survival">Server Survival on GitHub</a><a class="score-link" href="https://pshenok.github.io/server-survival/">Play in the browser</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-game&amp;item=choganhq-chogan&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-game&amp;item=choganhq-chogan&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-18&amp;cat=gh-game&amp;item=choganhq-chogan&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-game&amp;item=pshenok-server-survival&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-game&amp;item=pshenok-server-survival&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-game&amp;item=pshenok-server-survival&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
@@ -196,11 +200,10 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
 
     <table class="table">
       <tr><th>Project</th><th>Why not this week</th></tr>
-      <tr><td><a href="https://github.com/AppsYogi-com/ComposeYogi">ComposeYogi</a></td><td>A free music maker that runs in the browser (works offline, exports WAV, MP3 and MIDI), good on an iPad. 152 stars, one developer, and development has slowed. It was in an earlier draft of this issue and moved here to make room for something outside music.</td></tr>
-      <tr><td><a href="https://github.com/aklofas/kicad-happy">kicad-happy</a></td><td>Skills that let Claude Code help design electronics in KiCad. 1,444 stars, 17 contributors, MIT, release 2.3.1 on 6 October. Worth a look when you get back to electronics, which you want to teach.</td></tr>
-      <tr><td><a href="https://github.com/opengeos/GeoAgent">GeoAgent</a></td><td>An AI agent for analysing map and geospatial data. 512 stars, 10 contributors, MIT, owned by an organisation, release 1.9.0 on 9 August. Could help with the Roman Colchester maps and LiDAR if you restart that project.</td></tr>
-      <tr><td><a href="https://github.com/hi-godot/godot-ai">godot-ai</a></td><td>A mature connector between Claude Code and the Godot editor (3,060 stars, 32 contributors, MIT, release 4.3.0 on 3 October). Relevant if you go back to your Godot games. Its README documents opt-out telemetry (an install ID and usage events) and how to turn it off.</td></tr>
-      <tr><td><a href="https://github.com/leemysw/yovoice">yovoice</a></td><td>A local AI audio and music studio for Mac and Windows (including text to speech), which touches the ElevenLabs credits you ration. Created 15 September, so it is <strong>too new to try yet</strong>; 1,657 stars in five weeks is also more than I would trust. Revisit after mid-November.</td></tr>
+      <tr><td><a href="https://github.com/Wing900/ManimCat">ManimCat</a></td><td>Maths animations from a plain-English description, rendered through Manim &mdash; aimed straight at the maths videos. 476 stars, 71 forks, AGPL-3.0. Held back because the interesting half needs <strong>your own paid API key</strong>, the animation side is described by its own author as early (the matplotlib figure side is the mature one), and the maintainer calls himself a hobbyist with little time.</td></tr>
+      <tr><td><a href="https://github.com/inikolax/remiqora">remiqora</a></td><td>A local, offline AI music studio built for Apple Silicon &mdash; stem separation, an arranger, MIDI transcription, a multitrack DAW. MIT, 167 stars, 24 forks. Created 17 September, so it is <strong>only just over the one-month line</strong>, and that many stars in a month is more than I would trust yet. Revisit in November.</td></tr>
+      <tr><td><a href="https://github.com/futureboard/futureboard-studio">futureboard-studio</a></td><td>An open-source DAW with a Rust DSP core and native plugin hosting. MIT, 115 stars, 12 forks, five months old. Twelve forks is thin for something as large as a DAW, so this is one to watch rather than install &mdash; but plugin hosting in Rust is a good read if you are curious how Reaper does it.</td></tr>
+      <tr><td><a href="https://github.com/drandyhaas/KiCadRoutingTools">KiCadRoutingTools</a></td><td>Python and Rust tools to help route boards in KiCad. MIT, 546 stars, 75 forks, ten months old. The natural companion to this week's electronics pick, but one electronics project a week is enough.</td></tr>
     </table>
 
     <h2>What I left out, and why</h2>
@@ -208,11 +211,23 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
 
     <div class="thin">
       <ul class="plain">
-        <li><strong>Unofficial ports and compatibility layers for commercial games</strong>, including one that tops this week's list of new repositories. Copyright-grey, and you would be running binaries nobody has vetted. (Rule 3.)</li>
-        <li><strong>An adult-content prompt pack and a clone of a company's branded interface.</strong> (Rule 3.)</li>
-        <li><strong>Repositories with 100,000+ stars that are a few months old.</strong> I could not tell real interest from bought stars, so I passed unless forks, contributors and releases backed the number up. (Rule 6.) HyperFrames is the one that did.</li>
-        <li><strong>Everything created in the last month</strong>, however well starred. (Rule 1.)</li>
+        <li><strong>Four genuinely good projects with no stated licence</strong> (rule 2), which is the story of this week. <em>ori-studio</em>, for designing and validating origami models &mdash; the closest thing yet to the origami-software question you have had open, and I cannot recommend it. <em>velxio</em>, which emulates Arduino, ESP32 and Raspberry Pi boards in a browser across 19 real boards, at 3,355 stars &mdash; it would have been the electronics pick and would have run on the iPad. <em>dolce</em>, a notation editor that reads and writes ABC and MusicXML with offline score recognition. And <em>facet</em>, local AI photo scoring and culling. All four report their licence as <code>NOASSERTION</code>. If any of them adds a real licence, it goes straight in.</li>
+        <li><strong>music-to-midi</strong>, MIT and well starred, which converts audio to multitrack MIDI. Ruled out on your kit, not its quality: it needs an NVIDIA GPU with CUDA, explicitly will not fall back to CPU, does not list macOS support at all, and a cold install is about 32&nbsp;GB of models.</li>
+        <li><strong>Browser ports of commercial games</strong> &mdash; Morrowind, GTA Vice City and Touhou all surfaced high in the game searches. Copyright-grey, and they expect you to supply game data. (Rule 3.)</li>
+        <li><strong>MCP servers for Logic Pro and FL Studio.</strong> Both looked well made; you work in Reaper.</li>
+        <li><strong>A WiFi-sensing repository at roughly 99,000 stars</strong>, and others in the same band. I could not separate real interest from bought stars, and nothing in the forks or contributors settled it. (Rule 6.)</li>
+        <li><strong>Everything created in the last 30 days</strong>, however well starred. (Rule 1.)</li>
       </ul>
+    </div>
+
+    <div class="aside">
+      <span class="label">Two gaps worth naming</span>
+      <strong>Music was thin on purpose.</strong> Searching ABC notation returned exactly one
+      project in the whole window and it had no licence, so Guitariz is carrying the section alone
+      this week rather than being padded out. <strong>And nothing came back at all</strong> for the
+      maps and LiDAR searches that would serve the Roman Colchester work. Neither is a quiet week in
+      your interests; both are genuinely empty shelves, and they will be searched again from a
+      different angle next time.
     </div>
 
     <div class="aside">
