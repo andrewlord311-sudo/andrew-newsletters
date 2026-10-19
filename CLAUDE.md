@@ -4,9 +4,9 @@ Five weekly HTML newsletters, published to GitHub Pages and emailed by Google
 Apps Script: **PDPT Watch** and **What's On** to Laura on Mondays, **Puzzle
 Weekly** to Andrew on Fridays, **Music Weekly** to Andrew on Saturdays, and
 **GitHub Weekly** (new picks of open-source projects, with a safety line for each)
-to Andrew on Sundays. GitHub Weekly's scope is `scope/github.md`; it reads
+to Andrew on Thursdays. GitHub Weekly's scope is `scope/github.md`; it reads
 Andrew's whole-range interests note from his vault, and its routine starts at
-04:20 UTC on Sundays.
+04:20 UTC on Thursdays.
 
 ## Two rules that break things silently
 

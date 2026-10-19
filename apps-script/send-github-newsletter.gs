@@ -1,8 +1,8 @@
 // GitHub Weekly — weekly emailer.
 // Fetches the latest published issue and emails it to Andrew (himself, not Laura — this one's
-// his). The issue itself is regenerated separately (a Claude cloud routine, every Sunday
+// his). The issue itself is regenerated separately (a Claude cloud routine, every Thursday
 // early morning) and published to GitHub Pages — this script's only job is to pick up whatever
-// is live there and forward it, so it lands with the Sunday still ahead and there is time to
+// is live there and forward it, so it lands with the weekend still ahead and there is time to
 // actually try something.
 //
 // Setup (same pattern as send-puzzle-newsletter.gs and send-music-newsletter.gs):
@@ -16,7 +16,7 @@
 //        Function: sendGithubNewsletter
 //        Event source: Time-driven
 //        Type: Week timer
-//        Day: Sunday
+//        Day: Thursday
 //        Time: 7am to 8am
 //   7. Save
 //
