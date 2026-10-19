@@ -4,11 +4,11 @@
 start of every run, and it wins over anything in the prompt. It is the file
 Andrew edits to steer the newsletter — scope is data, not prompt.
 
-*Status: live from Sunday 25 Oct 2026. The routine starts at 04:20 UTC every Sunday, and the emailer (to Andrew only) sends it between 07:00 and 08:00 London. The first issue, 18 Oct 2026, was made by hand. Andrew's answers, 18.10.26: email to him only; Sunday; 3 to 5 picks; be cautious about anything under a month old.*
+*Status: live from Thursday 22 Oct 2026. The routine starts at 04:20 UTC every Thursday, and the emailer (to Andrew only) sends it between 07:00 and 08:00 London. The first issue, 18 Oct 2026, was made by hand. Andrew's answers, 18.10.26: email to him only; Thursday (moved from Sunday 19.10.26, so the picks land before the weekend); 3 to 5 picks; be cautious about anything under a month old.*
 
 ## Subject
 
-A Sunday-morning pick of **3 to 5 open-source projects worth trying**, chosen
+A Thursday-morning pick of **3 to 5 open-source projects worth trying**, chosen
 from GitHub for one reader. It is not "what's trending": raw star counts on new
 repositories are mostly hype. The measure of success is that he actually tries
 one of them, and that nothing he tries does him harm.
@@ -163,7 +163,7 @@ learns which parts of his range he actually wants.
 
 ## Publishing
 
-The routine starts at **04:20 UTC on Sunday**. The emailer sends whatever is live
+The routine starts at **04:20 UTC on Thursday**. The emailer sends whatever is live
 between **07:00 and 08:00 Europe/London**, so **push by 06:30 London at the latest**;
 cut scope rather than miss it. The page's date line must read `Week of D Month YYYY`
 with today's date: the emailer holds the issue back as stale otherwise. Overwrite
