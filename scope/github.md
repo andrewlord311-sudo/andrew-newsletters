@@ -121,20 +121,48 @@ on beats a long one he skims. Use the same page design as the other newsletters
 
 ## How to find candidates
 
-Use the **GitHub search API with `curl`**, no key needed:
+**Corrected 19.10.26: `curl` to the search API does not work in the routine sandbox.**
+This section used to say "use the GitHub search API with `curl`, no key needed". That is
+false here, and it fails in a way that looks like a network outage:
 
-    curl -s "https://api.github.com/search/repositories?q=topic:midi+created:2026-01-01..2026-09-17+pushed:%3E2026-09-25+stars:%3E40&sort=stars&order=desc&per_page=8"
+    curl -s "https://api.github.com/search/repositories?q=topic:midi..."
+    -> "This GitHub API path is not available: sessions are bound to their
+        configured repositories. Use repository-scoped endpoints"
+
+The sandbox's GitHub credentials are **bound to this account's own repos**. `curl` reaches
+`rate_limit` and `repos/andrewlord311-sudo/*` and nothing else: every search, and every
+`repos/{owner}/{repo}` belonging to somebody else, is refused. Note the trap -- `rate_limit`
+returns healthy JSON (15,000 core / 30 search, i.e. authenticated, not the 60/10 this file
+used to claim), so **the prompt's "if you cannot reach api.github.com, do not publish" check
+passes and then every search fails.** Judge research by an actual search, not by `rate_limit`.
+
+**Use the GitHub MCP tools instead** -- `mcp__github__search_repositories`. They are not
+repo-scoped and take the full search syntax:
+
+    query: "topic:midi license:mit created:2025-06-01..2026-09-19 pushed:>2026-10-05 stars:>40"
+    sort: stars   order: desc   perPage: 8   minimal_output: true
+
+- **Put `license:` in the query from the first search.** `minimal_output: true` is compact
+  but omits the licence; `false` returns `license.spdx_id` and costs ~1,500 tokens per repo.
+  Adding `license:mit` (or `apache-2.0`, `agpl-3.0`, `0bsd`, ...) satisfies rule 2 by
+  construction so nothing unlicensed is ever considered. This is not a nicety: on 19.10.26
+  **four of the week's best finds were `NOASSERTION`** and had to be thrown away late.
+- `repo:owner/name license:mit` returning one row confirms that repo's licence cheaply.
+- READMEs: `WebFetch https://raw.githubusercontent.com/{owner}/{repo}/{branch}/README.md`
+  works, and is the only way to check rules 4 and 5. Ask it outright for install steps,
+  pipe-to-shell, accounts or API keys, telemetry, and platforms. That is what caught
+  `music-to-midi` on 19.10.26 (NVIDIA/CUDA only, no macOS, ~32 GB of model downloads).
+- `…/contributors`, `…/commits`, `…/releases` for a third-party repo are **not reachable by
+  `curl`**. The MCP equivalents were not tested on 19.10.26 -- try them, but do not block on
+  them: `created_at`, `pushed_at`, forks, open issues and the README carry the Risk line.
 
 - **One topic per query.** Queries that combined topics with `OR` and parentheses returned nothing when tried (18.10.26).
 - Always restrict by `created:` (older than 30 days; usually within the last year)
   and `pushed:` (active in the last few weeks).
-- Unauthenticated limits: about **10 searches a minute and 60 other API calls an
-  hour**. Pause a few seconds between searches and keep to roughly 25 searches and
-  15 detail calls a run.
-- For each finalist read `repos/{owner}/{repo}` (created, pushed, stars, forks,
-  licence, owner type), `…/contributors`, `…/commits?since=` (last 30 days),
-  `…/releases` and `…/readme`. Flag a README that says `telemetry`, `account`,
-  `sign in`, `subscription`, `sudo`, or pipes to a shell.
+- Limits are **30 searches a minute**, so pacing is no longer the constraint -- your own
+  context is. Prefer many small licence-filtered searches to a few huge ones.
+- For each finalist, read the README (above) and flag anything saying `telemetry`,
+  `account`, `sign in`, `subscription`, `sudo`, or piping to a shell.
 - GitHub has **no official trending feed**. Do not scrape its trending page. For
   "getting a lot of likes", use recent repos sorted by stars and the snapshot in
   `scope/github-seen.md`.
