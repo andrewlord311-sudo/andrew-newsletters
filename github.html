@@ -86,112 +86,113 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
 <body>
 <div class="wrap">
 
+
   <div class="masthead">
     <p class="kicker">GitHub Weekly</p>
     <h1>Things worth trying</h1>
-    <p class="issue">Week of 19 October 2026</p>
+    <p class="issue">Week of 22 October 2026</p>
   </div>
 
   <div class="body">
 
-    <p class="lede">Five projects this week, and an unusually honest filter behind them.
-    I searched across your range &mdash; notes and sync, music, electronics, maths and teaching,
-    web and games, photography, maps &mdash; and <strong>four of the most appealing things I found had no
-    stated licence</strong>, including the one that answers your origami-software question and a
-    browser Arduino emulator with 3,355 stars. They are named at the bottom rather than quietly
-    dropped. What is left is five projects that each have an OSI licence, are all more than a
-    month old, and come with a plain line about what could go wrong. I did not download or run any
-    of it: this is what each project says about itself, checked against who maintains it and how
-    active it is.</p>
+    <p class="lede">Five projects, and a deliberate swerve away from last week. The searches this
+    time went through sheet music and notation, photo libraries, sudoku, LiDAR and maps, and games
+    &mdash; not electronics or vault sync, which both had their turn. Two of these are things you
+    open in a browser and use in ten minutes; one of them answers the oldest item on your music
+    wish list, turning a photograph of a page into something a computer can read. As always I did
+    not download or run any of it: every claim below is what the project says about itself,
+    weighed against who maintains it, how many people have forked it, and when it was last touched.</p>
 
     <h2>Try this weekend</h2>
-    <p class="section-note">Three things you can try in about an hour each.</p>
+    <p class="section-note">Three things, three corners of your range, about an hour each.</p>
 
     <div class="piece">
-      <p class="work">yaos</p>
-      <p class="composer">Real-time vault sync on a Cloudflare Worker you own &middot; Mac, Android, iPad</p>
-      <p class="why"><strong>What it is.</strong> An Obsidian sync engine built on Yjs CRDTs, so every device holds one live vault state rather than trading files. The server is a Cloudflare Worker you deploy to your own account with a button; text sync works out of the box, and adding R2 storage brings attachment sync and daily snapshots.</p>
-      <p class="why"><strong>Why it is for you.</strong> This is the sharpest answer yet to the one problem that spans both your vaults: the Second Brain sitting in iCloud where your Android phone cannot reach it, and the family vault leaning on git with phones that only ever pull. It is also a better shape than the sync plugin here last week &mdash; there is no hosted tier, so no encrypted copy of your notes on anyone else's server, and it runs on Cloudflare, which you already use.</p>
-      <p class="why"><strong>To try it.</strong> Deploy the Worker from the README's button, click <em>Claim</em> on the Worker URL, install the plugin from Obsidian's marketplace, then scan the QR code on a second device. The README stresses there is no terminal, no <code>.env</code> and no database step. Point it at a throwaway copy of a vault, not the real one. About an hour.</p>
-      <p class="risk"><strong>Risk.</strong> One developer, eight months old, and the Worker is yours so there is no third party in the middle; no telemetry is mentioned. The limits are specific and worth reading first: without R2 there is no attachment sync and no snapshots, files above the size cap are skipped silently, and empty folders and some non-Markdown plugin files are not covered. <strong>The README never tells you to back up first</strong> &mdash; do it anyway, and never run it alongside iCloud or git on the same vault.</p>
-      <p class="meta">1,059 stars &middot; 98 forks &middot; 0BSD &middot; created 16 February 2026 (about eight months old)</p>
-      <a class="listen" href="https://github.com/kavinsood/yaos">yaos on GitHub</a><a class="score-link" href="https://yaos.dev">Website</a>
+      <p class="work">homr</p>
+      <p class="composer">A photograph of a score, turned into MusicXML &middot; Mac, or the browser demo</p>
+      <p class="why"><strong>What it is.</strong> Optical music recognition: point it at a camera photo or a PDF of sheet music and it writes out MusicXML, which MuseScore and anything else in that family will open. It runs locally on the CPU; GPU builds exist for NVIDIA and AMD but are not needed.</p>
+      <p class="why"><strong>Why it is for you.</strong> Getting written music off paper and into a file you can manipulate is the oldest unmet want in your music notes, and it sits upstream of nearly everything else &mdash; MusicXML opens into MuseScore, out to MIDI, and from there into Reaper. It is also the obvious tool for studying a score you only own on paper: get it into a file and you can transpose it, play it back slowly, or pull one part out on its own.</p>
+      <p class="why"><strong>To try it.</strong> Start with the hosted demo and one clean photograph of a page you know well, so you can judge the errors. If it earns a local install, that is <code>uvx --from 'homr[cpu]' homr &lt;image&gt;</code> with Python 3.11 or 3.12 &mdash; a single command, no shell pipe, no sudo. About 30 minutes including proofreading what it gives back.</p>
+      <p class="risk"><strong>Risk.</strong> AGPL-3.0, two and a half years old, 78 forks behind 442 stars and committed to this week &mdash; a healthy shape. Three honest caveats. <strong>The README never names macOS or Apple Silicon at all</strong>; a CPU-only install path exists and nothing suggests a problem, but nobody has told you it works on your machine. It also contradicts itself: the limitations section says it handles pitch and rhythm for treble and bass clefs and skips dynamics, articulation and double accidentals, while the technical section says articulation and dynamics are output. Expect to proofread every bar either way. And the hosted demo means sending your page to someone else's server &mdash; fine for a printed edition, worth thinking about for your own manuscript. Model download sizes are not stated anywhere.</p>
+      <p class="meta">442 stars &middot; 78 forks &middot; AGPL-3.0 &middot; created 7 May 2024 (about two and a half years old)</p>
+      <a class="listen" href="https://github.com/liebharc/homr">homr on GitHub</a><a class="score-link" href="https://homr.site">Try the demo</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-vault&amp;item=kavinsood-yaos&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-vault&amp;item=kavinsood-yaos&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-vault&amp;item=kavinsood-yaos&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-music&amp;item=liebharc-homr&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-music&amp;item=liebharc-homr&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-music&amp;item=liebharc-homr&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
+
     <div class="piece">
-      <p class="work">Guitariz Studio</p>
-      <p class="composer">A workbench for guitar and piano in the browser &middot; Mac, iPad, phone</p>
-      <p class="why"><strong>What it is.</strong> A web music workbench: chord recognition from audio with the progression exported as MIDI, key and BPM detection, a tuner, stem separation, a scale explorer, a virtual fretboard with a capo, a virtual piano and ear-training drills. React front end, optional Python back end for the audio analysis.</p>
-      <p class="why"><strong>Why it is for you.</strong> Two of your stated music goals are writing guitar music and getting back to the piano, and this is aimed squarely between them. The part worth your attention is chord recognition straight out to MIDI: play or load something, get the harmony as a MIDI file, and take it into Reaper. It is also an installable web app, which makes it one of the few music tools on this list that works on the iPad.</p>
-      <p class="why"><strong>To try it.</strong> Open the hosted demo and try the fretboard, the scale explorer and a chord analysis on a track you know. Nothing to install. If you want the audio analysis running locally, the back end is a Python virtual environment and a first run downloads a roughly 300&nbsp;MB Demucs model. About 30 minutes for the hosted tour.</p>
-      <p class="risk"><strong>Risk.</strong> <strong>Small:</strong> 35 stars, one named creator, and no stated contributor count &mdash; though 18 forks against 35 stars is a healthier ratio than most things this size. The hosted site loads <strong>PostHog and Ahrefs analytics</strong>, and the README does not say what they collect or where uploaded audio goes, so run the back end yourself for anything you care about. It calls itself an installable web app but never mentions touch support, so treat the iPad as unproven until you open it. Chord-detection accuracy is unverified; nothing here is a substitute for your own ear.</p>
-      <p class="meta">35 stars &middot; 18 forks &middot; MIT &middot; created 10 December 2025 (about ten months old)</p>
-      <a class="listen" href="https://github.com/Guitariz/Guitariz">Guitariz on GitHub</a><a class="score-link" href="https://guitariz.studio">Live demo</a>
+      <p class="work">Interactive Sudoku Solver</p>
+      <p class="composer">A variant solver that also generates and counts &middot; browser, so the iPad too</p>
+      <p class="why"><strong>What it is.</strong> A web-based sudoku engine built for speed rather than for imitating a human solve. It takes grids up to 16&times;16 including non-square ones, supports a large set of constraints natively and lets you define your own, checks whether a puzzle has a unique solution, and counts solutions (estimating when the count is enormous). There is a JavaScript sandbox for generating and solving puzzles programmatically.</p>
+      <p class="why"><strong>Why it is for you.</strong> This is the variant end of sudoku &mdash; the Cracking the Cryptic end &mdash; rather than another app that deals you a classic grid. Two things in it are worth your evening: uniqueness checking, which is the question you actually want answered when you meet a puzzle off paper, and the scripting sandbox, which is the natural companion to the work you have already done turning paper puzzles into SudokuPad links. Custom constraints mean a variant it has never heard of is still expressible.</p>
+      <p class="why"><strong>To try it.</strong> Open the hosted page, enter a grid, add constraints, solve. Nothing to install and no account. If you want it locally it is a Jekyll site you serve yourself. About 20 minutes to find out whether the constraint language fits the way you think.</p>
+      <p class="risk"><strong>Risk.</strong> MIT by its licence file, though the README never mentions a licence. It is small &mdash; 54 stars, 15 forks, one maintainer &mdash; but it is six years old and still being committed to this month, which is a far better signal than the star count. <strong>The README does not explicitly say that solving happens entirely in your browser</strong>: it is a GitHub Pages site with no backend mentioned, no account and no upload step, so that is very likely, but it is inference rather than a promise. It is a solver, not a teacher: it will not show you a human path through a puzzle, and leaning on it will spoil a grid you meant to enjoy.</p>
+      <p class="meta">54 stars &middot; 15 forks &middot; MIT &middot; created 20 July 2020 (about six years old)</p>
+      <a class="listen" href="https://github.com/sigh/Interactive-Sudoku-Solver">On GitHub</a><a class="score-link" href="https://sigh.github.io/Interactive-Sudoku-Solver">Open the solver</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-music&amp;item=guitariz-guitariz&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-music&amp;item=guitariz-guitariz&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-music&amp;item=guitariz-guitariz&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-puzzles&amp;item=sigh-interactive-sudoku-solver&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-puzzles&amp;item=sigh-interactive-sudoku-solver&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-puzzles&amp;item=sigh-interactive-sudoku-solver&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
+
     <div class="piece">
-      <p class="work">kicad-happy</p>
-      <p class="composer">Design review for electronics, driven from Claude Code &middot; Mac</p>
-      <p class="why"><strong>What it is.</strong> A KiCad review toolkit: Python scripts that parse schematics, PCBs and Gerbers into structured data, plus skills that let a coding agent drive them &mdash; design review, EMC pre-compliance checks, SPICE simulation, datasheet fetching, component sourcing and fabrication prep. The analysis scripts are pure Python 3.10+ with no required dependencies, and KiCad itself is not needed to run them.</p>
-      <p class="why"><strong>Why it is for you.</strong> It was on last week's radar and it has earned a promotion, because electronics is the corner of your range with the least to show for it &mdash; a parts inventory that is still a stub and a stated wish to teach the subject. The teaching angle is the real one here: point it at a known-good example board and have it explain what the review found and why, which is a faster route into the vocabulary than reading a datasheet cold.</p>
-      <p class="why"><strong>To try it.</strong> Install it as a Claude Code plugin from its marketplace entry, or symlink the skills folder by hand. Then run the analysis scripts against an example KiCad project &mdash; no licence keys, and distributor API keys are optional because it falls back to web search. About an hour, and most of that is reading what it reports back.</p>
-      <p class="risk"><strong>Risk.</strong> MIT, 129 forks behind 1,451 stars, seven months old and actively released. Two honest caveats. It is a skills-plus-scripts toolkit for an agent rather than an application, which is the shape you are usually wary of &mdash; the scripts are real, but an agent is doing the driving. And <strong>the README never promises read-only operation</strong>: its own workflow says to fix issues and re-run, the datasheet skill writes into your project folder, and there is no mention of backups. Work on a copy. Your agent also sends project content to its model provider, and component searches reach out to distributors.</p>
-      <p class="meta">1,451 stars &middot; 129 forks &middot; MIT &middot; created 9 March 2026 (about seven months old)</p>
-      <a class="listen" href="https://github.com/aklofas/kicad-happy">kicad-happy on GitHub</a>
+      <p class="work">Local Lens</p>
+      <p class="composer">On-device sorting of a very large photo library &middot; Mac</p>
+      <p class="why"><strong>What it is.</strong> A desktop photo organiser that groups a library by face, by where it was taken and by date, with a timeline and search filters. All the recognition runs on the machine; there is no cloud step and no upload.</p>
+      <p class="why"><strong>Why it is for you.</strong> The photo library is the part of your range where the problem is volume: tens of thousands of files, the interesting ones buried, and a long-standing wish for culling and search that does not involve handing the lot to a service. Face and place clustering is the cheapest way to make a library that size navigable, and doing it offline is the whole point &mdash; this is the one pick here where "local" is the feature rather than a footnote.</p>
+      <p class="why"><strong>To try it.</strong> On the Mac, <code>brew install ashesbloom/locallens/local-lens</code> &mdash; an ordinary Homebrew install, no shell pipe. Point it at a <em>copy</em> of a folder of a few thousand photos, not the library itself, and see what the clustering makes of it. About an hour, most of it waiting for a first index.</p>
+      <p class="risk"><strong>Risk.</strong> AGPL-3.0 &mdash; the licence file is unambiguous, though the README's own file tree still labels it "MIT License", so the repo contradicts itself on paper. <strong>The app is not code-signed</strong>: the manual download route tells you to strip the Gatekeeper quarantine flag with <code>xattr</code> and <code>codesign</code>, which is exactly the instruction to be suspicious of in general. The Homebrew route avoids typing those by hand, and that is the one to use. The README says originals are never modified and that nothing leaves the machine, but it never says whether files are copied, moved or indexed where they lie, and it says nothing either way about analytics &mdash; hence the copy. One developer, 168 stars against 15 forks, sixteen months old; model sizes are not stated, and it mentions dropping to a lighter detection model when memory runs short.</p>
+      <p class="meta">168 stars &middot; 15 forks &middot; AGPL-3.0 &middot; created 27 June 2025 (about sixteen months old)</p>
+      <a class="listen" href="https://github.com/ashesbloom/LocalLens">Local Lens on GitHub</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-electronics&amp;item=aklofas-kicad-happy&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-electronics&amp;item=aklofas-kicad-happy&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-electronics&amp;item=aklofas-kicad-happy&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-photo&amp;item=ashesbloom-locallens&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-photo&amp;item=ashesbloom-locallens&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-photo&amp;item=ashesbloom-locallens&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
     <h2>For your projects</h2>
-    <p class="section-note">Something to learn from rather than install.</p>
+    <p class="section-note">Something to use, not just read &mdash; aimed at Roman Colchester.</p>
 
     <div class="piece">
-      <p class="work">Operation Ironhold</p>
-      <p class="composer">A complete 3D game in one 290&nbsp;KB HTML file &middot; read it, then play it</p>
-      <p class="why"><strong>What it is.</strong> A finished first-person shooter that is a single HTML file of about 290&nbsp;KB. No build step, no asset pipeline, no dependencies beyond three.js from a CDN. Levels are generated procedurally and the sound is Web Audio.</p>
-      <p class="why"><strong>Why it is for you.</strong> This is the one to read rather than use, and it speaks to three things you build at once: three.js, the small self-contained pages you send to people as links, and the video pipeline that records HTML scenes and stitches them with ffmpeg. A whole 3D game with no build step is a direct argument about how much machinery that pipeline actually needs, and the Web Audio side is worth a look on its own given your interest in it. The lesson is the file, not the genre.</p>
-      <p class="why"><strong>To try it.</strong> Read the source on GitHub &mdash; it is one file, so you can scroll the whole architecture in a sitting and see how scene setup, procedural generation and audio are partitioned without a bundler. About 40 minutes to skim properly.</p>
-      <p class="risk"><strong>Risk.</strong> MIT, 102 stars, 28 forks, and just under three months old &mdash; past the one-month line but not by much, so treat it as a thing to study rather than a dependency. It pulls three.js from a CDN, which is fine for reading and worth pinning if you ever borrow the pattern. A single-file 290&nbsp;KB game is a deliberate stunt as much as a design: admire the partitioning, do not conclude that one file is the right answer for your own projects.</p>
-      <p class="meta">102 stars &middot; 28 forks &middot; MIT &middot; created 26 July 2026 (just under three months old)</p>
-      <a class="listen" href="https://github.com/StarKnightt/operation-ironhold">Operation Ironhold on GitHub</a>
+      <p class="work">maplibre-gl-lidar</p>
+      <p class="composer">LiDAR point clouds on a map, in a browser tab &middot; Mac, iPad</p>
+      <p class="why"><strong>What it is.</strong> A MapLibre GL JS plugin that draws LiDAR point clouds through deck.gl. It reads LAS 1.0 to 1.4, LAZ, COPC and EPT datasets, colours points by elevation, intensity, classification or RGB, and gives you point picking, a Z offset, an elevation filter and a classification legend. There is a hosted viewer as well as the library.</p>
+      <p class="why"><strong>Why it is for you.</strong> This is for Roman Colchester, the project that is paused rather than finished, and it is a <em>use</em> rather than a <em>learn from</em>: the hosted viewer takes a <code>?url=</code> parameter, so a published LiDAR tile can be opened and turned around without writing a line. The two controls that matter for archaeology are both there &mdash; filtering by elevation and colouring by classification are how you separate an earthwork from the tree canopy sitting on top of it. And because it is a browser plugin rather than a desktop GIS, the looking-around part works on the iPad, which is where that kind of thinking actually happens.</p>
+      <p class="why"><strong>To try it.</strong> Open the viewer and pass it the URL of a public LAS or LAZ tile for ground you know. <code>npm install maplibre-gl-lidar</code> later if you want it embedded in a page of your own. There is a Docker image too &mdash; no use on an ARM NAS that cannot run Docker, so ignore that line. About 45 minutes to learn what the classification colours are telling you.</p>
+      <p class="risk"><strong>Risk.</strong> MIT, from opengeos &mdash; an established geospatial organisation rather than one person, which is the main reason this is a pick and not a radar item. 205 stars, 33 forks, nine months old, still being released. No maintainer is named in the README. The performance caveat is real and specific: non-COPC LAS and LAZ files load in full, with a default budget of a million points, so a large tile will struggle &mdash; COPC streams by viewport and is the format to look for. EPT servers must support CORS. Loading is from a URL or a local file in the browser and no upload is mentioned, but the README takes no explicit position on where your data goes, so assume nothing about a third-party tile server.</p>
+      <p class="meta">205 stars &middot; 33 forks &middot; MIT &middot; created 10 January 2026 (about nine months old)</p>
+      <a class="listen" href="https://github.com/opengeos/maplibre-gl-lidar">On GitHub</a><a class="score-link" href="https://opengeos.org/maplibre-gl-lidar/viewer/">Open the viewer</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-webdev&amp;item=starknightt-operation-ironhold&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-webdev&amp;item=starknightt-operation-ironhold&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-webdev&amp;item=starknightt-operation-ironhold&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-maps&amp;item=opengeos-maplibre-gl-lidar&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-maps&amp;item=opengeos-maplibre-gl-lidar&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-maps&amp;item=opengeos-maplibre-gl-lidar&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
     <h2>A game</h2>
 
     <div class="piece">
-      <p class="work">Server Survival</p>
-      <p class="composer">Tower defence, except the towers are infrastructure &middot; browser, iPad</p>
-      <p class="why"><strong>What it is.</strong> A 3D browser game in which you play a cloud architect: place and link firewalls, compute, databases and queues to absorb rising traffic and DDoS attacks while watching a budget and a reputation meter. Earn money on requests you serve, lose reputation on the ones you drop; the run ends at zero reputation or minus a thousand dollars. Survival mode, a 25-level campaign and a sandbox.</p>
-      <p class="why"><strong>Why it is for you.</strong> Tower defence is the genre you keep coming back to and have built in yourself, and this is the version where the waves are traffic and the towers are capacity planning &mdash; close enough to your professional day that the intuitions transfer, far enough to still be a game. It opens in a browser with no account, so it is one of the few picks here that genuinely works on the iPad.</p>
-      <p class="why"><strong>To try it.</strong> Open it and play one Survival run, then try the campaign. No install, no build, no account. About 15 minutes to see whether it grips. You can export an architecture as a PNG or share it as a URL, which is a neat touch if you want to show someone a layout.</p>
-      <p class="risk"><strong>Risk.</strong> MIT by its licence file, though the README itself never mentions a licence. 723 forks behind 6,458 stars is a ratio that holds up, and it is eleven months old with CI on every pull request &mdash; but no maintainer is named beyond the account, and <strong>the README says nothing about analytics either way</strong>. It is a game in a browser tab, so the exposure is small. The cloud architecture it teaches is simplified for play; do not take its scaling lessons to work.</p>
-      <p class="meta">6,458 stars &middot; 723 forks &middot; MIT &middot; created 21 November 2025 (about eleven months old)</p>
-      <a class="listen" href="https://github.com/pshenok/server-survival">Server Survival on GitHub</a><a class="score-link" href="https://pshenok.github.io/server-survival/">Play in the browser</a>
+      <p class="work">The Human Box</p>
+      <p class="composer">A civilisation that writes itself &middot; browser, iPad</p>
+      <p class="why"><strong>What it is.</strong> A sandbox in which autonomous people form tribes, invent languages, found religions, fight wars, sign treaties and work their way to computers across 45 eras. Nothing is scripted; there are only world laws. You can watch at speeds from paused to 5000&times;, follow one person and read their life log, or intervene with around 160 tools &mdash; reshape land, send a plague, bless a tribe. It is Rust compiled to WebAssembly and runs on your own device.</p>
+      <p class="why"><strong>Why it is for you.</strong> It is the history interest and the simulation interest in one tab, and it rewards ten minutes as readily as an hour: set it running fast, then pick a single person and read what happened to them. There is a design argument in it too, for the game work &mdash; the whole thing is emergence from rules rather than content that somebody authored, which is the economical answer to "how do you fill a world" that procedural generation keeps promising.</p>
+      <p class="why"><strong>To try it.</strong> Open it in a browser. No sign-up, worlds save locally and can be exported, and the page says the client never calls a hosted simulation. 15 minutes to see if it grips.</p>
+      <p class="risk"><strong>Risk.</strong> <strong>Use the browser version and not the desktop download.</strong> The macOS install the README offers is a <code>curl &hellip; | bash</code> one-liner that also strips the quarantine flag from an unsigned app &mdash; precisely the shape of install this newsletter will not recommend. The browser version needs none of it. MIT, five and a half months old, and 63 stars against 5 forks with one developer: the thinnest numbers in this issue, which is tolerable for a browser tab and would not be for anything touching your files. No version number or roadmap is given, so read that long feature list as ambition as much as inventory, and the README says nothing about analytics on the site itself.</p>
+      <p class="meta">63 stars &middot; 5 forks &middot; MIT &middot; created 7 May 2026 (about five and a half months old)</p>
+      <a class="listen" href="https://github.com/1homsi/thehumanbox">On GitHub</a><a class="score-link" href="https://thehumanbox.com">Play in the browser</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-game&amp;item=pshenok-server-survival&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-game&amp;item=pshenok-server-survival&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-19&amp;cat=gh-game&amp;item=pshenok-server-survival&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-game&amp;item=1homsi-thehumanbox&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-game&amp;item=1homsi-thehumanbox&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-10-22&amp;cat=gh-game&amp;item=1homsi-thehumanbox&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
@@ -200,10 +201,10 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
 
     <table class="table">
       <tr><th>Project</th><th>Why not this week</th></tr>
-      <tr><td><a href="https://github.com/Wing900/ManimCat">ManimCat</a></td><td>Maths animations from a plain-English description, rendered through Manim &mdash; aimed straight at the maths videos. 476 stars, 71 forks, AGPL-3.0. Held back because the interesting half needs <strong>your own paid API key</strong>, the animation side is described by its own author as early (the matplotlib figure side is the mature one), and the maintainer calls himself a hobbyist with little time.</td></tr>
-      <tr><td><a href="https://github.com/inikolax/remiqora">remiqora</a></td><td>A local, offline AI music studio built for Apple Silicon &mdash; stem separation, an arranger, MIDI transcription, a multitrack DAW. MIT, 167 stars, 24 forks. Created 17 September, so it is <strong>only just over the one-month line</strong>, and that many stars in a month is more than I would trust yet. Revisit in November.</td></tr>
-      <tr><td><a href="https://github.com/futureboard/futureboard-studio">futureboard-studio</a></td><td>An open-source DAW with a Rust DSP core and native plugin hosting. MIT, 115 stars, 12 forks, five months old. Twelve forks is thin for something as large as a DAW, so this is one to watch rather than install &mdash; but plugin hosting in Rust is a good read if you are curious how Reaper does it.</td></tr>
-      <tr><td><a href="https://github.com/drandyhaas/KiCadRoutingTools">KiCadRoutingTools</a></td><td>Python and Rust tools to help route boards in KiCad. MIT, 546 stars, 75 forks, ten months old. The natural companion to this week's electronics pick, but one electronics project a week is enough.</td></tr>
+      <tr><td><a href="https://github.com/HUANGCHIHHUNGLeo/claude-real-video">claude-real-video</a></td><td>Turns a video into deduplicated keyframes plus a transcript so a coding agent can actually watch it &mdash; the obvious way to have something check the output of your HTML-scene video pipeline. MIT, 2,250 stars, 202 forks, created 30 June 2026. Held back because I have not read its install closely enough to tell you what the ffmpeg and transcription side pulls in, and because frames and transcript go to a model provider.</td></tr>
+      <tr><td><a href="https://github.com/getopenscreen/openscreen">openscreen</a></td><td>A GPU-accelerated screen recorder with no watermark and no subscription, for Mac and Windows. MIT, 4,743 stars, 312 forks, seven months old. Straightforwardly useful for the channel; left out only for room, and because recording is not a bottleneck you have complained about.</td></tr>
+      <tr><td><a href="https://github.com/sharkdp/cube-composer">cube-composer</a></td><td>A browser puzzle game where each level is solved by composing functions. MIT, 2,049 stars, 86 forks, from a maintainer with a long track record. Not a pick because it is eleven years old and finished rather than new &mdash; but it is exactly your kind of logic puzzle and it plays on the iPad, so it is here as a pointer rather than a find.</td></tr>
+      <tr><td><a href="https://github.com/Kevin-Liu-01/Claude-of-Tanks">Claude-of-Tanks</a></td><td>A browser tank-combat game built end to end by an agent pipeline: 220 vehicles, armour and ballistics modelling, three.js. MIT, 493 stars, 101 forks, created 29 July 2026. Held over because last week's issue already carried a three.js browser shooter and two in a row is a rut.</td></tr>
     </table>
 
     <h2>What I left out, and why</h2>
@@ -211,31 +212,32 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
 
     <div class="thin">
       <ul class="plain">
-        <li><strong>Four genuinely good projects with no stated licence</strong> (rule 2), which is the story of this week. <em>ori-studio</em>, for designing and validating origami models &mdash; the closest thing yet to the origami-software question you have had open, and I cannot recommend it. <em>velxio</em>, which emulates Arduino, ESP32 and Raspberry Pi boards in a browser across 19 real boards, at 3,355 stars &mdash; it would have been the electronics pick and would have run on the iPad. <em>dolce</em>, a notation editor that reads and writes ABC and MusicXML with offline score recognition. And <em>facet</em>, local AI photo scoring and culling. All four report their licence as <code>NOASSERTION</code>. If any of them adds a real licence, it goes straight in.</li>
-        <li><strong>music-to-midi</strong>, MIT and well starred, which converts audio to multitrack MIDI. Ruled out on your kit, not its quality: it needs an NVIDIA GPU with CUDA, explicitly will not fall back to CPU, does not list macOS support at all, and a cold install is about 32&nbsp;GB of models.</li>
-        <li><strong>Browser ports of commercial games</strong> &mdash; Morrowind, GTA Vice City and Touhou all surfaced high in the game searches. Copyright-grey, and they expect you to supply game data. (Rule 3.)</li>
-        <li><strong>MCP servers for Logic Pro and FL Studio.</strong> Both looked well made; you work in Reaper.</li>
-        <li><strong>A WiFi-sensing repository at roughly 99,000 stars</strong>, and others in the same band. I could not separate real interest from bought stars, and nothing in the forks or contributors settled it. (Rule 6.)</li>
-        <li><strong>Everything created in the last 30 days</strong>, however well starred. (Rule 1.)</li>
+        <li><strong>Teaching the children came back completely empty.</strong> A licence-filtered search of educational games in the window returned <em>zero</em> repositories. Not a thin result &mdash; nothing at all. That corner gets searched from a different angle next week, because it is too central to your range to keep missing.</li>
+        <li><strong>dolce, re-checked today and still unlicensed.</strong> It was named here last week as the notation editor that reads and writes ABC and MusicXML with offline score recognition; it has gained stars since and still reports <code>NOASSERTION</code>. It stays out until that changes (rule 2), and homr covers part of the same ground with a real licence.</li>
+        <li><strong>Browser remakes of commercial games</strong> &mdash; a Minecraft web client and a remake of an Age of Sail trading game both ranked high in the game searches. Copyright-grey and they expect you to bring the original data. (Rule 3.)</li>
+        <li><strong>A one-click AI short-video generator at roughly 134,000 stars.</strong> The most-starred thing any search returned all morning, and the clearest example of why stars are the last number to look at: it is the slop end of video, a category you have been sceptical of in writing. (Rule 6.)</li>
+        <li><strong>Electronics, deliberately.</strong> It had its pick last week, and KiCadRoutingTools stays on hold rather than crowding out an area that has had nothing.</li>
+        <li><strong>Everything created in the last 30 days</strong>, however good it looked. (Rule 1.)</li>
       </ul>
     </div>
 
     <div class="aside">
-      <span class="label">Two gaps worth naming</span>
-      <strong>Music was thin on purpose.</strong> Searching ABC notation returned exactly one
-      project in the whole window and it had no licence, so Guitariz is carrying the section alone
-      this week rather than being padded out. <strong>And nothing came back at all</strong> for the
-      maps and LiDAR searches that would serve the Roman Colchester work. Neither is a quiet week in
-      your interests; both are genuinely empty shelves, and they will be searched again from a
-      different angle next time.
+      <span class="label">Two notes on the method</span>
+      <strong>The ratings are still empty.</strong> Nothing has been clicked on either of the first
+      two issues, so this week's mix was chosen from your interests note alone rather than steered
+      by what scored well. A thumbs up or down on anything below is worth more than it looks right
+      now: it is the only signal that tells this newsletter which parts of your range to lean into.
+      <strong>And the spread was forced on purpose</strong> &mdash; music, puzzles, photography, maps
+      and a game, with electronics and vault sync sat out after last week, so the issue could not
+      quietly collapse into the two or three areas where good projects are easiest to find.
     </div>
 
     <div class="aside">
       <span class="label">How I checked each pick</span>
-      Age, licence, who owns it, number of contributors, commits in the last 30 days,
-      releases, and a read of the README for warning signs (installs that pipe a script
-      into your shell, accounts, telemetry, subscriptions). Stars came last, because they
-      are the easiest number to fake.
+      Age, licence, who owns it, forks against stars, how recently it was committed to,
+      and a read of the README for warning signs (installs that pipe a script
+      into your shell, accounts, telemetry, subscriptions, platforms it never claims to
+      support). Stars came last, because they are the easiest number to fake.
     </div>
 
     <div class="feedback">
