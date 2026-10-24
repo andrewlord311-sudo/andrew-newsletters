@@ -258,6 +258,7 @@ Context carried over from Claude's memory on the Mac:
 
 @CLAUDE-context.md
 
+<!-- key-docs:start -->
 ## Key docs (read these before re-deriving anything)
 **Topic:** Andrew's weekly newsletters (PDPT Watch, What's On, Puzzle Weekly, Music Weekly, GitHub Weekly).
 
@@ -267,3 +268,4 @@ Context carried over from Claude's memory on the Mac:
 - Cross-project map: `Claude Projects/Project Index.md`
 
 The repo's `scope/*.md` files are canonical, not the vault.
+<!-- key-docs:end -->

@@ -1,6 +1,6 @@
 # Context for Claude -- andrew-newsletters
 
-_Copied from Claude's memory on Andrew's Mac, 26 September 2026, by `vault-tools/sync-claude-context.py`. Don't edit by hand -- it's regenerated._
+_Copied from Claude's memory on Andrew's Mac, 24 October 2026, by `vault-tools/sync-claude-context.py`. Don't edit by hand -- it's regenerated._
 
 ## About Andrew
 
@@ -98,12 +98,14 @@ Fix: three cloud routines via `RemoteTrigger` (the `schedule` skill), model clau
 
 **Apps Script setup gotchas hit while deploying it, worth reusing:** Safari blocks the OAuth consent popup, so `script.google.com` must be added to Safari → Settings → Websites → Pop-up Windows → Allow *before* authorising. And the function must be **Run manually once to authorise before adding the trigger**, not after — trying it the other way gives "Script authorization failed. Please check your pop-up blocker settings". Also: the emailer trigger must be **7-8am, not 6-7am** — the generator starts 05:00 BST and is told to push by 06:30, so a 6am emailer can fire before the issue exists and send the previous week's, which is exactly the failure the whole cloud-routine move fixed.
 
-`scope/music.md` carries a **copy of Andrew's taste note** from the vault (`Me/Identity/My musical tastes and interests.md`) because a cloud routine cannot read the vault — **if they disagree, the vault note is the truth and the copy needs updating**. It includes a **hard exclusion list that is the whole point of the newsletter**: no opera of any kind (sole exception one or two Wagner *overtures*), no Wagner otherwise, no Berlioz, no Liszt, no Second Viennese School or atonal music, no minimalism (but Arvo Pärt is explicitly liked and does not count as minimalism), no film music. Breaking one is worse than shipping a thin issue.
+`scope/music.md` carries a **copy of Andrew's taste note** from the vault (`Me/Identity/Music taste/My musical tastes and interests.md`) because a cloud routine cannot read the vault — **if they disagree, the vault note is the truth and the copy needs updating**. It includes a **hard exclusion list that is the whole point of the newsletter**: no opera of any kind (sole exception one or two Wagner *overtures*), no Wagner otherwise, no Berlioz, no Liszt, no Second Viennese School or atonal music, no minimalism (but Arvo Pärt is explicitly liked and does not count as minimalism), no film music. Breaking one is worse than shipping a thin issue.
 
 Loves, for reference: Schumann ("Prince of Music") and the whole Schumann family incl. Clara, Mahler, Bartók, Mozart (recently, has the complete quartets in score), Haydn, Schubert, Beethoven, Brahms, Bach's instrumental output, Handel, Dowland/lute, Tchaikovsky/Dvořák/Russian school, Elgar, Walton, Shostakovich, Vaughan Williams, Holst, Arvo Pärt, Judith Weir. Broader interest in compositional technique, form, orchestration and composers in historical context. Sections: listen this week / a composer to explore / something to study / on the radio / live near Colchester. Reuses the Puzzle Weekly rating endpoint for the 👍🙂👎 feedback loop.
 
 
 **PDPT Watch back issues archived into Laura's vault 21.9.26.** `pdpt.html` is overwritten every week, so all 12 published issues (21.7.26 - 21.9.26) were recovered from git history (`git log -- pdpt.html`, newest commit per week so the fixed re-runs win), converted HTML->Markdown, and copied to **Laura Work `Research/PDPT Watch/`** (folder id `1UqmFyNDRomj4KymOkhK6j_j-1jW5vb9f`) as `PDPT Watch YYYY-MM-DD.md` plus a `PDPT Watch — index.md` (table of week + lead story, wiki-links, note that sources aren't hand-checked and that coverage changes via `scope/pdpt.md`). Converter kept at scratchpad `h2md.py` — worth rewriting if the other newsletters (What's On / Music / Puzzle) ever need the same treatment, which is the obvious next ask. Note 31.8 and 1.9 are genuinely different issues, not a duplicate (different lead stories). See [[project-laura-vault]].
+
+**10.10.26 — Music Weekly reads the vault directly.** The routine (`trig_01Su2YNFgG9iE8YJtSLcHKcD`) now also clones `andrew-second-brain`, sparse to `Me/Identity/Music taste/` only (the taste note was moved into that folder so the routine can't see CV/emails), and treats the note as the truth; `scope/music.md` keeps a dated fallback snapshot. New section 3 **New music** = one 21st-century tonal composer a week, no-repeat list `scope/music-new-composers.md` (routine appends + commits). First run with it: Sat 17.10.26 — check it found the note. Depends on the vault→GitHub sync (`vault-tools/sync-second-brain.py`), which was silently blocked 4–10.10 by >100 MB mp4s (now skips files >45 MB) plus intermittent iCloud EPERM under launchd.
 
 ## Memory: project-newsletter-watchdog
 
