@@ -257,3 +257,13 @@ newsletter being generic. Breaking one is worse than shipping a thin issue.
 Context carried over from Claude's memory on the Mac:
 
 @CLAUDE-context.md
+
+## Key docs (read these before re-deriving anything)
+**Topic:** Andrew's weekly newsletters (PDPT Watch, What's On, Puzzle Weekly, Music Weekly, GitHub Weekly).
+
+**Vault:** Second Brain (`andrewlord311-sudo/andrew-second-brain`). In the cloud, attach it with `add_repo` if it isn't in the session.
+- `Claude Projects/Newsletters and monitors/Newsletters/Music newsletter.md`
+- `Claude Projects/Newsletters and monitors/Newsletters/GitHub newsletter - initial view.md`
+- Cross-project map: `Claude Projects/Project Index.md`
+
+The repo's `scope/*.md` files are canonical, not the vault.
