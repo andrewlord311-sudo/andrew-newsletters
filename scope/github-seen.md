@@ -19,6 +19,11 @@ append each pick** (owner/name, date of the issue) and commit it with the issue.
 - ashesbloom/LocalLens — 22.10.26
 - opengeos/maplibre-gl-lidar — 22.10.26
 - 1homsi/thehumanbox — 22.10.26
+- bp-studio/box-pleating-studio — 29.10.26
+- AppsYogi-com/ComposeYogi — 29.10.26 (was on the radar 18.10.26, promoted to a pick)
+- chromatone/chromatone.center — 29.10.26
+- sevenevesai/riso-windowseat — 29.10.26
+- YinkaiYu/topology-gomoku — 29.10.26
 
 ## On the radar (mentioned, not a pick: may be picked later)
 - hi-godot/godot-ai — 18.10.26
@@ -35,6 +40,12 @@ append each pick** (owner/name, date of the issue) and commit it with the issue.
 - getopenscreen/openscreen — 22.10.26 (screen recorder for the channel; held for room)
 - sharkdp/cube-composer — 22.10.26 (function-composition puzzle game; eleven years old and finished, so a pointer not a find)
 - Kevin-Liu-01/Claude-of-Tanks — 22.10.26 (three.js browser game; held over, last week already had one)
+- ec175/spectrometry_public — 29.10.26 (MIT, CPU-friendly Python+ffmpeg science-video engines; held for room)
+- ouestlabs/audio-ui — 29.10.26 (React audio primitives incl. piano roll; a parts bin to build with, not an evening's try)
+- Orama-Interactive/Pixelorama — 29.10.26 (pixel-art editor, also runs on the web; seven years old, so a pointer not a find)
+- tonygoldcrest/sightkick — 29.10.26 (MIT music-education drum trainer; needs electronic drums, hardware he lacks)
+- benjaminbreen/UHS — 29.10.26 (history-teaching sim, direct hit on the KS1 series, but 20 stars / zero forks and LLM-dependent)
+- FavioVazquez/showtime — 29.10.26 (local agent video studio, no API keys; created 28.9.26 so only just over 30 days — revisit)
 
 ## Rejected for licence (NOT blocked — re-pick if they ever add one)
 These were researched and named in an issue's "What I left out" but are not picks.
