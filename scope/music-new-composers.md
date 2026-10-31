@@ -12,3 +12,4 @@ issues and Andrew's taste note.)
 | Dobrinka Tabakova | 1980 | Bulgaria/UK | 2026-10-10 | Listen this week |
 | Dani Howard | 1993 | UK (b. Hong Kong) | 2026-10-17 | New music |
 | Gavin Higgins | 1983 | UK | 2026-10-24 | New music |
+| Cheryl Frances-Hoad | 1980 | UK (Essex) | 2026-10-31 | New music |
