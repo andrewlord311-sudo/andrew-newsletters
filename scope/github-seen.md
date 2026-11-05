@@ -24,6 +24,11 @@ append each pick** (owner/name, date of the issue) and commit it with the issue.
 - chromatone/chromatone.center — 29.10.26
 - sevenevesai/riso-windowseat — 29.10.26
 - YinkaiYu/topology-gomoku — 29.10.26
+- Frieve-A/effetune — 5.11.26
+- sirged/fermata — 5.11.26
+- YishenTu/claudian — 5.11.26
+- ec175/spectrometry_public — 5.11.26 (was on the radar 29.10.26, promoted to a pick)
+- Kevin-Liu-01/Claude-of-Tanks — 5.11.26 (was on the radar 22.10.26, promoted to a pick)
 
 ## On the radar (mentioned, not a pick: may be picked later)
 - hi-godot/godot-ai — 18.10.26
@@ -46,12 +51,16 @@ append each pick** (owner/name, date of the issue) and commit it with the issue.
 - tonygoldcrest/sightkick — 29.10.26 (MIT music-education drum trainer; needs electronic drums, hardware he lacks)
 - benjaminbreen/UHS — 29.10.26 (history-teaching sim, direct hit on the KS1 series, but 20 stars / zero forks and LLM-dependent)
 - FavioVazquez/showtime — 29.10.26 (local agent video studio, no API keys; created 28.9.26 so only just over 30 days — revisit)
+- tskovlund/mcp-score — 5.11.26 (MIT, MCP server: words -> music21 -> MusicXML, live MuseScore editing; README says alpha, wants Python 3.14+ and MuseScore 4.4.2+, no ABC)
+- jub0t/Concat — 5.11.26 (AGPL-3.0, local-first CapCut replacement drivable by an agent over JSON-RPC/MCP; README says Beta, 219 open issues)
+- FavioVazquez/showtime — 5.11.26 (MIT, now 38 days old so eligible at last; held only for room — next in line for the pipeline slot)
+- danilogcrf2-oss/ESP32Synth — 5.11.26 (MIT, 350-voice polyphonic synth for dual-core ESP32; needs hardware on the desk, so never a weekend)
 
 ## Rejected for licence (NOT blocked — re-pick if they ever add one)
 These were researched and named in an issue's "What I left out" but are not picks.
 All reported `NOASSERTION` on the date shown. Check again before dismissing.
 - zacharyfmarion/ori-studio — 19.10.26 — origami design/validation (answers a live question of his)
-- davidmonterocrespo24/velxio — 19.10.26 — browser Arduino/ESP32/Pi emulator, 3,355 stars
-- lodebar2026/dolce — 19.10.26, re-checked 22.10.26 (still NOASSERTION) — notation editor, OMR, reads/writes ABC + MusicXML
-- ncoevoet/facet — 19.10.26 — local AI photo scoring and culling
+- davidmonterocrespo24/velxio — 19.10.26, re-checked 5.11.26 (still NOASSERTION) — browser Arduino/ESP32/Pi emulator, 3,355 stars
+- lodebar2026/dolce — 19.10.26, re-checked 22.10.26 and 5.11.26 (still NOASSERTION) — notation editor, OMR, reads/writes ABC + MusicXML
+- ncoevoet/facet — 19.10.26, re-checked 5.11.26 (still NOASSERTION) — local AI photo scoring and culling
 
