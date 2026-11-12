@@ -136,8 +136,25 @@ returns healthy JSON (15,000 core / 30 search, i.e. authenticated, not the 60/10
 used to claim), so **the prompt's "if you cannot reach api.github.com, do not publish" check
 passes and then every search fails.** Judge research by an actual search, not by `rate_limit`.
 
-**Use the GitHub MCP tools instead** -- `mcp__github__search_repositories`. They are not
-repo-scoped and take the full search syntax:
+**Corrected again 12.11.26: use the `gh` CLI. The MCP search tools are usually not there.**
+This section said to use `mcp__github__search_repositories`. On both 5.11.26 and 12.11.26 that
+tool was **not in the session's toolset at all** -- the harness states plainly that the MCP
+`search_*` tools are unavailable and that search goes through the `gh` CLI. Two runs in a row have
+now read this paragraph, gone looking for a tool that is not there, and lost time. What works:
+
+    gh api -X GET search/repositories -f q='topic:midi license:mit created:<2026-10-13 pushed:>2026-10-25 stars:>20' \
+      -f sort=stars -f order=desc -f per_page=8
+
+Pipe it through `jq` and cut the output, or a single query will cost thousands of tokens:
+
+    | jq -r '.items[] | "\(.full_name) | #\(.stargazers_count) f\(.forks_count) | \(.license.spdx_id // "NONE") | c:\(.created_at[0:10]) p:\(.pushed_at[0:10]) | \(.description)"' | cut -c1-260
+
+**`repo:owner/name` is how you confirm one repo's licence, forks and dates** -- it returns the
+full item object, and it is the *only* way, because `gh api repos/{owner}/{repo}` for somebody
+else's repo returns null (same binding as `curl`, confirmed 12.11.26). Rate limit is 30
+searches/minute, so prefer many small licence-filtered queries.
+
+If the MCP search tools ever do appear, they take the same syntax:
 
     query: "topic:midi license:mit created:2025-06-01..2026-09-19 pushed:>2026-10-05 stars:>40"
     sort: stars   order: desc   perPage: 8   minimal_output: true
