@@ -14,3 +14,4 @@ issues and Andrew's taste note.)
 | Gavin Higgins | 1983 | UK | 2026-10-24 | New music |
 | Cheryl Frances-Hoad | 1980 | UK (Essex) | 2026-10-31 | New music |
 | Matthew Taylor | 1964 | UK | 2026-11-07 | New music |
+| Jonathan Leshnoff | 1973 | USA | 2026-11-14 | New music |
