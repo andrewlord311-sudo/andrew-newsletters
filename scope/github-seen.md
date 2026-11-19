@@ -34,6 +34,11 @@ append each pick** (owner/name, date of the issue) and commit it with the issue.
 - kitao/playload — 12.11.26
 - MartinDelophy/ai-video-editor — 12.11.26 (Timeline Studio)
 - HenryBao912/WikiSpeedrun — 12.11.26
+- ya-luotao/dacapo — 19.11.26
+- Duecki1/CalibRaw — 19.11.26
+- vijaypemmaraju/rondocode — 19.11.26
+- vincentsch/explainroo — 19.11.26
+- Eray114514/Deep-Space — 19.11.26 (code MIT; bundled music non-commercial only)
 
 ## On the radar (mentioned, not a pick: may be picked later)
 - hi-godot/godot-ai — 18.10.26
@@ -65,6 +70,13 @@ append each pick** (owner/name, date of the issue) and commit it with the issue.
 - gereleth/hexapipes — 12.11.26 (MIT, browser hex-pipe dailies; created 2022, a pointer not a find)
 - Arkalogy/best-photo-picker — 12.11.26 (MIT, local quality scoring + perceptual dedup + per-person boost; only 1 fork, too thin to send him to)
 - Dragonboon/Trispark — 12.11.26 (MIT, match-3 toolkit for Godot 4; noted from description only, a toolkit is not a weekend)
+- bootgs/utils — 19.11.26 (Apache-2.0, 300+ typed utilities for Google Apps Script; README never shows how the built code reaches a GAS project, clasp only a badge; 44 open issues vs 31 stars)
+- kobimusic/copisteria — 19.11.26 (Apache-2.0, OMR -> MusicXML with a learned evidence model; homr already took the OMR slot 22.10.26, and 25 stars / 4 forks; description only, no README read)
+- franklindhansen/glisscore — 19.11.26 (AGPL-3.0, "score videos made easy"; created 15.10.26 so 35 days, four-word description — next in line for the pipeline slot if a README holds up)
+- M-Abozaid/esp32-c3-adblock — 19.11.26 (MIT, 3,612 stars/413 forks, Pi-hole-class DNS blocker on a $2 ESP32-C3 — answers the Docker-less NAS; needs a board and a flashing toolchain, so a project not a weekend; description only)
+- dhtoolbox/itopos — 19.11.26 (Apache-2.0, Pleiades gazetteer mapped through time in a browser; 0 stars/0 forks)
+- gom00n/AutoGeoReferencingPublic — 19.11.26 (MIT, auto-georeferences scanned 1940s 1:20,000 map sheets — the exact old-maps problem; 0 stars/0 forks, research code)
+- gigliof/bach-to-basics — 19.11.26 (MIT, browser piano trainer with rich practice tools; lost the slot to dacapo on install cost — FastAPI backend + pnpm + Python, iPad only over LAN, instruments from external CDNs)
 
 ## Rejected for licence (NOT blocked — re-pick if they ever add one)
 These were researched and named in an issue's "What I left out" but are not picks.
@@ -96,3 +108,23 @@ All reported `NOASSERTION` on the date shown. Check again before dismissing.
 - davidmonterocrespo24/velxio — still NOASSERTION, now 3,702 stars.
 - ncoevoet/facet — still NOASSERTION.
 - mdedwards/slippery-chicken — no licence at all; algorithmic composition in Common Lisp.
+
+## Rejected for a safety rule, 19.11.26
+- h4ckf0r0day/obscura (36,425★, Apache-2.0), CloakHQ/CloakBrowser (32,977★, MIT), lexmount/moli
+  (24,035★, Apache-2.0), jackwener/OpenCLI (31,175★, Apache-2.0) — headless browsers and
+  drop-in Playwright replacements sold on passing bot detection / using your logged-in browser.
+  Rule 3 (evasion). These will keep topping every `playwright` search; they are not pickable.
+- sheng-neo/ra2-web (MIT) — browser RTS engine reading a commercial title's data files, bring your
+  own copy. Claudio5702/Cristalis (NOASSERTION) — static recompilation of an Xbox 360 game as a PC
+  port. sganggs/Stronghold-Protocol (GPL-3.0) — unofficial fan remake of a commercial game. Rule 3.
+- A cluster of 50-star, zero-fork, no-licence "2026" trainers (nosejaja500/HoDoKu-Enhanced-Edition,
+  efeunal-cpu/HoDoKu-Reference-Vault, christianqWP/sudoku-mind-matrix,
+  timeparadox199-droid/matrix-solver-lab, Neo-FullStack/linear-equation-arena,
+  HIBA0610/tribble-three-letter-word-trainer) — rules 2 and 6; same shape across different accounts.
+
+## Licence re-checks, 19.11.26 (all still NOASSERTION / none)
+- paulrosen/abcjs — still NOASSERTION (pushed 18.11.26). Fifth week. The one that matters most.
+- lodebar2026/dolce — still NOASSERTION (5th week running).
+- ncoevoet/facet — still NOASSERTION, now 392 stars.
+- zacharyfmarion/ori-studio — still NOASSERTION (origami design/validation; answers a live question).
+- seehiong/noteflow — no licence (web music IDE, text notation, 197 stars).
