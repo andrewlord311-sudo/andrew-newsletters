@@ -15,3 +15,4 @@ issues and Andrew's taste note.)
 | Cheryl Frances-Hoad | 1980 | UK (Essex) | 2026-10-31 | New music |
 | Matthew Taylor | 1964 | UK | 2026-11-07 | New music |
 | Jonathan Leshnoff | 1973 | USA | 2026-11-14 | New music |
+| Andrea Tarrodi | 1981 | Sweden | 2026-11-21 | New music |
