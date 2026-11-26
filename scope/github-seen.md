@@ -39,6 +39,11 @@ append each pick** (owner/name, date of the issue) and commit it with the issue.
 - vijaypemmaraju/rondocode — 19.11.26
 - vincentsch/explainroo — 19.11.26
 - Eray114514/Deep-Space — 19.11.26 (code MIT; bundled music non-commercial only)
+- Squarebow/Orfeo — 26.11.26
+- agharsallah/esp-labs-web — 26.11.26
+- vpavlenko/rawl — 26.11.26
+- Neywa-Labs/mlx-audio — 26.11.26
+- fjaeckel/seriesoftubes — 26.11.26
 
 ## On the radar (mentioned, not a pick: may be picked later)
 - hi-godot/godot-ai — 18.10.26
@@ -77,6 +82,32 @@ append each pick** (owner/name, date of the issue) and commit it with the issue.
 - dhtoolbox/itopos — 19.11.26 (Apache-2.0, Pleiades gazetteer mapped through time in a browser; 0 stars/0 forks)
 - gom00n/AutoGeoReferencingPublic — 19.11.26 (MIT, auto-georeferences scanned 1940s 1:20,000 map sheets — the exact old-maps problem; 0 stars/0 forks, research code)
 - gigliof/bach-to-basics — 19.11.26 (MIT, browser piano trainer with rich practice tools; lost the slot to dacapo on install cost — FastAPI backend + pnpm + Python, iPad only over LAN, instruments from external CDNs)
+
+- EarthmanMuons/whatchord — 26.11.26 (0BSD, hosted browser chord identification + harmony explorer with live MIDI; 26 stars/3 forks, lost the slot to Orfeo on breadth)
+- Agustin-Delgado/repath — 26.11.26 (MIT, browser mixed-signal circuit simulator, Rust/WASM + Svelte; 21 stars/3 forks and NO hosted build — becomes a pick the day a live demo appears)
+- nico579/lidar2map — 26.11.26 (GPL-3.0, offline archaeological LiDAR relief maps, 27 countries; 23 stars/1 fork, raster/vector layers France-centric)
+- Rastapopolix/tessera — 26.11.26 (GPL-3.0, generative composing firmware for the M-Vave FM-1; 38 stars/7 forks, created 11.10.26 — needs the hardware, so never a weekend)
+- tscircuit/tscircuit — 26.11.26 (MIT, electronics designed in TypeScript/React, 3,079 stars/363 forks; going since 2024, so a pointer not a find)
+
+## Rejected for a safety rule or star pattern, 26.11.26
+- debpalash/VoiceStudio (118,484★, AGPL-3.0, created 9.4.26), OpenMontageInc/OpenMontage (83,389★,
+  AGPL-3.0, created 29.3.26), harry0703/MoneyPrinterTurbo (145,751★, MIT) — all cover the same ground
+  as mlx-audio (local TTS / one-click video). Rule 6 on counts that size on projects that young, plus
+  his stated dislike of topic-in-video-out slop. Will keep topping every `text-to-speech` search.
+- QuipNetwork/quip-solver (11,585★ / 163 forks, AGPL-3.0) and QuipNetwork/xquad (5,580★ / 17 forks) —
+  surfaced by the `quantum-computing` search; a crypto mining stack. Rule 3, and a 71:1 star:fork ratio.
+- Ka1-S/LYNX-SHARE (1,096★ in six weeks, AGPL-3.0, created 12.10.26) — DAW rebuilding FL Studio's
+  workflow with .flp import. Rule 3 (clone of a company's branded interface) + rule 6 (velocity).
+- IllegalCreed/type-pal (345★, GPL-3.0) — TypeScript remake of the 1995 commercial game PAL. Rule 3.
+- joakimeriksson/fm1-emu — re-checked: now 45 days old so rule 1 is clear, but it still needs the
+  manufacturer's own firmware (rule 3 grey area). Unchanged answer.
+
+## Licence re-checks, 26.11.26 (all still NOASSERTION / none)
+- paulrosen/abcjs — still NOASSERTION (pushed 18.11.26). Sixth week. Still the one that matters most.
+- lodebar2026/dolce — still NOASSERTION (6th week), pushed 26.11.26, now 100 stars.
+- ncoevoet/facet — still NOASSERTION, now 407 stars.
+- zacharyfmarion/ori-studio — still NOASSERTION, pushed 26.11.26 (origami design/validation).
+- davidmonterocrespo24/velxio — still NOASSERTION, now 3,883 stars (browser Arduino/ESP32 emulator).
 
 ## Rejected for licence (NOT blocked — re-pick if they ever add one)
 These were researched and named in an issue's "What I left out" but are not picks.

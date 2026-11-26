@@ -86,131 +86,290 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
 <body>
 <div class="wrap">
 
-
   <div class="masthead">
     <p class="kicker">GitHub Weekly</p>
     <h1>Things worth trying</h1>
-    <p class="issue">Week of 19 November 2026</p>
+    <p class="issue">Week of 26 November 2026</p>
   </div>
 
   <div class="body">
 
-    <p class="lede">Three of this week's five are a web address and nothing else &mdash; open the tab and
-    you are using them. That is deliberate. Music carries a thumbs-down and a shrug beside its two ups,
-    and the pattern in what did badly is that it wanted installing before it could be judged, so both
-    music picks this week are hosted pages you can abandon in ten seconds. Video stays in the projects
-    slot on the strength of its one rating, and this week's candidate is the closest thing yet to the
-    pipeline you already run. Photography gets one more go: last week's pick drew no rating at all, so
-    rather than read that as a no, the slot goes to something different in kind &mdash; an editor rather
-    than a search tool, and specifically the sort of software you would otherwise rent. Five picks,
-    five corners of the range, no repeats. Nothing here was downloaded or run: every claim is what the
-    project says about itself, weighed against forks, open issues and when it was last touched.</p>
+    <p class="lede">The ratings have started to say something clear enough to act on. Music is the
+    best-rated area this newsletter has &mdash; three ups, two shrugs and one down &mdash; so it keeps two
+    slots. Games have never been rated below a shrug, so the game slot is a real find this week rather
+    than a filler. Video has one up and one shrug, so it keeps the projects slot. Photography has
+    exactly one rating in its whole history and it is a thumbs-down, so <strong>there is no photography
+    pick this week</strong>: that is a decision from your ratings, not a week with nothing in it. In its
+    place, electronics &mdash; the thing you say you want to teach and which has never had a pick at all.
+    Five picks, four areas, no repeats. Two of them are a web address and nothing else. Nothing was
+    downloaded or run: every claim below is what a project says about itself, weighed against forks,
+    open issues and when it was last touched &mdash; except the links, which I did open to check they load.</p>
 
     <h2>Try this weekend</h2>
-    <p class="section-note">Two browser tabs and one real application. Reading the grand staff, a RAW developer, and a synth you write rather than click.</p>
+    <p class="section-note">A real application for the Mac, and two browser tabs. Harmony you can see, and a chip you can learn without owning it.</p>
 
     <div class="piece">
-      <p class="work">Da Capo</p>
-      <p class="composer">Grand-staff reading drills that know what you are bad at &middot; browser, nothing installed</p>
-      <p class="why"><strong>What it is.</strong> Sight-reading practice in a web page. Timed note-recognition on the grand staff, then intervals, chords, rhythms and continuous sight-reading; a weakness heatmap that shows which notes and keys you actually hesitate on; a daily plan and a practice log; Hanon-style scale and exercise work; ear training; and 31 public-domain pieces to read, or your own <strong>MusicXML</strong> dropped in. A MIDI keyboard is recommended but optional &mdash; the computer keyboard and an on-screen piano both work &mdash; and there are wait and rhythm modes for playing along.</p>
-      <p class="why"><strong>Why it is for you.</strong> You read scores for pleasure and you are trying to get back to classical piano, and the thing that stands between those two is fluency on the grand staff rather than any shortage of repertoire. This is the drill for exactly that, and the heatmap is the part worth having: it turns &ldquo;I'm slow at reading&rdquo; into &ldquo;I'm slow on ledger lines and in four flats&rdquo;, which is a practisable fact. It takes your own MusicXML, so the pieces you are studying can become the drill rather than someone else's exercises. And it is the right shape for the hour after dinner: open a tab, do five minutes, close it. The children's version of the same argument is obvious, but note the honest limit below before you hand it to the iPad.</p>
-      <p class="why"><strong>To try it.</strong> Go to <code>playdacapo.com</code>. That is the entire instruction &mdash; nothing to install, no account. Use Chrome or Edge on the Mac if you want to plug a MIDI keyboard in, because Web MIDI exists nowhere else. Two minutes to the first drill; your practice history lives in the browser's own storage (IndexedDB) and can be exported to a file. Signing in is optional and only exists to sync between your own devices.</p>
-      <p class="risk"><strong>Risk.</strong> MIT, stated in the repository, with third-party pieces under their own licences (VexFlow MIT, the Bravura music font under the SIL Open Font Licence, Verovio LGPL-3.0-or-later) &mdash; a clean set, and worth knowing if you ever lift code out of it. The shape is the weak point: <strong>10 stars, 2 forks, 8 open issues</strong>, created 24 September and pushed two days ago. That is one person's project, two months old, with essentially nobody else in the code; the saving grace is that nothing is installed, so the cost of it being abandoned is a closed tab. It calls itself <strong>version 0.2.0</strong> and says so about its own edges: the thresholds for judging loudness, pedal and key-hold time are provisional, and several translations are still awaiting native-speaker review. <strong>The iPad is not promised.</strong> The project never addresses touch input, and Web MIDI is desktop Chrome or Edge only &mdash; so it will probably open on the iPad with the on-screen piano and may well be fiddly; treat tablet use as untested. On your data it is as good as this gets: practice stays in your browser, nothing is sent to a model, and the site counts visits without cookies. There is an Apple app built from the same code but it is not on the App Store.</p>
-      <p class="meta">10 stars &middot; 2 forks &middot; 8 open issues &middot; MIT &middot; created 24 September 2026 (8 weeks old) &middot; last pushed 17 November 2026</p>
-      <a class="listen" href="https://playdacapo.com/">Start a drill</a><a class="score-link" href="https://github.com/ya-luotao/dacapo">On GitHub</a>
+      <p class="work">Orfeo</p>
+      <p class="composer">MIDI in, harmony out &middot; a desktop app for the Mac (and the Windows PC)</p>
+      <p class="why"><strong>What it is.</strong> A cross-platform app that takes a MIDI file apart and
+      shows you what is in it. Notes fall onto a keyboard that lights up, coloured by track and by hand;
+      tempo changes without changing pitch; there is a loop region, a metronome, a count-in and a mixer.
+      Around that sit the parts that make it more than a player: a <strong>Chord Explorer</strong>, a
+      <strong>Scale Explorer with a circle of fifths</strong>, a chord prompter, and
+      <strong>real-time chord detection</strong> that names the harmony as the music goes past. It reads
+      MIDI, <strong>MusicXML</strong>, Guitar Pro, Capella and karaoke files, has a note editor that
+      saves edits as a new <code>_ORFEO_vN.mid</code> rather than touching your original, and exports to
+      MP3 or WAV. Three sound engines, including SpessaSynth with soundfonts.</p>
+      <p class="why"><strong>Why it is for you.</strong> You study scores for pleasure &mdash; Mozart's
+      quartets in score, Brahms and Bach avoiding cadence, pandiatonicism &mdash; and the gap between
+      reading a score and hearing what the harmony is doing is exactly what real-time chord detection
+      closes. Drop in a MIDI of a movement you are working through and you get a running first-pass
+      harmonic analysis against the sound, which is a different and faster thing from working it out at
+      the piano. The MusicXML import matters for the same reason: your own material, not someone's
+      exercise set. And the second use is the one you will probably get more hours out of &mdash; a
+      slow-it-down, loop-a-bar, play-along tool for getting back to classical piano, with your own MIDI
+      keyboard if you want it and the mouse if you do not. This is also one of the very few picks that
+      is genuinely useful on the <strong>Windows PC</strong>, which is where your music work actually
+      happens.</p>
+      <p class="why"><strong>To try it.</strong> Download a build from the project's releases &mdash; a
+      <code>.dmg</code> for Apple Silicon or Intel on the Mac, an installer, a portable build or the
+      Microsoft Store on Windows. No <code>curl | sh</code>, no <code>sudo</code>, no account, no
+      subscription. Twenty minutes: open it, drop in a MIDI file, turn on chord detection, and try the
+      scale explorer on something you know well. Extra soundfonts are an optional download if the
+      default General MIDI sound annoys you. Building from source instead is Node 20 LTS and
+      <code>npm install</code>.</p>
+      <p class="risk"><strong>Risk.</strong> GPL-3.0-or-later, stated in the repository, with GSAP
+      bundled under a separate additional-permission grant &mdash; worth knowing only if you ever lift
+      code out of it. <strong>788 stars, 61 forks, 3 open issues</strong>, created 13 June 2026 and
+      pushed yesterday: five months old, active, and a healthy fork-to-star ratio, which is the number
+      I trust here. Three open issues against 788 stars is unusually tidy &mdash; either very well kept
+      or issues get closed quickly, and I cannot tell which from the outside. The honest limits are the
+      ones it states itself: <strong>chord transcription is beta</strong>, so treat a detected chord as
+      a first pass and not an authority &mdash; which is the one caveat that matters for the use I am
+      recommending it for; the Native sound engine is beta and Windows-only; the Linux builds are
+      experimental. <strong>No iPad and no browser version</strong> &mdash; this is a desktop
+      application, and nothing in the project claims otherwise. On your data it is as clean as these
+      get: the project says no account and no telemetry, MIDI is processed entirely on your device, and
+      the internet is used only to fetch soundfonts, check for updates or open a link.</p>
+      <p class="meta">788 stars &middot; 61 forks &middot; 3 open issues &middot; GPL-3.0-or-later &middot; created 13 June 2026 (5 months old) &middot; last pushed 25 November 2026</p>
+      <a class="listen" href="https://orfeo.cc">Orfeo's own site</a><a class="score-link" href="https://github.com/Squarebow/Orfeo">On GitHub</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-music&amp;item=ya-luotao-dacapo&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-music&amp;item=ya-luotao-dacapo&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-music&amp;item=ya-luotao-dacapo&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-music&amp;item=squarebow-orfeo&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-music&amp;item=squarebow-orfeo&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-music&amp;item=squarebow-orfeo&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
     <div class="piece">
-      <p class="work">CalibRaw</p>
-      <p class="composer">A RAW developer you own instead of rent &middot; Mac (Apple Silicon or Intel), downloadable build</p>
-      <p class="why"><strong>What it is.</strong> A free, open-source RAW photo editor: sliders, tone curves, colour grading, a colour mixer, masks (brush, gradient, shape), lens correction, HDR merge, focus stacking, LUT import, presets, tiled export and JPEG XL output. RAW decoding goes through LibRaw and Rawler, so the usual alphabet is covered &mdash; <code>.arw</code>, <code>.cr2</code>, <code>.cr3</code>, <code>.nef</code>, <code>.raf</code>, <code>.dng</code>, <code>.orf</code> &mdash; alongside JPEG, PNG, HEIC and TIFF. The AI tools (subject, sky, depth and object masks, remove, denoise) run on your own machine. Editing is non-destructive: adjustments live in small <code>.calibraw</code> JSON sidecars next to the photo. There is also a headless command-line mode and an &ldquo;Edit Replay&rdquo; that exports your editing session as a 30fps MP4.</p>
-      <p class="why"><strong>Why it is for you.</strong> This is squarely in the category you said you wanted: software that is normally expensive, and specifically normally a subscription. A large personal photo library plus a dislike of renting your own tools is the exact case this answers, and the two design decisions that matter for a library you intend to keep for decades are both the right way round &mdash; sidecar files mean your originals are never touched and your edits are plain readable JSON rather than a proprietary catalogue, and the AI masks run locally so culling and tidying a shoot does not become an upload. The headless CLI is the part that will interest you a week later: a batch of edits applied from a script is the kind of job your Python-on-the-Mac habits already fit. Keep this on the Mac, where Metal does the work; the Windows machine is the one short of memory.</p>
-      <p class="why"><strong>To try it.</strong> There are prebuilt downloads &mdash; a macOS <code>.zip</code> for Apple Silicon or Intel, with Flathub, AppImage and <code>.deb</code> on Linux, an installer or portable build on Windows, and Play Store, F-Droid or <code>.apk</code> on Android. No <code>curl | sh</code>, no <code>sudo</code>, no account and no subscription. Building from source is Cargo and Rust 1.92+ if you would rather. An evening: open one shoot, try a sky mask and an export, and watch what the first AI tool downloads. GPU work needs Metal on the Mac (Vulkan or Direct3D 12 elsewhere) &mdash; OpenGL-only drivers are not supported.</p>
-      <p class="risk"><strong>Risk.</strong> <strong>GPL-3.0-or-later</strong>, which is stricter than most things in this newsletter &mdash; fine for using it, something to read properly before you reuse any of its code in your own projects. 344 stars, 27 forks, 20 open issues, created 13 July and pushed yesterday, so four months old and actively worked on; the fork count is on the low side for the stars, which usually means plenty of users and few contributors, i.e. one maintainer carrying it. There is <strong>no beta or early-access label anywhere</strong>, which on a four-month-old photo editor is a mild warning rather than a reassurance: keep it off anything irreplaceable until you have seen it round-trip a shoot you do not care about. On data the project is explicit and credible: nothing leaves your device, the only network access is downloading the AI models or the ONNX runtime, and that happens once, only after you agree, and is verified by SHA-256 before it runs offline. <strong>It does not say how big those models are</strong>, so expect an unknown download the first time you touch a mask. Two practical notes: the macOS build arrives as a plain <code>.zip</code>, so expect Gatekeeper to want convincing the first time; and no model, lens-profile or raw-decoder coverage claim should be taken on trust for an unusual camera &mdash; try your own files early.</p>
-      <p class="meta">344 stars &middot; 27 forks &middot; 20 open issues &middot; GPL-3.0-or-later &middot; created 13 July 2026 (4 months old) &middot; last pushed 18 November 2026</p>
-      <a class="listen" href="https://github.com/Duecki1/CalibRaw">On GitHub</a>
+      <p class="work">ESP32 Labs</p>
+      <p class="composer">A chip's whole bench guide as a web app, simulators included &middot; browser, so the iPad counts</p>
+      <p class="why"><strong>What it is.</strong> Thirty-two hands-on lessons on the ESP32-S3,
+      rebuilt as a React app you read in a tab: a live pinout, a 3D model of the board, interactive
+      simulators for the lessons, a <strong>simulated serial monitor that answers commands you type</strong>,
+      a reader that walks the companion firmware's source, a bench log, and a readable companion to the
+      chip's datasheet. In eleven languages. The important part for you is that
+      <strong>the lessons and the simulators work with no board plugged in</strong> &mdash; the project
+      says so explicitly; only the source-code reader needs the sibling firmware checkout to have
+      anything in it.</p>
+      <p class="why"><strong>Why it is for you.</strong> &ldquo;I want to teach electronics&rdquo; has
+      been on your list for a long time and your electronics notes are still stubs, and the reason is
+      the usual one: teaching electronics appears to need a bench, parts and a soldering iron before
+      anyone learns anything. This is the version that does not. It is a browser tab, so it works on the
+      <strong>iPad</strong> &mdash; which is where you actually sit with ideas &mdash; and the
+      simulators mean you can read a lesson, poke the thing, and find out whether you want to teach from
+      it, before buying a single component. It is also a good model to steal from if you ever build your
+      own teaching material: lessons with a simulator beside them is precisely the shape your Nuggets
+      games already take, applied to a subject you know and the children do not.</p>
+      <p class="why"><strong>To try it.</strong> Open <code>ionloft.com/esp-labs/</code>. That is all
+      &mdash; nothing installed, no account, and your progress and last-opened lesson live in the
+      browser's own storage. <strong>One correction worth having:</strong> the README's hosted address
+      (a Vercel one) returns a payment-required error as of this morning &mdash; I checked both &mdash;
+      so use the project's own site above, which is live. Running it locally is Node 24.14+, pnpm 11 and
+      two repositories cloned side by side, which you do not need in order to read the lessons. Half an
+      hour to know whether it is a teaching resource for you.</p>
+      <p class="risk"><strong>Risk.</strong> MIT, stated in the repository; third-party libraries and
+      the separate firmware repository carry their own licences. <strong>1,012 stars, 153 forks, 3 open
+      issues</strong>, created <strong>21 October 2026</strong> and pushed on 23 November. Two cautions
+      on that: it is <strong>36 days old</strong>, only just past this newsletter's 30-day line, and a
+      thousand stars in five weeks is fast &mdash; though 153 forks is in proportion to it, which is
+      the reassuring half. <strong>Unfinished in places, and it says so:</strong> two of the Wi-Fi
+      lessons and the entire Sensors track are planned rather than written, and Espressif's reference
+      text is included only when the reference file is present at build time, otherwise citations link
+      out to the official PDFs. It is not affiliated with Espressif, and the English source text is
+      used even in the translated interfaces. The hands-on half assumes specific hardware &mdash; an
+      ESP32-S3 DevKitC-1, a 1.9&Prime; TFT, buttons, and extra modules for the RFID and sound lessons
+      &mdash; and flashing firmware needs a real board, so budget for a shopping list if you go past
+      reading. On data: no account, progress stays in your browser, and the project says the Vercel
+      analytics and speed-insights scripts load only in Vercel builds, not in local or plain ones. The
+      project does not say whether the &ldquo;Internet &amp; AI&rdquo; Wi-Fi lesson needs an API key, so
+      assume it might.</p>
+      <p class="meta">1,012 stars &middot; 153 forks &middot; 3 open issues &middot; MIT &middot; created 21 October 2026 (36 days old) &middot; last pushed 23 November 2026</p>
+      <a class="listen" href="https://ionloft.com/esp-labs/">Open the guide</a><a class="score-link" href="https://github.com/agharsallah/esp-labs-web">On GitHub</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-photo&amp;item=duecki1-calibraw&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-photo&amp;item=duecki1-calibraw&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-photo&amp;item=duecki1-calibraw&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-electronics&amp;item=agharsallah-esp-labs-web&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-electronics&amp;item=agharsallah-esp-labs-web&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-electronics&amp;item=agharsallah-esp-labs-web&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
     <div class="piece">
-      <p class="work">rondocode</p>
-      <p class="composer">Write the synth and the pattern as text, hear it immediately &middot; browser, built for a phone</p>
-      <p class="why"><strong>What it is.</strong> A live-coding environment for sound in a browser tab. You write synths &mdash; oscillators, filters, envelopes &mdash; and patterns in a terse mini-notation, in either JavaScript or <code>rondo</code>, a small language that compiles to JavaScript, and a from-scratch AudioWorklet engine plays them as you type. Sampling is optional. It can bounce a render to a file offline, and there is an optional MCP bridge so a coding agent can drive the session, off unless you set it up. The author's own framing is that it is built to be played on a phone.</p>
-      <p class="why"><strong>Why it is for you.</strong> Generative music, Web Audio and writing music as code are three separate interests of yours that this collapses into one tab, and it arrives without the thing that usually stops you: no DAW to open, no plug-in to install, nothing to configure before the first sound. For a composer who writes MIDI from Python and has played with Penrose tiling as a score, a pattern language with a real DSP engine underneath is a sketchpad rather than a toy &mdash; a place to try a process, hear it in ten seconds and throw it away. The phone-first design is the practical bit: this is a thing to poke at away from the desk. And if it sticks, the MCP bridge is an obvious experiment for the Claude Code habit.</p>
-      <p class="why"><strong>To try it.</strong> Open <code>rondocode.com</code>, load an example, change a number, hear it change. Nothing to install and no account or key mentioned anywhere. Ten minutes to a noise you made, an evening if you start reading the <code>rondo</code> syntax properly. Running your own copy is <code>pnpm install</code> and <code>pnpm dev</code>, which you do not need in order to try it.</p>
-      <p class="risk"><strong>Risk.</strong> MIT. 74 stars, 9 forks, 13 open issues, created 21 July and last pushed on 11 November &mdash; four months old, one author, and eight days since the last commit, which is fine but not the daily activity of this issue's larger picks. <strong>Safari and the iPad are a known soft spot rather than a claim:</strong> the project ships an iOS and Safari audio diagnostics page at <code>/diag</code>, which tells you Safari audio has given trouble, and nothing anywhere promises tested tablet support &mdash; so if the iPad is the device you had in mind, test it with that page before you invest an evening. Two limitations the author states plainly, and they are the honest kind: an offline bounce is not bit-identical to what you just heard, because peaks above 0.89 get scaled down, and renders using <code>sing()</code> are not reproducible across machines. No accounts, keys or telemetry are mentioned; the optional agent bridge is off by default, which is the right default. It is a sketchpad, not a DAW &mdash; nothing here replaces Reaper, and it does not pretend to.</p>
-      <p class="meta">74 stars &middot; 9 forks &middot; 13 open issues &middot; MIT &middot; created 21 July 2026 (4 months old) &middot; last pushed 11 November 2026</p>
-      <a class="listen" href="https://rondocode.com/">Make a sound</a><a class="score-link" href="https://github.com/vijaypemmaraju/rondocode">On GitHub</a>
+      <p class="work">Rawl</p>
+      <p class="composer">Western scores in twelve colours &middot; browser, drop a MIDI file on it</p>
+      <p class="why"><strong>What it is.</strong> A piano-roll viewer for harmony. You drop a MIDI file
+      onto a web page and get it back as a piano roll where <strong>the twelve pitch classes are twelve
+      colours keyed to scale degree</strong>, so a modulation is a change of palette and a borrowed
+      chord is a wrong-coloured note. Alongside that sit curated corpora &mdash; classical, rock and
+      pop, jazz, and a large body of NES game music &mdash; with the author's own written analyses, and
+      an argument about teaching harmony by having students analyse pieces rather than learn rules
+      first. The NES section is organised by harmonic &ldquo;language&rdquo;: common practice, blues,
+      chiptune cadences, modes, pentatonic, hijaz.</p>
+      <p class="why"><strong>Why it is for you.</strong> Half your music notes are about how harmony
+      moves &mdash; cadence avoided in Brahms and Bach, pandiatonicism, what holds a form together
+      &mdash; and this is the cheapest way to <em>see</em> that in a piece rather than read about it.
+      Colour-by-scale-degree is a genuinely good idea for the specific question you keep asking of a
+      score: where does the ground shift, and how was the shift prepared. Ten seconds to find out
+      whether it suits how you think, because there is nothing to install. There is a teaching use too
+      &mdash; a child can see that a modulation happened long before they can name it &mdash; and a
+      caveat about the framing, below.</p>
+      <p class="why"><strong>To try it.</strong> Go to <code>rawl.rocks</code> and drag a MIDI file in.
+      No install, no account. Try something you know in score first, so you are judging the tool and not
+      the piece. The built-in corpora are a quicker start than your own files if you want to see what the
+      author thinks the colours are for.</p>
+      <p class="risk"><strong>Risk.</strong> <strong>The licence is the weak spot and you should know
+      exactly how.</strong> GitHub reports <strong>GPL-3.0</strong> for the repository, which satisfies
+      this newsletter's licence rule; but the README itself only says the project uses &ldquo;the same
+      licence as&rdquo; the upstream project it is forked from (Chip Player JS) without naming it. So
+      the licence is inherited rather than restated &mdash; fine for using a hosted web page, worth a
+      proper check before you reuse any of the code. <strong>84 stars, 10 forks, 29 open issues</strong>,
+      created in 2022 and pushed yesterday: a long-running one-person research project, not a product,
+      and the open-issue count against the star count tells you so honestly. Two limits it states
+      plainly: <strong>it cannot save your files, and it cannot save your annotations</strong> &mdash;
+      so it is a lens, not a workspace, and anything you work out you write down yourself. A list of
+      intended features (optical music recognition, colouring MusicXML noteheads, live MIDI) is
+      aspiration rather than function. Last, a taste warning rather than a risk: the project is
+      polemical about notation being gatekeeping, and you are someone who reads notation for pleasure
+      &mdash; take the colours and leave the manifesto. No accounts, keys or telemetry are mentioned.</p>
+      <p class="meta">84 stars &middot; 10 forks &middot; 29 open issues &middot; GPL-3.0 per GitHub, unnamed in the README &middot; created April 2022 &middot; last pushed 25 November 2026</p>
+      <a class="listen" href="https://rawl.rocks">Open Rawl</a><a class="score-link" href="https://github.com/vpavlenko/rawl">On GitHub</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-music&amp;item=vijaypemmaraju-rondocode&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-music&amp;item=vijaypemmaraju-rondocode&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-music&amp;item=vijaypemmaraju-rondocode&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-music&amp;item=vpavlenko-rawl&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-music&amp;item=vpavlenko-rawl&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-music&amp;item=vpavlenko-rawl&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
     <h2>For your projects</h2>
-    <p class="section-note">For the video pipeline &mdash; still the only area the ratings have never disagreed with. Something to use, and one pattern to steal.</p>
+    <p class="section-note">The video pipeline, and the one thing in it that still costs money.</p>
 
     <div class="piece">
-      <p class="work">explainroo</p>
-      <p class="composer">Narrated explainer videos rendered from a script and a scene file &middot; Mac, command line</p>
-      <p class="why"><strong>What it is.</strong> A tool that turns a script plus a JavaScript scene file into a finished narrated video &mdash; usually with a coding agent writing both. The voice is <strong>Kokoro running on your own machine</strong>, the word timing comes from Whisper, and the picture is a canvas renderer drawn through headless Chrome; ffmpeg assembles it. Out the other end: an MP4, <code>.srt</code> and <code>.vtt</code> subtitles, a cover image, YouTube chapters when the script names them, optional GIF and transparent MOV, a web player via <code>explainroo export</code>, and ready-made packages for YouTube, Shorts, TikTok, Reels, LinkedIn or X.</p>
-      <p class="why"><strong>Why it is for you.</strong> Your pipeline already records HTML scenes with Playwright and joins frames with ffmpeg, so this is not a new idea to you &mdash; it is your idea with the two pieces you have not built: a voice that costs nothing and needs no account, and word-level timing, which is what makes captions and on-screen text land on the syllable instead of approximately. <strong>Use it</strong> for the teaching videos and the hymn channel, where narration plus captions is most of the work and currently the slowest part. <strong>Steal one pattern from it</strong> even if you never run it: the README carries a table of exactly what leaves your machine for each command, so local and non-local work are separated by command rather than by trust &mdash; which is the documentation your own pipeline has no equivalent of, and the thing that makes a tool safe to hand to an agent. It also means the expensive options stay genuinely optional: ElevenLabs or Cartesia for voices, OpenRouter for AI images, each on your own key, each doing nothing until you ask.</p>
-      <p class="why"><strong>To try it.</strong> <code>npx --yes explainroo doctor --fetch</code>, which checks your machine and downloads the voice and timing models &mdash; <strong>about 400 MB, once, from Hugging Face</strong>. It wants Node 20.11 or newer, ffmpeg and Chrome or Chromium, and <strong>no graphics card</strong>, which suits the Mac. No account or API key for the default voice. If you want certain non-English voices, espeak-ng is a <code>brew install</code> (the README says so outright rather than hiding it); Japanese and Chinese additionally want Python. The optional agent plugin for Claude Code is a separate step. An evening for a first two-minute video, most of it spent on the script.</p>
-      <p class="risk"><strong>Risk.</strong> MIT, with the usual honest caveat that the components keep their own licences (Kokoro, Whisper via Transformers.js, Rough.js, Lucide, MathJax, Playwright, ffmpeg, and fonts under the SIL Open Font Licence) &mdash; worth reading before you publish commercially, and not a problem for a channel. The numbers want flagging under this newsletter's own rule: <strong>1,383 stars in eight weeks is fast</strong>, and fast star growth is the one number that cannot be told apart from bought attention. Here the supporting shape holds up &mdash; 137 forks is about one in ten, which is what real use looks like rather than a bookmarking spree, only 5 open issues, and it was pushed yesterday &mdash; but it is two months old, so treat it as promising rather than proven. It calls itself <strong>version 0.6.1</strong>, and is clear about its unfinished edges: <code>share</code> does nothing yet because the hosted service is not running, there is no presenter feature, and the optional AI clips can get text and diagrams wrong and can cost more than the quoted price. The author develops on Linux; tests run on macOS and Windows too, but <strong>Apple Silicon is never named</strong>, so do not be surprised if the first run needs a nudge. On data it is as clean as this issue gets: no telemetry, nothing about your usage sent anywhere, voice and timing and rendering all local, and network access limited to those one-off model downloads plus whichever outside service you explicitly invoke. One Linux-only wart documented in the README: the ONNX runtime may try to fetch CUDA files it never uses.</p>
-      <p class="meta">1,383 stars &middot; 137 forks &middot; 5 open issues &middot; MIT (components keep their own licences) &middot; created 25 September 2026 (8 weeks old) &middot; last pushed 18 November 2026</p>
-      <a class="listen" href="https://github.com/vincentsch/explainroo">On GitHub</a>
+      <p class="work">MLX-Audio</p>
+      <p class="composer">Speech models that run on your own Mac &middot; for the video pipeline &mdash; to use</p>
+      <p class="why"><strong>What it is.</strong> Text-to-speech, speech-to-text and speech-to-speech
+      running locally on Apple Silicon through Apple's MLX framework, with a long menu of models to
+      choose between and <strong>voice cloning in several of them</strong>. Three ways in: a command-line
+      tool, a Python API, and &mdash; the one that matters here &mdash; a <strong>local server with
+      OpenAI-compatible endpoints</strong> (<code>/v1/audio/speech</code>,
+      <code>/v1/audio/transcriptions</code>). There is an optional web UI if you would rather click.</p>
+      <p class="why"><strong>Why it is for you.</strong> Your pipeline records HTML scenes with
+      Playwright and joins them with ffmpeg, and the piece that has never been solved locally is the
+      voice: the good options want a paid account, which is the thing you say you dislike most about
+      otherwise-good software. <strong>Use this</strong> for the teaching videos and the hymn channel.
+      The specific reason to use it rather than admire it is the OpenAI-compatible endpoint: if any part
+      of your pipeline already knows how to ask a hosted service for speech, it can ask
+      <code>localhost</code> in the same shape, so this is a configuration change rather than a
+      rewrite. The transcription half is worth as much as the speaking half, because word-level timings
+      from your own narration are what make captions land on the syllable. And since it is MLX, it runs
+      on the machine you actually have rather than needing the RAM-starved PC or a GPU.</p>
+      <p class="why"><strong>To try it.</strong> <code>pip install -U mlx-audio</code> on the Mac
+      (Python 3.11+), then one generate command with a small model and listen to it. No
+      <code>curl | sh</code>, no account, no key. ffmpeg &mdash; via Homebrew &mdash; is needed only if
+      you want MP3 or similar; plain WAV works without it. An evening, most of which is downloading
+      models and deciding which voice you can bear to listen to for ten minutes.</p>
+      <p class="risk"><strong>Risk.</strong> The code is MIT, stated in the repository.
+      <strong>The models are not, and the README does not say what they are licensed under</strong>
+      &mdash; they come down from Hugging Face at first use, from several different originators. That
+      is the one thing to check before a voice generated here narrates anything you publish; the tool
+      being free is not the same as the voice being yours to use. Sizes range from a few hundred
+      megabytes for the small speech models to <strong>around 17 GB of memory for the largest</strong>,
+      which your Mac may or may not enjoy &mdash; start small. <strong>Apple Silicon and macOS only</strong>,
+      so nothing here helps the Windows PC. <strong>8,338 stars, 808 forks, 93 open issues</strong>,
+      created November 2024, pushed yesterday: two years old with real activity and a fork count in
+      proportion to its stars, which is the healthiest shape of anything in this issue. It is
+      company-adjacent &mdash; the README banners a commercial lab and a product &mdash; but neither is
+      required to run it, and nothing in it asks for an account. Two stated caveats: one model's voice
+      cloning is not yet available upstream so it quietly uses a default voice instead, and some models
+      are English-only. Nothing was installed or run to write this.</p>
+      <p class="meta">8,338 stars &middot; 808 forks &middot; 93 open issues &middot; MIT (code only; model licences unstated) &middot; created November 2024 &middot; last pushed 25 November 2026</p>
+      <a class="listen" href="https://github.com/Neywa-Labs/mlx-audio">Read the model list</a><a class="score-link" href="https://github.com/Neywa-Labs/mlx-audio#readme">Install notes</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-video&amp;item=vincentsch-explainroo&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-video&amp;item=vincentsch-explainroo&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-video&amp;item=vincentsch-explainroo&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-video&amp;item=neywa-labs-mlx-audio&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-video&amp;item=neywa-labs-mlx-audio&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-video&amp;item=neywa-labs-mlx-audio&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
     <h2>A game</h2>
-    <p class="section-note">In a browser, on a tablet, with a virtual joystick &mdash; and the same seed gives the same universe every time.</p>
+    <p class="section-note">Your day job, as a cartoon, in a browser tab. This one needs no explaining to you at all.</p>
 
     <div class="piece">
-      <p class="work">Deep Space</p>
-      <p class="composer">Fly to any planet in 1,024 star systems and walk about on it &middot; browser, touch or keyboard</p>
-      <p class="why"><strong>What it is.</strong> A procedurally generated space game in a web page, built on Three.js with a WebGL 2 renderer and <strong>no loading screens</strong>: you fly from interstellar space down to a planet, land, and get out and walk, skydive and fight on seed-generated terrain. The galaxy is a fixed, curated spiral of 1,024 systems, and the same seed always produces the same world. There is a 3D galaxy map, a ship you can walk around inside, six surface weapons, outposts with patrolling robots, and a black hole to find. Quality settles itself from the frame rate it measures rather than from what hardware you have, and mobile automatically caps its render resolution.</p>
-      <p class="why"><strong>Why it is for you.</strong> The iPad is for recreation and this is the kind of thing it is actually good for: open a link, fly somewhere, stop. Touch is properly thought about rather than bolted on &mdash; one finger steers, a pinch is the throttle, two fingers orbit a planet you have selected, and walking around on the surface uses a virtual joystick &mdash; so it is a real tablet game and not a desktop game that tolerates a tablet. There is a second reason, which is Three.js: you build with it, and a seamless space-to-surface transition with no loading screen is a genuinely hard thing to pull off in a browser. Worth half an hour as a player and ten minutes as someone who will wonder how the terrain streaming works.</p>
-      <p class="why"><strong>To try it.</strong> Open <code>dp.eray.top</code> and fly. Nothing to install, no account, no login. On the Mac the mouse steers, W and S are thrust and brake, <code>L</code> auto-lands and <code>M</code> is the galaxy map; on foot it is WASD, 1&ndash;6 for weapons, <code>F</code> to interact. On the iPad use the touch controls above. Ten seconds to playing.</p>
-      <p class="risk"><strong>Risk.</strong> <strong>Mixed licensing, and this is the thing to understand before you fork it:</strong> the code is MIT, but the 42 music tracks are not &mdash; 27 were generated with Google DeepMind's Lyria and 15 with an early Suno, and the project states they fall outside the MIT licence and are for non-commercial use only, telling anyone who wants to redistribute or go commercial to replace the audio. The game runs with the audio folder deleted. For playing it, none of that matters; for borrowing from it, it matters a lot. The shape is small: <strong>25 stars, 3 forks, no open issues</strong>, created 17 July and pushed yesterday. One person's project, played in their browser and hosted on their own domain &mdash; so the honest risk is that the link stops working one day, not that it harms you. The documentation is mainly in Simplified Chinese with an English README alongside. No accounts, analytics or telemetry are documented, and the only network traffic described is the music loading on demand from the project's own assets &mdash; but note that this is a personal site rather than a repository you inspect, so &ldquo;no telemetry&rdquo; here is the absence of a claim rather than a promise. It needs WebGL 2 and states no minimum hardware; if the iPad struggles the automatic quality tiers are supposed to handle it.</p>
-      <p class="meta">25 stars &middot; 3 forks &middot; 0 open issues &middot; MIT for the code; bundled music is non-commercial only &middot; created 17 July 2026 (4 months old) &middot; last pushed 18 November 2026</p>
-      <a class="listen" href="https://dp.eray.top">Play in the browser</a><a class="score-link" href="https://github.com/Eray114514/Deep-Space">On GitHub</a>
+      <p class="work">Series of Tubes</p>
+      <p class="composer">Run an ISP: subsea cable, IXPs, 95th-percentile billing and the occasional backhoe &middot; browser</p>
+      <p class="why"><strong>What it is.</strong> A free cartoon browser game about how the internet
+      actually works. You start with one router in one city and try to grow into a transit-free Tier 1
+      network. You win customers (home broadband, enterprises, hosting, DDoS protection, AI data
+      centres), decide how to interconnect &mdash; IP transit, internet exchanges, peering, CDN caches
+      &mdash; and build the physical layer: <strong>leased waves across some forty subsea cable
+      systems</strong>, dark fibre, router generations, link aggregation. Then you do traffic
+      engineering and survive what the world does to you: backhoe cuts, route leaks, DDoS, sharks.
+      There is an optional multiplayer mode where players peer with and sell transit to each other.</p>
+      <p class="why"><strong>Why it is for you.</strong> This is optical networking as a toy, which is
+      not a thing that usually exists. You spend your working life on the layer this game is a cartoon
+      of, and the pleasure on offer is specific: finding out which parts it gets right, and laughing at
+      the parts it does not. <strong>95th-percentile billing as a game mechanic</strong> is a genuinely
+      funny idea and a sign the author knows the business. There is a second use if you want one &mdash;
+      it is the clearest answer you will find to &ldquo;what does Daddy do&rdquo;, and the kind of thing
+      your teaching work is made of &mdash; but mainly it is half an hour of recreation aimed almost
+      personally at you.</p>
+      <p class="why"><strong>To try it.</strong> Go to <code>seriesoftub.es</code>. Nothing installed,
+      no account, no cookies; your progress sits in the browser's local storage. Eight languages.
+      Multiplayer is opt-in and the game works fine without it, so start solo.</p>
+      <p class="risk"><strong>Risk.</strong> MIT, stated in the repository. <strong>263 stars, 58 forks,
+      58 open issues</strong>, created <strong>23 October 2026</strong> and pushed this morning: that is
+      <strong>34 days old</strong>, barely past this newsletter's 30-day line, and one author working
+      fast &mdash; 58 open issues against 263 stars is what a month-old game looks like, not a warning
+      in itself, but do not expect stability. <strong>Do not use it as a reference:</strong> the project
+      says outright that it simplifies and gets some things wrong for the sake of the joke, and points
+      at a book for the accurate version &mdash; which, given your field, is the one thing worth knowing
+      before you get irritated. <strong>The iPad is untested:</strong> nothing in the project addresses
+      touch or tablets at all, so it may well want a mouse. On data: no accounts and no cookies in solo
+      play; the optional multiplayer sends game data to relay servers, and the project says those relays
+      never keep IP addresses and cannot see your strategy or money, with deals sealed end to end
+      &mdash; which is a good answer, and still a reason to stay solo if you would rather not find
+      out.</p>
+      <p class="meta">263 stars &middot; 58 forks &middot; 58 open issues &middot; MIT &middot; created 23 October 2026 (34 days old) &middot; last pushed 26 November 2026</p>
+      <a class="listen" href="https://seriesoftub.es/">Play it</a><a class="score-link" href="https://github.com/fjaeckel/seriesoftubes">On GitHub</a>
       <div class="rate">
         <span class="rate-label">Rate this</span>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-game&amp;item=eray114514-deep-space&amp;rating=up">&#128077; Loved it</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-game&amp;item=eray114514-deep-space&amp;rating=mid">&#128578; Good</a>
-        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-19&amp;cat=gh-game&amp;item=eray114514-deep-space&amp;rating=down">&#128078; Not for me</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-game&amp;item=fjaeckel-seriesoftubes&amp;rating=up">&#128077; Loved it</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-game&amp;item=fjaeckel-seriesoftubes&amp;rating=mid">&#128578; Good</a>
+        <a href="https://script.google.com/macros/s/AKfycbx1bzCocMh1xf8zCYZ72Pg8dNkFm949fpMm82RExKkgXMsChltsUBdLWrDgFD7Y_jmiqg/exec?week=2026-11-26&amp;cat=gh-game&amp;item=fjaeckel-seriesoftubes&amp;rating=down">&#128078; Not for me</a>
       </div>
     </div>
 
     <h2>On the radar</h2>
-    <p class="section-note">Good, but not this week. Two of these are a direct hit on an interest and still not pickable &mdash; the reason is in each row.</p>
+    <p class="section-note">Worth knowing, not worth your Saturday. Each row says which it is and why.</p>
 
     <table class="table">
       <tr><th>Project</th><th>Why not this week</th></tr>
-      <tr><td><a href="https://github.com/bootgs/utils">@bootgs/utils</a></td><td>300-odd typed, unit-tested utilities for <strong>Google Apps Script</strong>, in TypeScript: Sheets and A1-notation helpers, <code>isX</code>/<code>requireX</code> guards, typed exception classes, UI and network helpers, docs in five languages. Apache-2.0, 31 stars, 9 forks, pushed yesterday, with CI and OpenSSF badges &mdash; unusually careful for its size. Relevant because the newsletter emailers themselves are Apps Script. Held back for one gap: <strong>the README never shows how the compiled code actually gets into an Apps Script project</strong> &mdash; it is an npm install and a <code>npm run build</code>, and clasp appears only as a badge &mdash; so the step that matters for your workflow is undocumented. Also 44 open issues against 31 stars. Worth a look if you ever move the emailers to TypeScript properly.</td></tr>
-      <tr><td><a href="https://github.com/kobimusic/copisteria">copisteria</a></td><td>Optical music recognition with a &ldquo;learned evidence model&rdquo;: page images of printed music in, MusicXML out. Apache-2.0, 25 stars, 4 forks, created 4 October, pushed yesterday. A direct hit on wanting printed scores turned into something a computer can read &mdash; and held back because <strong>homr took the OMR slot on 22 October</strong> and nothing here says it beats it, on 25 stars and 4 forks. Noted from its description and metadata, not a close read. Revisit when it has either users or a comparison.</td></tr>
-      <tr><td><a href="https://github.com/franklindhansen/glisscore">glisscore</a></td><td>&ldquo;Score videos made easy&rdquo; &mdash; the scrolling-score-over-audio format, which is precisely what a hymn or a study channel is made of. AGPL-3.0, 21 stars, 3 forks, pushed today. Two reasons it waits: created <strong>15 October</strong>, so 35 days old and only just past the line, and a four-word description is all there is to go on until someone reads it properly. Next week's candidate for the pipeline slot if it survives a README.</td></tr>
-      <tr><td><a href="https://github.com/M-Abozaid/esp32-c3-adblock">esp32-c3-adblock</a></td><td>A Pi-hole-class DNS ad-blocker on a <strong>two-dollar ESP32-C3</strong>: 537,000 domains stored as 40-bit hashes in flash and binary-searched, with a UDP sinkhole and a web dashboard. MIT, 3,612 stars, 413 forks, created June, pushed 6 November. The reason it is interesting to you specifically is the NAS that cannot run Docker &mdash; this is the whole job on hardware that costs less than lunch. Not a pick because it needs a board on the desk and a flashing toolchain, which is a project rather than a weekend, and because this is from its description and metadata only.</td></tr>
-      <tr><td><a href="https://github.com/dhtoolbox/itopos">itopos</a> and <a href="https://github.com/gom00n/AutoGeoReferencingPublic">AutoGeoReferencing</a></td><td>Two finds for the Roman Colchester work, both too thin to send you to. The first maps and animates places from the <strong>Pleiades gazetteer</strong> of the ancient world through time, in a browser (Apache-2.0, created 15 October). The second automatically georeferences scanned 1940s 1:20,000 map sheets &mdash; a neural net finds the triangulation symbols, OCR reads the grid labels, and it solves the transform (MIT, created July). Both have <strong>zero stars and zero forks</strong>, which is the clearest &ldquo;research code, not a tool&rdquo; signal there is. Filed because the second one is the exact problem old maps give you, and because this corner of your range has had nothing pickable for weeks.</td></tr>
-      <tr><td><a href="https://github.com/gigliof/bach-to-basics">Bach to Basics</a></td><td>The other browser piano trainer: falling notes, MIDI, PDF and audio import, A/B loops, a speed trainer, wait mode per hand, fingering hints from MusicXML. MIT, 19 stars, 4 forks, pushed yesterday. Lost this week's slot to Da Capo on install cost alone &mdash; <strong>it needs a FastAPI backend plus pnpm and Python 3.11/3.12</strong> running on the Mac, Java for PDF import, and the iPad only reaches it over your own network; its sampled instruments also come from external CDNs. Richer than Da Capo if you want the practice tools; a weekend rather than a tab.</td></tr>
+      <tr><td><a href="https://github.com/EarthmanMuons/whatchord">whatchord</a></td><td>Play or type notes, get the chord named, and explore the harmony around it &mdash; in a browser, with live MIDI, at <a href="https://whatchord.earthmanmuons.com">whatchord.earthmanmuons.com</a>. Licensed <strong>0BSD</strong>, which is about as permissive as licences get, so anything you learn from it you can reuse freely. Only 26 stars and 3 forks, and Orfeo does chord identification as one feature among many, so it loses the slot on breadth rather than on quality. A good small thing if you want exactly that one job done in a tab.</td></tr>
+      <tr><td><a href="https://github.com/Agustin-Delgado/repath">repath</a></td><td>A mixed-signal circuit simulator that runs <strong>entirely in the browser</strong> &mdash; a Rust engine compiled to WebAssembly behind a Svelte interface. MIT, created 2 August, pushed 21 November. Exactly the right shape for teaching electronics on an iPad, and held back for one plain reason: <strong>21 stars, 3 forks and no hosted build</strong>, so trying it means running the toolchain yourself. Revisit if a live demo ever appears; it would be a pick that day.</td></tr>
+      <tr><td><a href="https://github.com/nico579/lidar2map">lidar2map</a></td><td>Offline archaeological LiDAR maps from open data in 27 countries: bare-earth relief &mdash; hillshade, Sky-View Factor, local relief modelling &mdash; exported for walking apps. GPL-3.0, created April. This is the Roman Colchester problem exactly, and it has <strong>23 stars and one fork</strong>, with the raster and vector layers centred on France; the relief recipes are the transferable part. Filed, honestly, because this corner of your range keeps producing research code and no tools.</td></tr>
+      <tr><td><a href="https://github.com/Rastapopolix/tessera">tessera</a></td><td>Replacement firmware that turns a pocket synth into a generative composing machine: 13 generators, song forms, and a long form that shapes a whole piece. GPL-3.0, 38 stars, 7 forks, created 11 October, pushed today. Generative music on hardware is a real interest of yours and this is the well-made version &mdash; but it needs the device on your desk, which is a purchase, not a weekend. (Same device as the emulator this newsletter turned down a fortnight ago on a firmware question.)</td></tr>
+      <tr><td><a href="https://github.com/tscircuit/tscircuit">tscircuit</a></td><td>Real electronics designed in <strong>TypeScript and React</strong> &mdash; components as code, with a browser viewer. MIT, 3,079 stars, 363 forks, actively developed. A direct hit on how you build things, and not a find: it has been going since 2024, so it is a pointer rather than news. Mentioned because if the ESP32 guide above gets you as far as wanting a board of your own, this is the way in that uses a language you already write.</td></tr>
     </table>
 
     <h2>What I left out, and why</h2>
@@ -218,25 +377,26 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
 
     <div class="thin">
       <ul class="plain">
-        <li><strong>The most popular thing I saw all morning, twice over.</strong> Two headless browsers for agents at <strong>36,425</strong> and <strong>32,977 stars</strong> &mdash; one advertising that it &ldquo;passes every bot detection test&rdquo; with source-level fingerprint patches, the other a drop-in Playwright replacement in the same business, plus a third at 24,000 and a fourth that turns any site into a CLI using your logged-in browser. Apache-2.0 and MIT, enormously popular, and all of them are tools for evading bot detection. (Rule 3.) This matters to you more than most rejections because Playwright <em>is</em> your stack, and these will keep appearing at the top of every search.</li>
-        <li><strong>Three games that are really someone else's game.</strong> A browser real-time-strategy engine that reads a commercial title's data files and asks you to bring your own copy; a static recompilation of an Xbox 360 tower-defence game as a native PC port; and a fan remake of a commercial mobile tower-defence game. Rule 3 rules out ports, emulators and compatibility layers for commercial games, whatever the licence on the new code says &mdash; and the recompilation was unlicensed anyway.</li>
-        <li><strong>A cluster of puzzle repositories with the same shape and no licence.</strong> Half a dozen sudoku and algebra &ldquo;trainers&rdquo;, all with 50-odd stars, <strong>zero forks</strong>, titles ending in &ldquo;2026&rdquo; and no licence file: an unsolvable-grid trainer, a HoDoKu fork, a linear-equation arena, a three-letter-word trainer. Rule 2 on the licence and rule 6 on the numbers &mdash; fifty stars and no forks, repeated across six repositories by different accounts, is not six independent projects. Worth knowing because sudoku is the best-rated category in all your newsletters, so this is the corner where searching gets noisiest.</li>
-        <li><strong>The licence re-checks, now a weekly ritual.</strong> <strong>abcjs</strong> &mdash; still <code>NOASSERTION</code>, pushed yesterday, fifth week of asking, and still the one that would matter most. <strong>dolce</strong> (offline score recognition reading and writing both ABC and MusicXML) &mdash; still <code>NOASSERTION</code>. <strong>facet</strong> (local photo scoring and culling, 392 stars) &mdash; still <code>NOASSERTION</code>. <strong>ori-studio</strong>, which designs and validates origami models and answers a live question of yours &mdash; still <code>NOASSERTION</code>. Also unlicensed this week: NoteFlow Studio, a web music IDE with text notation, and an origami-named scripting language that is nothing to do with folding paper.</li>
-        <li><strong>Three photo tools beaten by one.</strong> FerrumPix (GPL-3.0, 762 stars but only 19 forks) and two Immich add-ons, left out because a self-hosted library server is the one thing your Docker-less ARM NAS cannot host &mdash; a fit problem, not a rule.</li>
-        <li><strong>The hardware shelf.</strong> A generative firmware for a pocket synth, a eurorack SDK, a receipt printer that prints a picture each morning: all MIT, all good, all needing something soldered or bought before the first run. Not rejected, just never a weekend.</li>
-        <li><strong>Everything created in the last 30 days</strong>, however good it looked. (Rule 1.) Nothing this week was close enough to the line to argue about.</li>
+        <li><strong>Photography, on purpose and not on a rule.</strong> The only rating photography has ever had in this newsletter is a thumbs-down, so the slot went to electronics instead of to a fourth photo tool. Nothing was rejected to make that happen &mdash; the searches simply were not run. Rate a pick up and the area comes straight back.</li>
+        <li><strong>The three biggest things in the whole morning's searching, all in the same business.</strong> An &ldquo;open-source ElevenLabs alternative&rdquo; at <strong>118,484 stars</strong>, an &ldquo;agentic video production system&rdquo; at <strong>83,389</strong>, and a one-click short-video generator at <strong>145,751</strong> &mdash; AGPL-3.0, AGPL-3.0 and MIT, all created or grown in 2026. Each does, on paper, the thing MLX-Audio does. Rule 6 is the reason none of them is the pick: counts of that size on projects that young cannot be told apart from bought ones from the outside, and the business they are all in &mdash; a topic and a keyword in, a finished video out &mdash; is the slop you say you dislike. MLX-Audio won the slot on fit and on a fork-to-star ratio I can believe.</li>
+        <li><strong>A crypto mining stack, found by searching for quantum computing.</strong> 11,585 stars against <strong>163 forks</strong> &mdash; a seventy-to-one ratio, which is the clearest tell there is &mdash; and it is a mining and wallet-adjacent project, so rule 3 ends it regardless. Worth recording because your professional field is now a keyword other people are farming: the quantum search returned established toolkits from IBM, Google and the national labs, and then this.</li>
+        <li><strong>A new DAW that rebuilds a commercial one's interface.</strong> AGPL-3.0, <strong>1,096 stars in six weeks</strong>, and the pitch is a named commercial product's workflow plus an importer for its project files. Rule 3 rules out clones of a company's branded interface and rule 6 covers the velocity; either alone would do. A browser remake of a 1995 commercial adventure game went the same way.</li>
+        <li><strong>The pocket-synth emulator is finally old enough and still out.</strong> Turned down a fortnight ago partly for being 31 days old; it is 45 days old now, so rule 1 is satisfied. It still needs the manufacturer's own firmware to do anything, which is the grey area that mattered, and that has not changed. Same answer, better reason.</li>
+        <li><strong>The licence re-checks, week six.</strong> <strong>abcjs</strong> &mdash; still <code>NOASSERTION</code>, pushed a week ago, and still the one whose licence would matter most to you. <strong>dolce</strong> (offline score recognition, reads and writes ABC and MusicXML) &mdash; still none, pushed today. <strong>facet</strong> (local photo scoring and culling, now 407 stars) &mdash; still none. <strong>ori-studio</strong> (origami design and validation, which answers a live question of yours) &mdash; still none, pushed today. <strong>velxio</strong> (browser Arduino and ESP32 emulator, now 3,883 stars &mdash; and relevant to this week's electronics pick) &mdash; still none. Five projects, all active, none pickable. Rule 2 is the most expensive rule in this newsletter and it has not loosened.</li>
+        <li><strong>Everything created in the last 30 days.</strong> (Rule 1.) Two of this week's picks are only just the right side of that line, at 34 and 36 days, and both say so in their Risk lines.</li>
       </ul>
     </div>
 
     <div class="aside">
       <span class="label">A note on the method</span>
-      Same as last week, and worth repeating because the failure looks like a network outage when
-      it is not: the <code>gh</code> command line reached GitHub's search API fine, the MCP search
-      tools were again absent from this morning's toolset, and <code>repos/{owner}/{repo}</code> is
-      still refused for anyone else's repository. So every licence, fork count and date here came
-      from <code>repo:owner/name</code> searches, and the READMEs from
-      <code>raw.githubusercontent.com</code>. Fourteen topic searches across music, the vault,
-      puzzles, maths, photography, electronics, maps, video, games, Apps Script and Astro.
+      Nineteen topic searches this week &mdash; music theory, web audio, LilyPond, generative music,
+      synthesizers, sheet music, browser and puzzle and educational games, Obsidian plugins, Manim,
+      text to speech, electronics, circuit simulators, quantum computing, archaeology and origami
+      &mdash; plus one <code>repo:owner/name</code> search per finalist to confirm its licence, forks
+      and dates. Unchanged from the last three weeks: the <code>gh</code> command line reaches GitHub's
+      search API, the MCP search tools were again absent from this morning's toolset, and
+      <code>repos/{owner}/{repo}</code> is still refused for anyone else's repository. READMEs came
+      from <code>raw.githubusercontent.com</code>.
     </div>
 
     <div class="aside">
@@ -245,7 +405,10 @@ code{background:#E6EFEC; padding:0 .25rem; font-size:.9em;}
       and a read of the README for warning signs (installs that pipe a script
       into your shell, accounts, telemetry, subscriptions, platforms it never claims to
       support). Stars came last, because they are the easiest number to fake.
-      Nothing was cloned, downloaded or run.
+      This week I also requested each project's own site to check it loads &mdash; which is how the
+      ESP32 guide's dead Vercel address was caught &mdash; and confirmed every repository through the
+      search API, since GitHub's own web pages refuse requests from this sandbox. Nothing was cloned,
+      downloaded or run.
     </div>
 
     <div class="feedback">
