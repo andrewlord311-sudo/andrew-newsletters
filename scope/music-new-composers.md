@@ -16,3 +16,4 @@ issues and Andrew's taste note.)
 | Matthew Taylor | 1964 | UK | 2026-11-07 | New music |
 | Jonathan Leshnoff | 1973 | USA | 2026-11-14 | New music |
 | Andrea Tarrodi | 1981 | Sweden | 2026-11-21 | New music |
+| Tõnu Kõrvits | 1969 | Estonia | 2026-11-28 | New music |
